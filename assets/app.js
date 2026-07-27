@@ -206,8 +206,11 @@
 
     // progress
     var row = el('div', 'progress-row');
-    var pct = el('span', 'progress-pct s-' + st.cls,
-      d.status === 'unfalsifiable' ? '—' : (d.progress + '%'));
+    // A tilde on the number, because the striped bar that used to be the only
+    // marker of an editorial estimate measures 1.22:1 against its own fill.
+    var shown = d.status === 'unfalsifiable' ? '—'
+      : (d.estimated ? '~' : '') + d.progress + '%';
+    var pct = el('span', 'progress-pct s-' + st.cls, shown);
     row.appendChild(pct);
     row.appendChild(el('span', 'progress-caption',
       d.status === 'unfalsifiable' ? 'no measurable threshold' : (d.progress_note || 'toward stated threshold')));
@@ -241,17 +244,32 @@
     chips.appendChild(el('span', 'chip chip-cat', CATEGORIES[d.category] || d.category));
     if (d.deadline) chips.appendChild(el('span', 'chip chip-deadline', 'Deadline ' + d.deadline));
     if (d.stake) chips.appendChild(el('span', 'chip', d.stake));
+    if (d.estimated) chips.appendChild(el('span', 'chip chip-est', 'editorial estimate'));
     if (d.verification) {
       var vLabel = VERIFICATION[d.verification] || d.verification;
-      var vChip = el('span', 'chip chip-verif v-' + d.verification, vLabel);
+      // Was a title= tooltip: invisible to keyboard users and entirely absent on
+      // touch, so phone visitors could not reach the provenance reason at all.
       if (d.verification_note) {
-        vChip.title = d.verification_note;
-        vChip.tabIndex = 0;
-        vChip.setAttribute('aria-label', 'Provenance, ' + vLabel + '. ' + d.verification_note);
+        var vBtn = el('button', 'chip chip-verif v-' + d.verification, vLabel);
+        vBtn.type = 'button';
+        vBtn.setAttribute('aria-expanded', 'false');
+        var note = el('p', 'verif-note', d.verification_note);
+        note.hidden = true;
+        vBtn.addEventListener('click', function () {
+          var open = vBtn.getAttribute('aria-expanded') === 'true';
+          vBtn.setAttribute('aria-expanded', String(!open));
+          note.hidden = open;
+        });
+        chips.appendChild(vBtn);
+        card.appendChild(chips);
+        card.appendChild(note);
+      } else {
+        chips.appendChild(el('span', 'chip chip-verif v-' + d.verification, vLabel));
+        card.appendChild(chips);
       }
-      chips.appendChild(vChip);
+    } else {
+      card.appendChild(chips);
     }
-    card.appendChild(chips);
 
     // why this one sits below the line
     if (d.claim === 'proxy' && d.claim_note) {
@@ -304,6 +322,14 @@
       a.appendChild(p);
     });
     card.appendChild(a);
+
+    // what would change this verdict
+    if (d.flip_condition) {
+      var flip = el('div', 'flip');
+      flip.appendChild(el('b', null, 'What would change this'));
+      flip.appendChild(el('span', null, d.flip_condition));
+      card.appendChild(flip);
+    }
 
     // drift
     if (d.drift) {

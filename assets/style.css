@@ -387,6 +387,21 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .chip.s-failed   { color: var(--fail); }
 .chip.s-unfals   { color: var(--unfals); }
 .chip-cat { background: var(--bg-sunken); }
+.chip-est { color: var(--near); border-color: var(--accent-soft); }
+
+/* provenance chip is a real button now, and its note a disclosure */
+button.chip-verif { cursor: pointer; font: inherit; font-size: 10.5px; letter-spacing: .06em; }
+button.chip-verif::after { content: ' ⌄'; opacity: .6; }
+button.chip-verif[aria-expanded="true"]::after { content: ' ⌃'; }
+.verif-note {
+  margin: -8px 0 16px;
+  padding: 10px 12px;
+  background: var(--bg-sunken);
+  border-radius: 7px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
 .chip-inline { display: inline-block; vertical-align: baseline; text-transform: none; }
 .chip-deadline { color: var(--accent); border-color: var(--accent-soft); }
 
@@ -491,6 +506,25 @@ code { font-family: var(--mono); font-size: 0.9em; }
   line-height: 1.55;
   color: var(--ink-dim);
 }
+.flip {
+  border-left: 2px solid var(--accent-soft);
+  padding: 0 0 0 12px;
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+.flip b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
 .drift b {
   display: block;
   font-family: var(--mono);
@@ -518,6 +552,19 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .card-foot a { color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
 .card-foot a:hover { color: var(--accent); border-color: var(--accent); }
 .card-foot .conf { margin-left: auto; color: var(--ink-faint); white-space: nowrap; }
+
+/* Static pre-rendered criteria (build.py). Present in the served HTML so the
+   page has content without JavaScript; app.js replaces it on boot. */
+.prerender { display: contents; }
+.prerender-head {
+  grid-column: 1 / -1;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  margin: 24px 0 0;
+  color: var(--ink-dim);
+}
+.prerender .card p { font-size: 14.5px; color: var(--ink-dim); }
 
 /* result count: was visually hidden, so the only feedback that a filter did
    anything reached screen readers and nobody else */

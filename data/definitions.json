@@ -13,12 +13,12 @@
       "category": "benchmark",
       "status": "passed",
       "progress": 100,
-      "progress_note": "73% win rate against a 50% bar",
+      "progress_note": "73% judged human against a 50% three-party bar",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "an average interrogator will not have more than 70 per cent chance of making the right identification after five minutes of questioning",
       "quote_source": "Alan Turing, \"Computing Machinery and Intelligence\", 1950",
-      "status_today": "<strong>Passed in 2025, against a bar Turing never set.</strong> The 70% figure was his prediction for the year 2000, not a stated pass mark; the field retrofitted it into one. Scored against that retrofitted bar: Jones and Bergen ran two randomised, pre-registered three-party tests at UC San Diego, in which participants held simultaneous five-minute conversations with one human and one system, then judged which was which. GPT-4.5 with a humanlike-persona prompt was <strong>judged to be the human 73% of the time</strong>, selected as human significantly more often than the actual human participants. Two caveats keep this honest: the pass is prompt-dependent, and the same model without the persona prompt does not pass. The most famous test in the field fell to a system two generations behind the frontier.",
+      "status_today": "<strong>Passed in 2025, against a bar Turing never set.</strong> His 70% figure was a prediction for the year 2000 and describes interrogator accuracy, not the pass mark used here. The bar actually cleared is the 50% chance line in a three-party test.\n\nJones and Bergen ran two randomised, pre-registered three-party tests, on UC San Diego undergraduates and an online Prolific sample: five-minute simultaneous conversations with one human and one system, then a judgement of which was which. GPT-4.5 with a humanlike-persona prompt was <strong>judged to be the human 73% of the time</strong>, significantly more often than the actual human participants. LLaMa-3.1-405B also cleared the bar at 56%, so two systems passed, not one.\n\nTwo caveats keep this honest: without the persona prompt the same model drops to 36%, and the systems that passed are generations behind the frontier. Published in PNAS in May 2026.",
       "source_url": "https://arxiv.org/abs/2503.23674",
       "evidence": [
         {
@@ -29,7 +29,8 @@
       "verification": "independent",
       "verification_note": "Peer-reviewed PNAS study, pre-registered, no lab involvement",
       "claim": "stated",
-      "measured": "2025"
+      "measured": "2025",
+      "flip_condition": "A failed replication at longer duration, or without a persona prompt, would reopen this."
     },
     {
       "slug": "coffee-test",
@@ -64,7 +65,8 @@
       "verification": "unmeasured",
       "verification_note": "Never attempted in an unfamiliar home; scored as a judgement over Epoch AI's component-level assessments",
       "claim": "stated",
-      "measured": "2026-04"
+      "measured": "2026-04",
+      "flip_condition": "One unrehearsed run in a home the system has never seen, operating an unfamiliar appliance unaided."
     },
     {
       "slug": "arc-agi-2-grand-prize",
@@ -94,7 +96,8 @@
       "verification_note": "Adjudicated inside ARC Prize's own Kaggle competition",
       "claim": "proxy",
       "claim_note": "Chollet has said plainly that solving ARC-AGI would not mean AGI had been achieved. The prize is framed as a necessary milestone, not a finish line.",
-      "measured": "2025"
+      "measured": "2025",
+      "flip_condition": "The 4 December 2026 private-set result. 85% claims the $150K bonus; below that it rolls to 2027."
     },
     {
       "slug": "arc-agi-3",
@@ -110,7 +113,7 @@
       "confidence": "high",
       "quote": "An interactive reasoning benchmark which challenges AI agents to explore novel environments, acquire goals on the fly, build adaptable world models, and learn continuously.",
       "quote_source": "ARC Prize Foundation, launched 25 March 2026. A 100% score means agents beat every environment as efficiently as humans.",
-      "status_today": "<strong>The cleanest AGI gap number currently available: 30% against a human 100%.</strong> Agents get no instructions, no rules and no stated goals. They must explore, infer how the environment works, work out what winning looks like, and carry what they learn forward. At launch in March 2026 the best frontier model scored 0.51%. Claude Opus 5, tested on 24 July, scored <strong>30.16%</strong>, roughly four times the next best system, GPT-5.6 Sol at 7.8%, with every older frontier model still near zero. That is the largest single-step gain on any AGI-framed benchmark right now, and it is one vendor's unreplicated result. Note the cost: that run came to $20,657, so on the efficiency dimension Chollet's definition actually cares about, this is nowhere near human.",
+      "status_today": "<strong>The cleanest AGI gap number currently available: 30% against a human 100%.</strong> Agents get no instructions, no rules and no stated goals. They must explore, infer how the environment works, work out what winning looks like, and carry what they learn forward. At launch in March 2026 the best frontier model scored 0.51%. Claude Opus 5, tested on 24 July, scored <strong>30.16%</strong>, roughly four times the next best system, GPT-5.6 Sol at 7.8%, with every older frontier model still near zero. That is the largest single-step gain on any AGI-framed benchmark right now, and it is one vendor's unreplicated result. On cost the picture is less one-sided than it looks: the run came to $20,657, which is nowhere near human on the efficiency dimension Chollet's definition cares about, but it undercut the $25,064 GPT-5.6 Sol spent to score 7.8%. Both figures are from the published semi-private leaderboard.",
       "source_url": "https://arcprize.org/arc-agi/3",
       "evidence": [
         {
@@ -126,7 +129,8 @@
       "verification_note": "ARC Prize tested Claude Opus 5 directly, but the result is one vendor's, unreplicated",
       "claim": "proxy",
       "claim_note": "AGI-framed by name, but the ARC Prize Foundation claims it as a measure of one missing capability, not as a sufficient test for general intelligence.",
-      "measured": "2026-07"
+      "measured": "2026-07",
+      "flip_condition": "An independent replication of the 30.16%, or any system clearing it at materially lower cost."
     },
     {
       "slug": "hendrycks-agi-score",
@@ -153,7 +157,8 @@
       "verification": "self-reported",
       "verification_note": "Scored by the paper's own authors and never independently replicated; no 2026 model has been run at all",
       "claim": "stated",
-      "measured": "2025-12"
+      "measured": "2025-12",
+      "flip_condition": "Any 2026 frontier model scored on the ten domains. A non-zero Long-Term Memory Storage score would be the bigger event."
     },
     {
       "slug": "hutter-prize",
@@ -165,7 +170,7 @@
       "category": "academic",
       "status": "early",
       "progress": 6,
-      "progress_note": "under 6% of the purse ever claimed",
+      "progress_note": "under 6% of the purse paid; a money metric, not a byte one",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "enwik9 constitutes an amount of non-visual knowledge an average adult human holds, so compressors compressing enwik9 better than a human will predict better, and hence should be smarter... which, if achieved, most would agree constitutes AGI.",
@@ -185,7 +190,8 @@
       "verification": "maintainer-checked",
       "verification_note": "Prize committee adjudicates every award against a byte count",
       "claim": "stated",
-      "measured": "2024-09"
+      "measured": "2024-09",
+      "flip_condition": "An award to the pending cmix-lex entry, or a rule change admitting neural compressors."
     },
     {
       "slug": "openai-microsoft-100b",
@@ -224,7 +230,8 @@
       "verification": "self-reported",
       "verification_note": "Rests on the two counterparties' own disclosures; the contract has never been public",
       "claim": "stated",
-      "measured": "2026-06"
+      "measured": "2026-06",
+      "flip_condition": "Nothing. The clause was deleted; only the underlying profit figure can still move."
     },
     {
       "slug": "gdpval",
@@ -235,12 +242,12 @@
       "category": "economic",
       "status": "in-progress",
       "progress": 60,
-      "progress_note": "parity reached on the benchmark itself",
+      "progress_note": "49.7% straight wins against a 50% parity bar",
       "falsifiability": "high",
       "confidence": "medium",
       "quote": "a domain expert sees only the task and two unlabeled deliverables, and ranks them without knowing which is which",
-      "quote_source": "GDPval, OpenAI, September 2025. 50% means indistinguishable from an industry expert.",
-      "status_today": "The most rigorously built economic criterion anyone has published: 1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity has been reached.</strong> The September 2025 paper put Claude Opus 4.1 at 47.6% wins-or-ties; GPT-5.2 later reached <strong>70.9%</strong>, comfortably past the 50% parity bar. Quote these like for like: the same model's straight win rate is about 49.7%, and mixing the two metrics is the most common error made with this benchmark.\n\nEpoch AI's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it reached parity, and the impact did not follow.",
+      "quote_source": "Description of the GDPval grading protocol, OpenAI, arXiv October 2025. 50% means indistinguishable from an industry expert.",
+      "status_today": "The most rigorously built economic criterion anyone has published: 1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity is close but not cleanly reached on the bar as stated.</strong> The criterion defines 50% as indistinguishable from an expert, and the comparable figure is the straight win rate, which for GPT-5.2 is <strong>49.7%</strong>. Its wins-or-ties figure is 70.9%, and quoting that against a 50% bar is the most common error made with this benchmark. On OpenAI's own later reporting GPT-5.5 reaches 84.9% wins-or-ties, so the direction is not in doubt; the bar is simply not the one usually cited.\n\nEpoch AI's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it is at or near parity, and the impact has not followed.",
       "source_url": "https://arxiv.org/abs/2510.04374",
       "evidence": [
         {
@@ -259,7 +266,10 @@
       "verification": "independent",
       "verification_note": "Scored by Epoch AI and Artificial Analysis, though the benchmark is OpenAI's own",
       "claim": "proxy",
-      "claim_note": "OpenAI built GDPval to measure economic task performance and never claimed parity on it constitutes AGI. Reading it as an AGI threshold is this page's inference, not OpenAI's claim."
+      "claim_note": "OpenAI built GDPval to measure economic task performance and never claimed parity on it constitutes AGI. Reading it as an AGI threshold is this page's inference, not OpenAI's claim.",
+      "flip_condition": "A GDPval-style result tracking a measurable labour-market shift, which Epoch says has not happened.",
+      "measured": "2026-04",
+      "estimated": true
     },
     {
       "slug": "nadella-ten-percent-growth",
@@ -269,13 +279,13 @@
       "year": 2025,
       "category": "economic",
       "status": "early",
-      "progress": 3,
-      "progress_note": "3.1% global growth against a 10% bar",
+      "progress": 30,
+      "progress_note": "3.0% growth against a 10% bar",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "Us self-claiming some AGI milestone, that's just nonsensical benchmark hacking to me. The real benchmark is: the world growing at 10%.",
       "quote_source": "Satya Nadella, Dwarkesh Podcast, 19 February 2025",
-      "status_today": "The single most unambiguous criterion in this collection: world GDP growth is measured quarterly by institutions with no stake in the AGI debate. It is also nowhere close. The IMF's April 2026 outlook projects <strong>3.1% global growth for 2026, revised down</strong> from 3.3%; US real GDP grew 2.1% in Q1 2026. The deeper problem for AI attribution: <strong>roughly three-quarters of Q1 2026 US GDP growth came from AI capital expenditure</strong>. That is the economy building the factory, not the factory producing, and Goldman Sachs found that some $700B of 2025 global AI capex produced no measurable productivity impact. The criterion cannot distinguish AI-caused growth from any other cause; its strength is that it is immune to benchmark gaming, which was exactly Nadella's point.",
+      "status_today": "The single most unambiguous criterion in this collection: world GDP growth is measured quarterly by institutions with no stake in the AGI debate. It is also nowhere close. The IMF's July 2026 update projects <strong>3.0% global growth for 2026</strong>, revised down again from the 3.1% it published in April; US real GDP grew 2.1% in Q1 2026.\n\nThe deeper problem for AI attribution is that most of the recent US growth is the economy building the factory rather than the factory producing. Summing the national-accounts lines for information-processing equipment and intellectual property puts roughly three-quarters of Q1 2026 US growth in that bucket, though the BEA publishes no AI-specific line and those categories sweep in much that is not AI. Goldman Sachs, separately, reports finding no meaningful economy-wide relationship between AI adoption and productivity.\n\nThe criterion cannot distinguish AI-caused growth from any other cause; its strength is that it is immune to benchmark gaming, which was exactly Nadella's point.",
       "source_url": "https://www.dwarkesh.com/p/satya-nadella",
       "evidence": [
         {
@@ -290,7 +300,8 @@
       "verification": "independent",
       "verification_note": "IMF and BEA national accounts",
       "claim": "stated",
-      "measured": "2026-04"
+      "measured": "2026-07",
+      "flip_condition": "Two consecutive IMF outlooks projecting global growth above 5%."
     },
     {
       "slug": "suleyman-modern-turing-test",
@@ -321,7 +332,8 @@
       "verification": "unmeasured",
       "verification_note": "Attempted with real money since April 2026, but the figures are the operator's own and not independently audited",
       "claim": "stated",
-      "measured": "2026-07"
+      "measured": "2026-07",
+      "flip_condition": "Any audited AI-run business turning $100k into $1M on a retail web platform. Andon Market returning to its starting balance would be the leading indicator."
     },
     {
       "slug": "amodei-powerful-ai",
@@ -366,12 +378,12 @@
         {
           "label": "Runs tasks taking hours, days or weeks autonomously",
           "state": "partial",
-          "note": "METR's frontier 50%-reliability horizon is 17.4h, but only ~3.1h at 80%. Hours yes, days marginal, weeks no."
+          "note": "METR's frontier 50% horizon is 17.4h, but METR calls measurements above 16h unreliable with its current suite (95% CI 8.5-55h) and excludes the point from its own trend fit. It is also a preview snapshot, not a shipped model. Hours yes, days marginal, weeks no."
         },
         {
           "label": "Controls physical tools, robots and lab equipment through a computer",
           "state": "partial",
-          "note": "Real in instrumented settings; simulated manipulation runs 89% against 12% on real household tasks."
+          "note": "Real in instrumented settings. Epoch AI rates the nearest household task at tier 2 of 5, and transfer to unseen environments is largely undemonstrated."
         },
         {
           "label": "Millions of parallel instances at 10-100x human speed",
@@ -379,7 +391,9 @@
           "note": "Not in doubt. GDPval measured frontier models completing expert deliverables around 100x faster."
         }
       ],
-      "claim": "stated"
+      "claim": "stated",
+      "flip_condition": "A published method for testing the Nobel-laureate clause would make the criterion scoreable; METR horizons past a week at 80% reliability would move the autonomy clause.",
+      "measured": "2026-05"
     },
     {
       "slug": "three-lab-recursive-rd",
@@ -395,9 +409,13 @@
       "confidence": "high",
       "quote": "recursively self improving (i.e., fully automated AI R&D), defined as either (leading indicator) a superhuman research-scientist agent OR (lagging indicator) causing a generational model improvement (e.g., from OpenAI o1 to OpenAI o3) in 1/5th the wall-clock time of equivalent progress in 2024, sustainably for several months",
       "quote_source": "OpenAI Preparedness Framework v2. The Critical threshold for AI Self-Improvement",
-      "status_today": "<strong>The most adjudicable AGI definitions in existence, and all three are untriggered.</strong> Three commercial rivals, writing independently and with every incentive to claim capability, each defined a recursive-AI-R&D threshold. As of July 2026: Anthropic formally determined Claude Opus 4.6 does not cross it and published a sabotage risk report anyway because the call was difficult; <strong>OpenAI's system card for GPT-5.6 states plainly that none of the three variants reach even the <em>High</em> rung, two full steps below Critical</strong>; and Gemini 3.1 Pro Deep Think sits below every DeepMind CCL. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
+      "status_today": "<strong>The most adjudicable AGI definitions in existence, and all three are untriggered.</strong> Three commercial rivals, writing independently and with every incentive to claim capability, each defined a recursive-AI-R&D threshold. As of July 2026: Anthropic's Claude Opus 5 system card of 24 July states the automated AI R&D threshold is not crossed, on the grounds that no sustained AI-attributable 2x acceleration is observed and the model does not substitute for its research staff; <strong>OpenAI's system card for GPT-5.6 states that all three variants sit below the <em>High</em> rung</strong>, the one immediately beneath Critical; and Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
       "source_url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
       "evidence": [
+        {
+          "label": "Claude Opus 5 system card",
+          "url": "https://www.anthropic.com/claude-opus-5-system-card"
+        },
         {
           "label": "GPT-5.6 system card",
           "url": "https://deploymentsafety.openai.com/gpt-5-6"
@@ -415,7 +433,8 @@
       "verification_note": "All three determinations are made by the labs about their own models; no regulator publishes an independent finding",
       "claim": "proxy",
       "claim_note": "These are risk-management triggers written for safety frameworks. None of the three labs says crossing one means AGI has arrived, though all three treat it as the point where progress stops being human-paced.",
-      "measured": "2026-07"
+      "measured": "2026-07",
+      "flip_condition": "Any of the three labs publishing a determination that its own threshold has been crossed."
     },
     {
       "slug": "marcus-five-tasks",
@@ -476,7 +495,8 @@
         }
       ],
       "claim": "stated",
-      "measured": "2026-06"
+      "measured": "2026-06",
+      "flip_condition": "A single system doing three of the five. Musk accepting would turn the offer into a bet."
     },
     {
       "slug": "marcus-brundage-2027",
@@ -514,7 +534,8 @@
       "verification": "unmeasured",
       "verification_note": "The judging panel that decides it has still not been named",
       "claim": "stated",
-      "measured": "2026-07"
+      "measured": "2026-07",
+      "flip_condition": "Eight of ten by 31 Dec 2027, or the naming of a judging panel, which would cut the 22.8% annulment price."
     },
     {
       "slug": "kurzweil-kapor-longbet",
@@ -548,7 +569,8 @@
       "verification": "unmeasured",
       "verification_note": "No committee seated and no interview conducted in 24 years",
       "claim": "stated",
-      "measured": "2026-05"
+      "measured": "2026-05",
+      "flip_condition": "A committee being seated. Nothing else can resolve this before 2029."
     },
     {
       "slug": "hassabis-einstein-test",
@@ -583,7 +605,8 @@
       ],
       "verification": "unmeasured",
       "verification_note": "Run once at small scale (3.3B parameters, pre-1900 corpus, March 2026) with a negative result; never attempted at frontier scale",
-      "claim": "stated"
+      "claim": "stated",
+      "flip_condition": "A frontier-scale run on a pre-1911 corpus. TypewriterLM shows the corpus is buildable; only the scale is missing."
     }
   ]
 }
