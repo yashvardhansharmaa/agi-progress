@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGI Progress — tracking the definitions people actually committed to</title>
+<meta name="description" content="A tracker for the concrete, falsifiable definitions of AGI proposed by researchers, lab leaders, and bettors — and how much progress has actually been made against each one.">
+<meta property="og:title" content="AGI Progress">
+<meta property="og:description" content="How far along are we, according to the people who defined the finish line?">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">◐</button>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">An open, sourced tracker</p>
+    <h1>How far to <em>AGI</em>?</h1>
+    <p class="deck">
+      &ldquo;AGI&rdquo; means nothing in general and something very specific in particular. Dozens of researchers,
+      founders and bettors have staked out <strong>concrete, falsifiable definitions</strong> — a revenue number,
+      a benchmark score, a list of five tasks, a date. This site collects those definitions and scores
+      the world against each one.
+    </p>
+    <p class="updated">Last reviewed <time id="updatedDate">—</time> · <a href="https://github.com/yashvardhansharmaa/agi-progress">Source &amp; corrections on GitHub</a></p>
+  </div>
+</header>
+
+<section class="dashboard wrap" id="dashboard" aria-label="Summary statistics"></section>
+
+<aside class="caveat wrap">
+  <h2>Read every 2026 score with an asterisk</h2>
+  <p>
+    In July 2026 the UK AI Security Institute reported that <strong>all five frontier models it tested attempted
+    to cheat</strong> during capability evaluations — searching the web for answers, probing the evaluation
+    software, and reaching out to external infrastructure. Asked afterwards, the models described what they had
+    done as wrong less than half the time. METR found that at least 16% of successful runs on its longest tasks
+    involved cheating, and could not produce a robust time-horizon measurement for OpenAI's flagship at all: the
+    number lands anywhere between 11 and 270 hours depending on how you count the cheating.
+  </p>
+  <p>
+    So the scores below carry two kinds of uncertainty — ordinary sampling error, and the newer problem that a
+    benchmark result may not measure what its name says. Where a lab's self-reported number diverges sharply from
+    a standardised harness, both are shown.
+  </p>
+</aside>
+
+<nav class="controls wrap" aria-label="Filters">
+  <div class="filter-group" id="categoryFilters" role="group" aria-label="Filter by category"></div>
+  <div class="sort-group">
+    <label for="sortBy">Sort</label>
+    <select id="sortBy">
+      <option value="progress-desc">Most progress</option>
+      <option value="progress-asc">Least progress</option>
+      <option value="year-desc">Newest definition</option>
+      <option value="year-asc">Oldest definition</option>
+      <option value="deadline">Nearest deadline</option>
+      <option value="name">Alphabetical</option>
+    </select>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div id="cards" class="cards" aria-live="polite"></div>
+  <p id="emptyState" class="empty" hidden>No definitions match that filter.</p>
+</main>
+
+<section class="wrap signals" id="signals">
+  <h2>Four numbers worth holding onto</h2>
+  <div class="signal-grid">
+    <div class="signal">
+      <p class="signal-figure">17.4<span>h</span> <em>vs</em> ~2<span>min</span></p>
+      <h3>Software time horizon vs physical</h3>
+      <p>METR measures how long a task a model can finish at 50% reliability. On software engineering the frontier
+      is 17.4 hours. On making a cup of coffee in the real world, same evaluator, same method, it is about two
+      minutes. A factor of roughly 500 separates the thing we benchmark from the thing we live in.</p>
+    </div>
+    <div class="signal">
+      <p class="signal-figure">92.5<span>%</span> <em>vs</em> 24<span>%</span></p>
+      <h3>The same benchmark, two sets of rules</h3>
+      <p>Frontier models clear ARC-AGI-2's 85% bar on the semi-private set. On the private set, inside the
+      compute-limited offline container where the $700,000 prize actually lives, the record is 24% and unclaimed.
+      Efficiency was the entire point of the definition, and it is the half that hasn't moved.</p>
+    </div>
+    <div class="signal">
+      <p class="signal-figure">0 <em>of</em> 3</p>
+      <h3>Recursive-AI-R&amp;D triggers fired</h3>
+      <p>Anthropic, OpenAI and DeepMind each independently wrote a threshold for when AI meaningfully automates
+      AI research. All three report it untriggered as of July 2026 — OpenAI's flagship isn't even at the rung
+      below. These are negative determinations by rivals with every incentive to claim otherwise.</p>
+    </div>
+    <div class="signal">
+      <p class="signal-figure">0<span>%</span></p>
+      <h3>Long-term memory storage</h3>
+      <p>In the CHC-grounded framework that 33 researchers signed, both GPT-4 and GPT-5 score zero on the ability
+      to permanently learn anything after deployment. Every camp — Sutskever, Sutton, Karpathy, Hassabis,
+      DeepMind's own taxonomy, Altman himself — independently names this as the missing piece.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap methodology" id="methodology">
+  <h2>How to read this</h2>
+  <div class="method-grid">
+    <div>
+      <h3>The percentage is an editorial judgement</h3>
+      <p>
+        Where a definition names a number — 85% on ARC-AGI, $100B in profit, a 2029 deadline — the bar is
+        computed from that number and the arithmetic is shown. Where a definition is prose, the score is a
+        considered estimate against the stated criteria, not a measurement. Both kinds are labelled, and every
+        card carries a confidence rating. Treat the low-confidence ones as prompts to go read the source.
+      </p>
+    </div>
+    <div>
+      <h3>Falsifiability is tracked separately from progress</h3>
+      <p>
+        A definition can be famous and still be unscoreable. &ldquo;Outperforms humans at most economically
+        valuable work&rdquo; has no threshold, no measurement procedure and no deadline. We record those, mark them
+        <span class="chip chip-inline">low falsifiability</span>, and resist the temptation to invent a number
+        that looks rigorous.
+      </p>
+    </div>
+    <div>
+      <h3>Definitions drift — that's part of the data</h3>
+      <p>
+        Several people on this page have materially changed their definition as systems improved. Where that
+        happened, the card shows the drift with dates. The pattern where a capability stops counting as
+        intelligence once a machine has it is old enough to have a name: the AI effect.
+      </p>
+    </div>
+    <div>
+      <h3>Sources over summaries</h3>
+      <p>
+        Every definition links to a primary source — the original paper, post, bet or interview — not to press
+        coverage of it. Several widely-repeated claims about AGI definitions turn out to be misquotes of the
+        original; where we found that, the card says so.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      Built as an open dataset. The definitions live in
+      <a href="https://github.com/yashvardhansharmaa/agi-progress/blob/main/data/definitions.json"><code>data/definitions.json</code></a>
+      — corrections, additions and disputed scores are welcome as pull requests.
+    </p>
+    <p class="fine">
+      Scores reflect public information as of the review date above. Nothing here is a forecast.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
