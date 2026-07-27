@@ -280,13 +280,13 @@
       "year": 2025,
       "category": "economic",
       "status": "early",
-      "progress": 30,
-      "progress_note": "3.0% growth against a 10% bar",
+      "progress": 0,
+      "progress_note": "3.0% growth against a ~3.1% no-AI baseline",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "Us self-claiming some AGI milestone, that's just nonsensical benchmark hacking to me. The real benchmark is: the world growing at 10%.",
       "quote_source": "Satya Nadella, Dwarkesh Podcast, 19 February 2025",
-      "status_today": "Nobody has to convene a panel to score this one: the IMF publishes it quarterly and has no stake in the AGI debate. It is also nowhere close. The IMF's July 2026 update projects <strong>3.0% global growth for 2026</strong>, revised down again from the 3.1% it published in April; US real GDP grew 2.1% in Q1 2026.\n\nThe deeper problem for AI attribution is that most of the recent US growth is the economy building the factory rather than the factory producing. Summing the national-accounts lines for information-processing equipment and intellectual property puts roughly three-quarters of Q1 2026 US growth in that bucket, though the BEA publishes no AI-specific line and those categories sweep in much that is not AI. Goldman Sachs, separately, reports finding no meaningful economy-wide relationship between AI adoption and productivity.\n\nThe criterion cannot distinguish AI-caused growth from any other cause; its strength is that it is immune to benchmark gaming, which was exactly Nadella's point.",
+      "status_today": "Nobody has to convene a panel to score this one: the IMF publishes it quarterly and has no stake in the AGI debate. It is also the only criterion here that starts from a floor rather than from zero.\n\nThe world economy grows at roughly <strong>3% a year without any AI contribution at all</strong> — 3.2% averaged across 1970 to 2019, 3.0% across the 2009-2019 decade. The IMF's July 2026 update projects <strong>3.0% for 2026</strong>, revised down again from the 3.1% it published in April. Measured as excess over the no-AI baseline, which is the only way this criterion means anything, progress toward Nadella's 10% is <strong>zero, and the sign is negative</strong>.\n\nWhat growth there is looks like the economy building the factory rather than the factory producing. Summing the national-accounts lines for information-processing equipment and intellectual property puts roughly three-quarters of Q1 2026 US growth in that bucket, though the BEA publishes no AI-specific line. Goldman Sachs reports finding no meaningful economy-wide relationship between AI adoption and productivity. The criterion cannot attribute growth to any particular cause, but it is immune to benchmark gaming, which was Nadella's point.",
       "source_url": "https://www.dwarkesh.com/p/satya-nadella",
       "evidence": [
         {
@@ -302,7 +302,7 @@
       "verification_note": "IMF and BEA national accounts",
       "claim": "stated",
       "measured": "2026-07",
-      "flip_condition": "Two consecutive IMF outlooks projecting global growth above 5%."
+      "flip_condition": "Global growth sustained above roughly 4%, which would be the first clear excess over the long-run baseline. Two consecutive IMF outlooks above 5% would put the bar in reach."
     },
     {
       "slug": "suleyman-modern-turing-test",
