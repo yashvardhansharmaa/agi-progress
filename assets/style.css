@@ -519,6 +519,16 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .card-foot a:hover { color: var(--accent); border-color: var(--accent); }
 .card-foot .conf { margin-left: auto; color: var(--ink-faint); white-space: nowrap; }
 
+/* result count: was visually hidden, so the only feedback that a filter did
+   anything reached screen readers and nobody else */
+.count-line {
+  margin: 18px 0 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+}
+
 /* ---------- proxies: cited as AGI progress, never claimed as AGI tests ---------- */
 
 .proxies {
@@ -687,7 +697,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
   color: var(--ink);
 }
 .field input::placeholder, .field textarea::placeholder { color: var(--ink-faint); }
-.field input:focus, .field textarea:focus { border-color: var(--accent); outline: none; }
+.field input:focus, .field textarea:focus { border-color: var(--accent); }
 .field textarea { resize: vertical; }
 .hint { font-size: 12.5px; color: var(--ink-faint); margin: 6px 0 0; }
 

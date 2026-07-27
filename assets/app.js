@@ -188,9 +188,11 @@
     // head
     var head = el('div', 'card-head');
     var h = el('h3');
+    h.id = d.slug + '-title';
     h.textContent = d.name;
     head.appendChild(h);
     card.appendChild(head);
+    card.setAttribute('aria-labelledby', h.id);
 
     // meta line
     var meta = el('p', 'card-meta');
@@ -338,12 +340,15 @@
 
   function sortDefs(list) {
     var s = state.sort;
-    var RANK = { nearly: 0, 'in-progress': 1, early: 2, failed: 3, passed: 4 };
+    // Every status needs a rank: a missing key makes the comparator return NaN,
+    // which leaves the whole list in an arbitrary order.
+    var RANK = { nearly: 0, 'in-progress': 1, early: 2, failed: 3, passed: 4, unfalsifiable: 5 };
+    function rankOf(d) { var r = RANK[d.status]; return r == null ? 99 : r; }
     var out = list.slice();
     out.sort(function (a, b) {
       switch (s) {
         case 'live-first': {
-          var ra = RANK[a.status], rb = RANK[b.status];
+          var ra = rankOf(a), rb = rankOf(b);
           if (ra !== rb) return ra - rb;
           return (b.progress || 0) - (a.progress || 0);
         }
@@ -388,8 +393,9 @@
 
     var count = document.getElementById('resultCount');
     if (count) {
-      count.textContent = stated.length + ' stated definitions and ' + proxies.length +
-        ' proxies shown' +
+      var plural = function (n, one, many) { return n + ' ' + (n === 1 ? one : many); };
+      count.textContent = plural(stated.length, 'stated definition', 'stated definitions') +
+        ' and ' + plural(proxies.length, 'proxy', 'proxies') + ' shown' +
         (state.category === 'all' ? '' : ' in ' + (CATEGORIES[state.category] || state.category));
     }
   }
