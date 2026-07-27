@@ -243,12 +243,12 @@
       "category": "economic",
       "status": "in-progress",
       "progress": 60,
-      "progress_note": "49.7% straight wins against a 50% parity bar",
+      "progress_note": "70.9% wins-or-ties against a 50% bar",
       "falsifiability": "high",
       "confidence": "medium",
       "quote": "a domain expert sees only the task and two unlabeled deliverables, and ranks them without knowing which is which",
-      "quote_source": "Description of the GDPval grading protocol, OpenAI, arXiv October 2025. 50% means indistinguishable from an industry expert.",
-      "status_today": "1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity is close but not cleanly reached on the bar as stated.</strong> The criterion defines 50% as indistinguishable from an expert, and the comparable figure is the straight win rate, which for GPT-5.2 is <strong>49.7%</strong>. Its wins-or-ties figure is 70.9%, and quoting that against a 50% bar is the most common error made with this benchmark. On OpenAI's own later reporting GPT-5.5 reaches 84.9% wins-or-ties, so the direction is not in doubt; the bar is simply not the one usually cited.\n\nEpoch AI's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it is at or near parity, and the impact has not followed.",
+      "quote_source": "GDPval grading protocol, as described by Epoch AI, 2026",
+      "status_today": "1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity has been reached on the benchmark's own metric.</strong> The paper reports wins-or-ties, putting Claude Opus 4.1 at 47.6%; GPT-5.2 reached <strong>70.9%</strong> and GPT-5.5 later 84.9%. Quote these like for like: GPT-5.2's straight win rate is 49.7%, against 21.2% ties and 29.1% losses, so it is graded better than the expert more than twice as often as worse. Epoch AI's reading is that GPT-5.2 reached parity.\n\nEpoch's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it reached parity, and the impact has not followed.",
       "source_url": "https://arxiv.org/abs/2510.04374",
       "evidence": [
         {
@@ -411,7 +411,7 @@
       "confidence": "high",
       "quote": "recursively self improving (i.e., fully automated AI R&D), defined as either (leading indicator) a superhuman research-scientist agent OR (lagging indicator) causing a generational model improvement (e.g., from OpenAI o1 to OpenAI o3) in 1/5th the wall-clock time of equivalent progress in 2024, sustainably for several months",
       "quote_source": "OpenAI Preparedness Framework v2. The Critical threshold for AI Self-Improvement",
-      "status_today": "<strong>Untriggered at all three labs.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nAnthropic's Claude Opus 5 system card of 24 July states the automated AI R&D threshold is not crossed, on the grounds that no sustained AI-attributable 2x acceleration is observed and the model does not substitute for its research staff. <strong>OpenAI's card for GPT-5.6 puts all three variants below the <em>High</em> rung</strong>, one below Critical. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
+      "status_today": "<strong>Untriggered at all three labs.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nAnthropic's Claude Opus 5 system card of 24 July states the automated AI R&D threshold is not crossed, on the grounds that no sustained AI-attributable 2x acceleration is observed and the model does not substitute for its research staff. <strong>OpenAI's card for GPT-5.6 puts all three variants below the <em>High</em> rung for AI self-improvement</strong>, the step immediately beneath Critical. All three are rated High for biological, chemical and cyber capability. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
       "source_url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
       "evidence": [
         {
@@ -645,22 +645,22 @@
         {
           "label": "Pass a Turing test of the type that would win the Loebner Silver Prize",
           "state": "partial",
-          "note": "GPT-4.5 was judged human 73% of the time in a five-minute three-party test, but the Loebner format asked for 30 minutes and the competition has been defunct since about 2019."
+          "note": "GPT-4.5 was judged human 73% of the time in a five-minute three-party test, but the Loebner format ran 25 minutes and required fooling half the judges. The contest has been defunct since 2019."
         },
         {
           "label": "Score 90% or more on a robust Winograd Schema Challenge such as WinoGrande",
           "state": "met",
-          "note": "Treated as settled. Frontier leaderboards no longer report WinoGrande at all, which is what saturation looks like, so no adjudicated 2026 figure exists against the 90% bar."
+          "note": "Cleared in 2022 by a fine-tuned specialist, ST-MoE-32B at 96.1%. Frontier LLM few-shot scores sit below the bar, with GPT-4 at 87.5%, and leaderboards have stopped reporting it."
         },
         {
           "label": "Score at the 75th percentile on a full SAT mathematics section, from images of the pages",
-          "state": "met",
-          "note": "Multimodal frontier models clear this comfortably."
+          "state": "partial",
+          "note": "Assumed rather than shown. GPT-4 reached the 89th percentile on SAT Math, but that evaluation embedded figures into a text prompt. Nobody has published a run from images of the exam pages, which is what the criterion asks for."
         },
         {
           "label": "Learn Montezuma's Revenge from visual input and explore all 24 rooms in under 100 hours of equivalent play",
           "state": "unmet",
-          "note": "Go-Explore reached level 1 reliably in 2018, but on sample budgets far above the bar. The 100-hour constraint, not the rooms, is what remains unsatisfied."
+          "note": "The rooms stopped being the hard part in 2018; the budget is the bar. The 2026 state of the art uses 400M frames for exploration alone, against roughly 21.6M for 100 hours of play."
         },
         {
           "label": "Be a single unified system, not sub-systems specialised to each task",
@@ -668,14 +668,14 @@
           "note": "No system has been demonstrated on all four tests, let alone one system on all four."
         }
       ],
-      "progress": 50,
+      "progress": 40,
       "forecast": {
         "date": "2028-09-13",
         "forecasters": "1.8k",
         "as_of": "2026-07-27",
         "label": "Metaculus median, weakly general AI"
       },
-      "progress_note": "2 of 5 met, 1 partial"
+      "progress_note": "1 of 5 met, 2 partial"
     },
     {
       "slug": "metaculus-full-agi",
@@ -726,7 +726,7 @@
         {
           "label": "At least 90% top-1 strict accuracy on APPS interview-level problems",
           "state": "partial",
-          "note": "Best published interview-level figure found is about 80% Pass@1. Frontier models are seldom run on APPS now, so there is no current adjudicated number."
+          "note": "The best published interview-level result, about 80%, comes from a multi-agent plan-code-debug scaffold on a 139-problem subset. Single-shot top-1, which is what the criterion specifies, is around 50%."
         },
         {
           "label": "Be a single unified system, not sub-systems specialised to each task",
@@ -754,7 +754,7 @@
       "measured": "2026-07",
       "quote": "To pass the employment test, AI programs must be able to perform the jobs ordinarily performed by humans. Progress toward human-level AI could then be measured by the fraction of these jobs that can be acceptably performed by machines.",
       "quote_source": "Nils J. Nilsson, \"Human-Level Artificial Intelligence? Be Serious!\", AI Magazine 26(4), 2005",
-      "status_today": "Alone among the criteria here, Nilsson did not set a pass mark. He defined <em>progress itself</em> as the fraction of ordinary jobs machines can acceptably perform, which makes this the only entry with a built-in continuous metric rather than a threshold to cross.\n\nThe closest instrument is the Remote Labor Index, built by CAIS with Scale, which scores whether AI agents can complete real paid freelance projects to the standard a client would accept. The best model reached <strong>15.8%</strong> in July 2026, up from 2.5% at launch in October 2025.\n\nSet that against GDPval, where frontier models score around 70% wins-or-ties on expert deliverables. Same year, same broad question, and a gap of more than fifty points. The difference is that GDPval grades a deliverable in isolation while the Remote Labor Index requires the whole job to be finished to a paying client's satisfaction. Nilsson asked for the second.",
+      "status_today": "Alone among the criteria here, Nilsson did not set a pass mark. He defined <em>progress itself</em> as the fraction of ordinary jobs machines can acceptably perform, which makes this the only entry with a built-in continuous metric rather than a threshold to cross.\n\nThe closest instrument is the Remote Labor Index, built by CAIS with Scale, which scores whether AI agents can complete real paid freelance projects to the standard a client would accept. The best model reached <strong>15.8%</strong> in July 2026, up from 2.5% at launch in October 2025.\n\nSet that against GDPval, where the best reported figure is 84.9% wins-or-ties on expert deliverables. Same year, same broad question, and a gap of nearly seventy points. The difference is that GDPval grades a deliverable in isolation while the Remote Labor Index requires the whole job to be finished to a paying client's satisfaction. Nilsson asked for the second.",
       "flip_condition": "The Remote Labor Index crossing 50%, which would be the first time a majority of real remote projects were completed to client standard.",
       "source_url": "https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/General%20Essays/AIMag26-04-HLAI.pdf",
       "evidence": [

@@ -128,9 +128,18 @@
     var met = defs.filter(function (d) { return d.status === 'passed'; }).length;
     var nearly = defs.filter(function (d) { return d.status === 'nearly'; }).length;
 
-    var mean = scoreable.length
-      ? Math.round(scoreable.reduce(function (a, d) { return a + (d.progress || 0); }, 0) / scoreable.length)
-      : 0;
+    // Averaged over criteria that have actually been measured. Note this is a
+    // survivorship-biased sample: the never-administered ones are unmeasured
+    // largely because they are physical or open-ended, which is where progress
+    // is slowest. The sub-line carries their mean so the gap stays visible.
+    var measured = scoreable.filter(function (d) { return d.verification !== 'unmeasured'; });
+    var estimatedOnly = scoreable.filter(function (d) { return d.verification === 'unmeasured'; });
+    var avg = function (list) {
+      return list.length
+        ? Math.round(list.reduce(function (a, d) { return a + (d.progress || 0); }, 0) / list.length)
+        : 0;
+    };
+    var mean = avg(measured);
 
     var withDeadline = defs.filter(function (d) { return d.deadline; }).length;
 
@@ -143,7 +152,11 @@
     var stats = [
       { v: defs.length, l: 'Stated definitions' },
       { v: met,         l: met === 1 ? 'Criterion met' : 'Criteria met', accent: met > 0 },
-      { v: mean + '%',  l: 'Mean progress', accent: true }
+      { v: mean + '%',
+        l: 'Mean progress, measured criteria',
+        sub: measured.length + ' of ' + defs.length + ' · the ' + estimatedOnly.length +
+             ' never run average ' + avg(estimatedOnly) + '%',
+        accent: true }
     ];
 
     if (fc) {
