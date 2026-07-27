@@ -432,34 +432,6 @@
       ]
     },
     {
-      "slug": "karpathy-remote-worker",
-      "name": "A remote worker you can hire instead of a person",
-      "proposer": "Andrej Karpathy",
-      "affiliation": "Eureka Labs; formerly OpenAI and Tesla",
-      "year": 2025,
-      "deadline": "2035",
-      "category": "lab",
-      "status": "in-progress",
-      "progress": 35,
-      "estimated": true,
-      "falsifiability": "medium",
-      "confidence": "high",
-      "quote": "AGI = an automated system capable of doing any economically valuable work that a human can do. (Like humans they might need some additional training for a job, that's fine). And I grant the commonly given 'digital concession', putting away physical work.",
-      "quote_source": "Andrej Karpathy, October 2025 — explicitly re-adopting the original OpenAI definition",
-      "status_today": "Karpathy named four blockers in October 2025: not enough raw intelligence, not multimodal enough, can't do computer use, and no continual learning. <strong>Three have improved substantially; the fourth has not moved.</strong> His framing of the remaining work as a \"march of nines\" toward reliability is the right lens — a job is measured in months and 50% reliability is not employable, while frontier time horizons are measured in hours. He put AGI about a decade out, calling himself five to ten times more pessimistic than optimistic Silicon Valley forecasts while remaining bullish relative to sceptics. Mid-2026 is roughly 18 months into that decade. The juxtaposition worth noting: Karpathy re-adopted the original OpenAI Charter definition in October 2025, two months after OpenAI's own CEO called it not a useful term.",
-      "source_url": "https://www.dwarkesh.com/p/andrej-karpathy",
-      "evidence": [
-        {
-          "label": "Simon Willison's summary",
-          "url": "https://simonwillison.net/2025/Oct/18/agi-is-still-a-decade-away/"
-        },
-        {
-          "label": "METR time horizons",
-          "url": "https://metr.org/time-horizons/"
-        }
-      ]
-    },
-    {
       "slug": "turing-test",
       "name": "The Turing Test",
       "proposer": "Alan Turing",
