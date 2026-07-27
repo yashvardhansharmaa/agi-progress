@@ -24,6 +24,14 @@
     policy:    'Policy & safety'
   };
 
+  // Provenance of the evidence each progress score rests on.
+  var VERIFICATION = {
+    'independent':        'independently measured',
+    'maintainer-checked': 'checked by the operator',
+    'self-reported':      'self-reported',
+    'unmeasured':         'never administered'
+  };
+
   var state = { data: null, category: 'all', sort: 'progress-desc' };
 
   /* ---------- utilities ---------- */
@@ -70,9 +78,7 @@
 
     var withDeadline = defs.filter(function (d) { return d.deadline; }).length;
 
-    var oldest = defs.reduce(function (a, d) {
-      return (d.status !== 'passed' && d.year && d.year < a) ? d.year : a;
-    }, 9999);
+    var unmeasured = defs.filter(function (d) { return d.verification === 'unmeasured'; }).length;
 
     var stats = [
       { v: defs.length,       l: 'Criteria tracked' },
@@ -80,7 +86,7 @@
       { v: nearly,            l: 'Nearly met' },
       { v: mean + '%',        l: 'Mean progress', accent: true },
       { v: withDeadline,      l: 'Carry a hard deadline' },
-      { v: oldest,            l: 'Oldest still unmet' }
+      { v: unmeasured,        l: 'Never administered', accent: true }
     ];
 
     stats.forEach(function (s) {
@@ -168,6 +174,11 @@
     if (d.deadline) chips.appendChild(el('span', 'chip chip-deadline', 'Deadline ' + d.deadline));
     if (d.stake) chips.appendChild(el('span', 'chip', d.stake));
     if (d.falsifiability) chips.appendChild(el('span', 'chip', d.falsifiability + ' falsifiability'));
+    if (d.verification) {
+      var vChip = el('span', 'chip chip-verif v-' + d.verification, VERIFICATION[d.verification] || d.verification);
+      if (d.verification_note) vChip.title = d.verification_note;
+      chips.appendChild(vChip);
+    }
     card.appendChild(chips);
 
     // quote

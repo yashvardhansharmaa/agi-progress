@@ -76,6 +76,8 @@ Each entry in `definitions[]`:
 | `status_today` | yes | the assessment. Supports `<strong>` and `<em>` only |
 | `drift` | no | how the proposer's definition has changed over time |
 | `source_url` | no | primary source — the original paper/post/bet, not press coverage |
+| `verification` | no | `independent` · `maintainer-checked` · `self-reported` · `unmeasured` |
+| `verification_note` | no | why that tier; shown as a tooltip on the chip |
 | `evidence` | no | `[{label, url}]`, up to 3 shown |
 
 ## Scoring rules
@@ -89,6 +91,11 @@ Each entry in `definitions[]`:
    single easiest way to make this site dishonest. (The `unfalsifiable` status remains available in
    the schema for entries that later turn out to be unscoreable.)
 4. **Primary sources only.** Where popular reporting misquotes an original, the card says so.
+5. **Provenance is tagged, not assumed.** `verification` records who produced the evidence a score
+   rests on. `independent` means a third party measured it; `maintainer-checked` means the
+   criterion's own operator did; `self-reported` means the party being measured produced the number;
+   `unmeasured` means the test has never been administered and the figure is an inference from
+   proxies. Twelve of the current entries are `unmeasured` — that is a finding, not a gap.
 
 ## Contributing
 

@@ -33,7 +33,9 @@
           "label": "CNBC",
           "url": "https://www.cnbc.com/2026/04/27/openai-microsoft-partnership-revenue-cap.html"
         }
-      ]
+      ],
+      "verification": "self-reported",
+      "verification_note": "Rests on the two counterparties' own disclosures; the contract has never been public"
     },
     {
       "slug": "gdpval",
@@ -64,7 +66,9 @@
           "label": "GDPval-AA leaderboard",
           "url": "https://artificialanalysis.ai/evaluations/gdpval-aa"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "Scored by Epoch AI and Artificial Analysis, though the benchmark is OpenAI's own"
     },
     {
       "slug": "nilsson-employment-test",
@@ -96,7 +100,9 @@
           "label": "Stanford: Canaries in the Coal Mine",
           "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "BLS, Challenger and Stanford Digital Economy Lab figures"
     },
     {
       "slug": "suleyman-modern-turing-test",
@@ -123,7 +129,9 @@
           "label": "Vending-Bench 2",
           "url": "https://epoch.ai/benchmarks/vending-bench-2"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Never attempted in the real economy; scored from simulated proxies"
     },
     {
       "slug": "amodei-powerful-ai",
@@ -151,7 +159,9 @@
           "label": "The Adolescence of Technology",
           "url": "https://darioamodei.com/essay/the-adolescence-of-technology"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "METR time-horizon measurements"
     },
     {
       "slug": "nadella-ten-percent-growth",
@@ -178,7 +188,9 @@
           "label": "Epoch: AI datacenter share of GDP",
           "url": "https://epoch.ai/data-insights/ai-datacenter-share-gdp"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "IMF and BEA national accounts"
     },
     {
       "slug": "cotra-transformative-ai",
@@ -205,7 +217,9 @@
           "label": "BLS productivity",
           "url": "https://www.bls.gov/productivity/articles-and-research/ai-and-productivity/home.htm"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "IMF and BEA national accounts"
     },
     {
       "slug": "aschenbrenner-drop-in-remote-worker",
@@ -233,7 +247,9 @@
           "label": "METR Frontier Risk Report",
           "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "METR time-horizon measurements"
     },
     {
       "slug": "metr-working-definition",
@@ -264,7 +280,9 @@
           "label": "GPT-5.6 Sol evaluation",
           "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "METR authored the definition and operates the instrument that measures it"
     },
     {
       "slug": "legg-minimal-agi",
@@ -293,7 +311,9 @@
           "label": "ARC-AGI-3 results",
           "url": "https://arcprize.org/results/anthropic-claude-opus-5"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "The adversarial task suite it requires does not exist"
     },
     {
       "slug": "hassabis-einstein-test",
@@ -321,7 +341,9 @@
           "label": "DeepMind technical AGI safety",
           "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/An_Approach_to_Technical_AGI_Safety_Apr_2025.pdf"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Never run, and arguably unrunnable — a 1911-clean training corpus is an open problem"
     },
     {
       "slug": "deepmind-levels-of-agi",
@@ -349,7 +371,9 @@
           "label": "Cognitive framework",
           "url": "https://arxiv.org/abs/2605.28405"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "The authors have never published a placement of current models on their own matrix"
     },
     {
       "slug": "deepmind-cognitive-taxonomy",
@@ -373,7 +397,9 @@
           "label": "arXiv paper",
           "url": "https://arxiv.org/abs/2605.28405"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Published before its evaluations existed; the test suite was still being crowdsourced in mid-2026"
     },
     {
       "slug": "huang-agi-achieved",
@@ -401,7 +427,9 @@
           "label": "ARC-AGI-3 launch",
           "url": "https://arcprize.org/blog/arc-agi-3-launch"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "A test declared passed that has never been run"
     },
     {
       "slug": "lecun-ami",
@@ -429,7 +457,9 @@
           "label": "ARC-AGI-3 results",
           "url": "https://arcprize.org/results/anthropic-claude-opus-5"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "Scored via ARC-AGI-3, verified by ARC Prize, as a proxy for his four criteria"
     },
     {
       "slug": "turing-test",
@@ -452,7 +482,9 @@
           "label": "Jones & Bergen, PNAS",
           "url": "https://arxiv.org/abs/2503.23674"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "Peer-reviewed PNAS study, pre-registered, no lab involvement"
     },
     {
       "slug": "arc-agi-1",
@@ -479,7 +511,9 @@
           "label": "On the Measure of Intelligence",
           "url": "https://arxiv.org/abs/1911.01547"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "ARC Prize tests and publishes the results itself"
     },
     {
       "slug": "arc-agi-2-accuracy",
@@ -502,7 +536,9 @@
           "label": "ARC-AGI-2 leaderboard data",
           "url": "https://arcprize.org/media/data/leaderboard/v2.json"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "ARC Prize tests and publishes the results itself"
     },
     {
       "slug": "arc-agi-2-grand-prize",
@@ -527,7 +563,9 @@
           "label": "ARC Prize 2025 results",
           "url": "https://arcprize.org/blog/arc-prize-2025-results-analysis"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "Adjudicated inside ARC Prize's own Kaggle competition"
     },
     {
       "slug": "arc-agi-3",
@@ -554,7 +592,9 @@
           "label": "ARC-AGI-3 launch",
           "url": "https://arcprize.org/blog/arc-agi-3-launch"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "ARC Prize tested Claude Opus 5 directly — but the result is one vendor's, unreplicated"
     },
     {
       "slug": "coffee-test",
@@ -581,7 +621,9 @@
           "label": "Stanford AI Index 2026",
           "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Never attempted in an unfamiliar home; scored from METR's physical time-horizon proxy"
     },
     {
       "slug": "winograd-schema",
@@ -604,7 +646,9 @@
           "label": "WinoGrande",
           "url": "https://arxiv.org/abs/1907.10641"
         }
-      ]
+      ],
+      "verification": "independent",
+      "verification_note": "Widely replicated before the benchmark was retired"
     },
     {
       "slug": "robot-college-student",
@@ -627,7 +671,9 @@
           "label": "GPQA Diamond",
           "url": "https://epoch.ai/benchmarks/gpqa-diamond"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "No AI system has ever enrolled at an accredited institution"
     },
     {
       "slug": "lovelace-2",
@@ -650,7 +696,9 @@
           "label": "Riedl, 2014",
           "url": "https://ar5iv.labs.arxiv.org/html/1410.6142"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "No published evaluation of any modern model exists — the progress figure is a guess"
     },
     {
       "slug": "hendrycks-agi-score",
@@ -673,7 +721,9 @@
           "label": "arXiv paper",
           "url": "https://arxiv.org/abs/2510.18212"
         }
-      ]
+      ],
+      "verification": "self-reported",
+      "verification_note": "Scored by the paper's own authors and never independently replicated; no 2026 model has been run at all"
     },
     {
       "slug": "three-lab-recursive-rd",
@@ -704,7 +754,9 @@
           "label": "DeepMind Frontier Safety",
           "url": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"
         }
-      ]
+      ],
+      "verification": "self-reported",
+      "verification_note": "All three determinations are made by the labs about their own models; no regulator publishes an independent finding"
     },
     {
       "slug": "hutter-prize",
@@ -732,7 +784,9 @@
           "label": "Prize FAQ",
           "url": "http://prize.hutter1.net/hfaq.htm"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "Prize committee adjudicates every award against a byte count"
     },
     {
       "slug": "marcus-five-tasks",
@@ -758,7 +812,9 @@
           "label": "Per-task market prices",
           "url": "https://manifold.markets/LovkushAgarwal/possible-outcomes-of-the-bet-on-ai"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Never adjudicated; the offer was never accepted, so no panel exists"
     },
     {
       "slug": "marcus-brundage-2027",
@@ -788,7 +844,9 @@
           "label": "Per-task prices",
           "url": "https://manifold.markets/LovkushAgarwal/possible-outcomes-of-the-bet-on-ai"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "The judging panel that decides it has still not been named"
     },
     {
       "slug": "kurzweil-kapor-longbet",
@@ -818,7 +876,9 @@
           "label": "Jones & Bergen, PNAS",
           "url": "https://www.pnas.org/doi/abs/10.1073/pnas.2524472123"
         }
-      ]
+      ],
+      "verification": "unmeasured",
+      "verification_note": "No committee seated and no interview conducted in 24 years"
     },
     {
       "slug": "metaculus-weakly-general",
@@ -846,7 +906,9 @@
           "label": "ARC Prize leaderboard",
           "url": "https://arcprize.org/leaderboard"
         }
-      ]
+      ],
+      "verification": "maintainer-checked",
+      "verification_note": "Metaculus operates the criteria; two of four sub-criteria verified against public benchmarks"
     }
   ]
 }
