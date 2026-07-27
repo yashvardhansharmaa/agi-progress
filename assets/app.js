@@ -19,7 +19,7 @@
     economic:  'Economic',
     benchmark: 'Benchmark',
     bet:       'Bets & forecasts',
-    lab:       'Lab leaders',
+    lab:       'Labs & frameworks',
     academic:  'Formal & academic',
     policy:    'Policy & safety'
   };
@@ -63,7 +63,6 @@
     var scoreable = defs.filter(function (d) { return d.status !== 'unfalsifiable'; });
     var met = defs.filter(function (d) { return d.status === 'passed'; }).length;
     var nearly = defs.filter(function (d) { return d.status === 'nearly'; }).length;
-    var unscoreable = defs.length - scoreable.length;
 
     var mean = scoreable.length
       ? Math.round(scoreable.reduce(function (a, d) { return a + (d.progress || 0); }, 0) / scoreable.length)
@@ -71,13 +70,17 @@
 
     var withDeadline = defs.filter(function (d) { return d.deadline; }).length;
 
+    var oldest = defs.reduce(function (a, d) {
+      return (d.status !== 'passed' && d.year && d.year < a) ? d.year : a;
+    }, 9999);
+
     var stats = [
-      { v: defs.length,       l: 'Definitions tracked' },
+      { v: defs.length,       l: 'Criteria tracked' },
       { v: met,               l: 'Criteria met',  accent: met > 0 },
       { v: nearly,            l: 'Nearly met' },
-      { v: mean + '%',        l: 'Mean progress, scoreable criteria', accent: true },
-      { v: unscoreable,       l: 'Too vague to score' },
-      { v: withDeadline,      l: 'Carry a hard deadline' }
+      { v: mean + '%',        l: 'Mean progress', accent: true },
+      { v: withDeadline,      l: 'Carry a hard deadline' },
+      { v: oldest,            l: 'Oldest still unmet' }
     ];
 
     stats.forEach(function (s) {

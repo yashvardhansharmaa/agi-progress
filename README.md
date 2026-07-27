@@ -3,10 +3,26 @@
 A tracker for the concrete, falsifiable definitions of AGI — and how much progress has actually
 been made against each one.
 
-"AGI" as a general term is close to meaningless. But a lot of specific people have staked out
-specific, checkable claims: a revenue number, a benchmark threshold, a list of five tasks, a dated
-bet. This repo collects those claims, links each to a primary source, and scores the world against
-them.
+"AGI" as a general term is close to meaningless. But a lot of specific people and organisations have
+staked out checkable claims: a revenue number, a benchmark threshold, a list of five tasks, a dated
+bet. This repo collects those, links each to a primary source, and scores the world against them.
+
+## What counts for inclusion
+
+One rule: **the proposer has to have operationalized it** — named a criterion concrete enough to
+check. A definition alone is not enough.
+
+Deliberately excluded:
+
+- Definitions with no threshold or measurement procedure (the OpenAI Charter's "most economically
+  valuable work"; Altman's "weakly defined term"). OpenAI still appears via GDPval and the $100B
+  clause, which are the forms it actually operationalized.
+- Capability benchmarks whose authors never claimed they measured AGI (GPQA, SWE-bench, HLE,
+  FrontierMath, OSWorld). ARC-AGI, Winograd and the Turing Test stay, because they were each
+  explicitly proposed as tests of machine general intelligence.
+- Predictions about consequences rather than capability (job-loss forecasts, growth-regime models).
+- Regulatory compute proxies (the EU AI Act's 10^25 FLOP threshold).
+- Critiques about the state of the definitions, rather than definitions.
 
 **Live site:** https://yashvardhansharmaa.github.io/agi-progress/
 
@@ -47,7 +63,7 @@ Each entry in `definitions[]`:
 | `affiliation` | no | org or publication context |
 | `year` | yes | when first stated |
 | `category` | yes | `economic` · `benchmark` · `bet` · `lab` · `academic` · `policy` |
-| `status` | yes | `passed` · `nearly` · `in-progress` · `early` · `unfalsifiable` |
+| `status` | yes | `passed` · `nearly` · `in-progress` · `early` · `failed` · `unfalsifiable` |
 | `progress` | yes | 0–100. Ignored for `unfalsifiable` entries |
 | `progress_note` | no | caption under the number, e.g. `"of the 5 tasks"` |
 | `estimated` | no | `true` renders a striped bar, marking a judgement call rather than a measurement |
@@ -68,9 +84,10 @@ Each entry in `definitions[]`:
    against that number and the working is stated in `status_today`.
 2. **Prose criteria get a labelled estimate.** Marked `estimated: true`, rendered with a striped
    bar so it's visually distinct from a measurement.
-3. **Vague definitions are not scored.** If there's no threshold and no measurement procedure, the
-   entry is `unfalsifiable` and shows no percentage. Inventing a number for these would be the
-   single easiest way to make this site dishonest.
+3. **Vague definitions are not included.** If there's no threshold and no measurement procedure,
+   it isn't an operationalization and doesn't get a card. Inventing a number for these would be the
+   single easiest way to make this site dishonest. (The `unfalsifiable` status remains available in
+   the schema for entries that later turn out to be unscoreable.)
 4. **Primary sources only.** Where popular reporting misquotes an original, the card says so.
 
 ## Contributing

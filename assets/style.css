@@ -171,6 +171,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
   margin-top: 8px;
   display: block;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 /* ---------- caveat banner ---------- */

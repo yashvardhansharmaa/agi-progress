@@ -1,7 +1,7 @@
 {
   "meta": {
     "updated": "2026-07-26",
-    "note": "Every entry links to a primary source. Progress figures for prose criteria are labelled estimates."
+    "note": "Only people and organisations that actually operationalized AGI — a stated criterion concrete enough to check. Definitions with no threshold or measurement procedure are excluded, as are capability benchmarks never framed as AGI tests."
   },
   "definitions": [
     {
@@ -32,32 +32,6 @@
         {
           "label": "CNBC",
           "url": "https://www.cnbc.com/2026/04/27/openai-microsoft-partnership-revenue-cap.html"
-        }
-      ]
-    },
-    {
-      "slug": "openai-charter",
-      "name": "Outperforms humans at most economically valuable work",
-      "proposer": "OpenAI",
-      "affiliation": "OpenAI Charter",
-      "year": 2018,
-      "category": "economic",
-      "status": "unfalsifiable",
-      "progress": 25,
-      "falsifiability": "low",
-      "confidence": "medium",
-      "quote": "highly autonomous systems that outperform humans at most economically valuable work",
-      "quote_source": "OpenAI Charter, April 2018",
-      "status_today": "The most quoted definition in the field, and one of the least testable. Three undefined terms carry all the weight — <em>highly autonomous</em>, <em>most</em>, and <em>economically valuable work</em>. Whether \"most\" means a majority of tasks, of occupations, or of wage-weighted output swings the answer by decades, and the Charter names no threshold, no protocol and no evaluator. On the most favourable reading, GDPval — OpenAI's own attempt to operationalise this exact sentence — puts frontier models at expert parity on curated digital deliverables. But that covers 44 mostly-digital occupations out of 800-plus, autonomy is still measured in hours rather than the months a job implies, and the labour market shows no matching displacement. Altman has since called AGI \"a very sloppy term\" and conceded the company moves its goalposts. Andrej Karpathy publicly re-adopted this definition in October 2025, two months after OpenAI's own CEO disowned it.",
-      "source_url": "https://openai.com/charter/",
-      "evidence": [
-        {
-          "label": "GDPval paper",
-          "url": "https://arxiv.org/abs/2510.04374"
-        },
-        {
-          "label": "METR on AGI definitions",
-          "url": "https://metr.org/agi.pdf"
         }
       ]
     },
@@ -180,34 +154,6 @@
       ]
     },
     {
-      "slug": "amodei-entry-level-jobs",
-      "name": "Half of entry-level white-collar jobs eliminated",
-      "proposer": "Dario Amodei",
-      "affiliation": "CEO, Anthropic",
-      "year": 2025,
-      "deadline": "2030",
-      "category": "economic",
-      "status": "early",
-      "progress": 20,
-      "estimated": true,
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "half of all entry-level white collar jobs in the next 1–5 years",
-      "quote_source": "Dario Amodei, Axios interview, May 2025 — with US unemployment predicted at 10–20%",
-      "status_today": "The best-instrumented claim on this page, with monthly BLS data against it and a hard deadline of May 2030. <strong>Directionally supported at the micro level, decisively not met at the macro level.</strong> Stanford's \"Canaries in the Coal Mine\" finds a 16% relative employment decline for workers aged 22–25 in AI-exposed occupations, and roughly 20% for software developers in that age band since late 2022 — driven by a collapse in hiring rather than layoffs, with experienced-worker employment stable. Against that, US unemployment is 4.2%, nowhere near the predicted 10–20%, and the New York Fed found in May 2026 \"little indication of a distinct AI-driven decline in labor demand,\" noting the decline in AI-exposed postings began <em>before</em> ChatGPT's release. One wrinkle worth watching: June's fall in the headline rate came alongside labour force participation dropping to 61.5%, its lowest since March 2021.",
-      "source_url": "https://darioamodei.com/essay/the-adolescence-of-technology",
-      "evidence": [
-        {
-          "label": "Stanford Digital Economy Lab",
-          "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
-        },
-        {
-          "label": "New York Fed",
-          "url": "https://libertystreeteconomics.newyorkfed.org/2026/05/do-job-postings-show-early-labor-market-effects-of-ai/"
-        }
-      ]
-    },
-    {
       "slug": "nadella-ten-percent-growth",
       "name": "The world economy growing at 10%",
       "proposer": "Satya Nadella",
@@ -258,33 +204,6 @@
         {
           "label": "BLS productivity",
           "url": "https://www.bls.gov/productivity/articles-and-research/ai-and-productivity/home.htm"
-        }
-      ]
-    },
-    {
-      "slug": "hanson-doubling-time",
-      "name": "A new growth mode doubling every two weeks",
-      "proposer": "Robin Hanson",
-      "affiliation": "George Mason University",
-      "year": 2000,
-      "category": "economic",
-      "status": "early",
-      "progress": 0,
-      "progress_note": "23-year doubling against a 2-week bar",
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "a new economic growth mode with a doubling time of roughly two weeks or less",
-      "quote_source": "Robin Hanson, \"Long-Term Growth As A Sequence of Exponential Modes\", 2000",
-      "status_today": "The most precise quantitative claim in this collection, and unusually, one derived from a fitted model of two million years of growth data rather than asserted. Hanson's framework reads history as a sequence of growth modes with sharply different doubling times: roughly 224,000 years for foraging, 909 years for farming, 6.3 years for industry. The next transition, on his CES model, gives a doubling time of <strong>1.3 to 2.3 weeks</strong>. World GDP is currently growing at about 3.1% a year, a doubling time of roughly <strong>23 years</strong> — three orders of magnitude away, and in fact slower than his fitted industrial-mode figure. Hanson himself remains publicly sceptical that current LLM progress represents the transition to a new mode.",
-      "source_url": "https://hanson.gmu.edu/longgrow.pdf",
-      "evidence": [
-        {
-          "label": "Hanson's growth modes",
-          "url": "https://mason.gmu.edu/~rhanson/longgrow.html"
-        },
-        {
-          "label": "IMF WEO April 2026",
-          "url": "https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026"
         }
       ]
     },
@@ -457,33 +376,6 @@
       ]
     },
     {
-      "slug": "altman-definitions",
-      "name": "Sam Altman's receding definition",
-      "proposer": "Sam Altman",
-      "affiliation": "CEO, OpenAI",
-      "year": 2025,
-      "category": "lab",
-      "status": "unfalsifiable",
-      "progress": 30,
-      "falsifiability": "low",
-      "confidence": "medium",
-      "quote": "AGI is a weakly defined term, but generally speaking we mean it to be a system that can tackle increasingly complex problems, at human level, in many fields.",
-      "quote_source": "Sam Altman, \"Three Observations\", 9 February 2025",
-      "status_today": "Recorded here not because it is scoreable but because it is the clearest case of a definition dissolving under its own author. \"Increasingly complex\" is a direction, not a threshold; \"many fields\" is uncountable. The one genuinely checkable claim in the sequence — that in 2025 agents would join the workforce and \"materially change the output of companies\" — half-landed: agents did deploy at scale, but the aggregate output effect never showed up in the statistics. His February 2026 restatement is more falsifiable than anything before it: superintelligence as a system that does \"a better job as the CEO of a major company than any executive,\" plus a dated claim that <strong>by the end of 2028 more of the world's intellectual capacity will sit inside data centres than outside</strong>. Neither is met; the second is at least checkable.",
-      "drift": "The Charter's \"outperform humans at most economically valuable work\" (2018) → a \"median human co-worker\" (2023) → \"we are now confident we know how to build AGI\" (January 2025) → \"a weakly defined term\" (February 2025) → \"not a super useful term,\" with a concession that GPT-5 fails his own bar because it cannot learn continuously (August 2025) → \"AGI kinda went whooshing by\" (December 2025) → the goal restated as superintelligence (2026). Those positions cannot all be true of the same referent. The most coherent reading is that Altman abandoned AGI as a goalpost in 2025 and re-anchored on a further one.",
-      "source_url": "https://blog.samaltman.com/three-observations",
-      "evidence": [
-        {
-          "label": "Reflections",
-          "url": "https://blog.samaltman.com/reflections"
-        },
-        {
-          "label": "The Gentle Singularity",
-          "url": "https://blog.samaltman.com/the-gentle-singularity"
-        }
-      ]
-    },
-    {
       "slug": "huang-agi-achieved",
       "name": "\"I think we've achieved AGI\"",
       "proposer": "Jensen Huang",
@@ -540,29 +432,6 @@
       ]
     },
     {
-      "slug": "sutskever-continual-learning",
-      "name": "A superintelligent fifteen-year-old",
-      "proposer": "Ilya Sutskever",
-      "affiliation": "CEO, Safe Superintelligence Inc.",
-      "year": 2025,
-      "category": "lab",
-      "status": "early",
-      "progress": 20,
-      "estimated": true,
-      "falsifiability": "low",
-      "confidence": "medium",
-      "quote": "A human being is not an AGI. Yes, there is definitely a foundation of skills, but a human being lacks a huge amount of knowledge. Instead, we rely on continual learning.",
-      "quote_source": "Ilya Sutskever, Dwarkesh Podcast, 25 November 2025",
-      "status_today": "Sutskever's reframing is a direct attack on the whole human-benchmark family of definitions: the target is not a system that knows everything a person knows, but one that arrives with enormous <em>capacity to learn</em> and then acquires expertise through deployment, the way a talented teenager does. His diagnosis — \"these models somehow just generalize dramatically worse than people\" — remains accurate in July 2026. <strong>Continual learning is the single least-improved capability of the past two years.</strong> No deployed frontier system learns from its own deployment; knowledge cutoffs persist and the industry's answer remains larger context windows rather than weight updates. This is also the strongest cross-camp consensus in the field: Karpathy, Sutton, Hassabis, DeepMind's taxonomy, the Hendrycks framework and Altman himself all name it as the key missing piece. SSI, valued around $32B, has published nothing.",
-      "source_url": "https://www.dwarkesh.com/p/ilya-sutskever-2",
-      "evidence": [
-        {
-          "label": "Interview highlights",
-          "url": "https://forum.effectivealtruism.org/posts/iuKa2iPg7vD9BdZna/highlights-from-ilya-sutskever-s-november-2025-interview"
-        }
-      ]
-    },
-    {
       "slug": "karpathy-remote-worker",
       "name": "A remote worker you can hire instead of a person",
       "proposer": "Andrej Karpathy",
@@ -587,53 +456,6 @@
         {
           "label": "METR time horizons",
           "url": "https://metr.org/time-horizons/"
-        }
-      ]
-    },
-    {
-      "slug": "sutton-era-of-experience",
-      "name": "Learning from experience, not imitation",
-      "proposer": "Richard Sutton",
-      "affiliation": "University of Alberta; 2024 Turing Award",
-      "year": 2025,
-      "category": "lab",
-      "status": "early",
-      "progress": 15,
-      "estimated": true,
-      "falsifiability": "low",
-      "confidence": "medium",
-      "quote": "the computational part of the ability to achieve goals",
-      "quote_source": "Richard Sutton's definition of intelligence; sharpened in \"Welcome to the Era of Experience\" (2025)",
-      "status_today": "Sutton argues LLMs are not intelligent under his definition because they lack substantive goals — they predict tokens, learn by imitation rather than experience, and cannot be genuinely surprised by an outcome. His central empirical claim, that they do not learn on the job, <strong>remains true in July 2026</strong> and is corroborated by every competing framework. His architectural claim — that a fundamentally different experience-based approach is required — is unresolved: continual learning has not been solved by either paradigm. ARC-AGI-3 is the closest live test, and both LLMs and purpose-built agents remain far from human. The notable thing about this position is its author: the man who wrote \"The Bitter Lesson,\" the essay most often cited to justify scaling, publicly declared the scaling-of-imitation paradigm a dead end.",
-      "source_url": "https://www.dwarkesh.com/p/richard-sutton",
-      "evidence": [
-        {
-          "label": "Discussion",
-          "url": "https://www.dwarkesh.com/p/thoughts-on-sutton"
-        }
-      ]
-    },
-    {
-      "slug": "brooks-not-in-my-lifetime",
-      "name": "A robot that understands its own existence",
-      "proposer": "Rodney Brooks",
-      "affiliation": "MIT emeritus; founder of iRobot",
-      "year": 2019,
-      "deadline": "2050",
-      "category": "lab",
-      "status": "early",
-      "progress": 5,
-      "estimated": true,
-      "falsifiability": "low",
-      "confidence": "high",
-      "quote": "A robot that has any real idea about its own existence, or the existence of humans in the way that a six year old understands humans.",
-      "quote_source": "Rodney Brooks, Predictions Scorecard — classified NIML, \"Not In My Lifetime\"",
-      "status_today": "Not met, uncontroversially — no system has a persistent self-model with ongoing existence. Brooks matters here less for the criterion than for the method: he publishes <strong>dated predictions and grades himself against them publicly every January</strong>, including his misses. In the 2026 scorecard he logs that he was far too optimistic on electric vehicles, underestimated Falcon 9, missed LLMs specifically, and that Waymo's driverless service arrived eight years earlier than he predicted. That is the standard of intellectual honesty this whole field lacks. His broader 2026 claim — that we are not on the verge of replacing white- or blue-collar workers wholesale, practising medicine without doctors, or eliminating coding as a job — remains broadly accurate, which is itself a scoreable result.",
-      "source_url": "https://rodneybrooks.com/predictions-scorecard-2026-january-01/",
-      "evidence": [
-        {
-          "label": "AGI Has Been Delayed",
-          "url": "https://rodneybrooks.com/agi-has-been-delayed/"
         }
       ]
     },
@@ -790,83 +612,6 @@
       ]
     },
     {
-      "slug": "humanitys-last-exam",
-      "name": "Humanity's Last Exam",
-      "proposer": "Dan Hendrycks",
-      "affiliation": "Center for AI Safety & Scale AI",
-      "year": 2025,
-      "category": "benchmark",
-      "status": "in-progress",
-      "progress": 53,
-      "progress_note": "53.3% on the text-only subset",
-      "falsifiability": "high",
-      "confidence": "medium",
-      "quote": "the final closed-ended academic benchmark of its kind with broad subject coverage",
-      "quote_source": "CAIS & Scale AI, January 2025. The authors predicted models could exceed 50% by the end of 2025.",
-      "status_today": "2,500 questions across more than 100 subjects, written to be unanswerable by search. The authors' own marker of 50% <strong>has been crossed, roughly six months later than they predicted</strong> — Claude Fable 5 reaches 53.3% on Artificial Analysis's text-only, no-tools harness, with Claude Opus 5 just behind. On Scale's official leaderboard, which uses a different extractor and the full set, Gemini 3.1 Pro leads at 46.4%; that seven-point harness disagreement is itself worth knowing about. Frontier models gained about 30 percentage points on this benchmark in a single year. The failure that persists is calibration: Gemini 3.1 Pro's calibration error is 51%, meaning the models remain confidently wrong at a rate that would disqualify any human expert. Note the benchmark's own site is stale, still listing a leader from 2025.",
-      "source_url": "https://lastexam.ai/",
-      "evidence": [
-        {
-          "label": "Artificial Analysis",
-          "url": "https://artificialanalysis.ai/evaluations/humanitys-last-exam"
-        },
-        {
-          "label": "Scale AI leaderboard",
-          "url": "https://labs.scale.com/leaderboard/humanitys_last_exam"
-        }
-      ]
-    },
-    {
-      "slug": "frontiermath",
-      "name": "FrontierMath",
-      "proposer": "Epoch AI",
-      "affiliation": "problems contributed by 60+ research mathematicians",
-      "year": 2024,
-      "category": "benchmark",
-      "status": "in-progress",
-      "progress": 40,
-      "progress_note": "39.6% for a general model on Tier 4",
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "exceptionally challenging",
-      "quote_source": "Terence Tao's assessment at launch was that these problems would \"resist AIs for several years at least\"",
-      "status_today": "Research-level mathematics, scored by automated verification of a submitted answer. On Tiers 1–3, GPT-5.5 Pro reaches <strong>52.4%</strong>. On Tier 4, the hardest tier, the leader is DeepMind's AI Co-mathematician at 47.9% — but that is a <strong>purpose-built specialist system</strong>, and citing it as evidence of general intelligence is a category error. The best general-purpose model on Tier 4 is GPT-5.5 Pro at <strong>39.6%</strong>, which is the number a generality claim should use. Two warnings. Version 2, released in June 2026, corrected errors in roughly 40% of the benchmark and removed 17 problems, so no pre-June-2026 score is comparable to a post-v2 one. And a figure of 83% for Tier 4 is circulating widely — <strong>it is fabricated</strong>, apparently by search-result summarisers, and contradicts Epoch's own published data. Note also that OpenAI funded the benchmark's creation and had access to the problems.",
-      "source_url": "https://epoch.ai/frontiermath",
-      "evidence": [
-        {
-          "label": "Tier 4 leaderboard",
-          "url": "https://epoch.ai/benchmarks/frontiermath-tier-4-v2"
-        },
-        {
-          "label": "Tiers 1–4",
-          "url": "https://epoch.ai/frontiermath/tiers-1-4"
-        }
-      ]
-    },
-    {
-      "slug": "gpqa-diamond",
-      "name": "PhD-expert parity on GPQA Diamond",
-      "proposer": "David Rein et al.",
-      "affiliation": "NYU, Cohere, Anthropic",
-      "year": 2023,
-      "category": "benchmark",
-      "status": "passed",
-      "progress": 100,
-      "progress_note": "94.6% against a 65–74% expert bar",
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "Google-proof",
-      "quote_source": "Questions written by domain PhDs. Non-expert validators with unrestricted web access score ~34%; in-domain PhD experts score 65%.",
-      "status_today": "<strong>Saturated, and about 20 points above the human expert baseline.</strong> GPT-5.4 Pro leads at 94.6%, with Gemini 3.1 Pro, GPT-5.5 and Claude Opus 5 all within two points. The remaining gap to 100% is widely believed to be label noise rather than capability. GPQA no longer discriminates between frontier models and has been demoted to a regression test — Artificial Analysis now gives it just 6% weight in its composite index. Worth recording precisely because of how quickly it went from \"Google-proof questions that stump non-expert humans with internet access\" to a number nobody bothers reporting.",
-      "source_url": "https://arxiv.org/abs/2311.12022",
-      "evidence": [
-        {
-          "label": "Epoch AI leaderboard",
-          "url": "https://epoch.ai/benchmarks/gpqa-diamond"
-        }
-      ]
-    },
-    {
       "slug": "winograd-schema",
       "name": "The Winograd Schema Challenge",
       "proposer": "Hector Levesque",
@@ -886,60 +631,6 @@
         {
           "label": "WinoGrande",
           "url": "https://arxiv.org/abs/1907.10641"
-        }
-      ]
-    },
-    {
-      "slug": "osworld-parity",
-      "name": "Human parity at using a computer",
-      "proposer": "Tianbao Xie et al.",
-      "affiliation": "XLANG Lab, University of Hong Kong",
-      "year": 2024,
-      "category": "benchmark",
-      "status": "in-progress",
-      "progress": 30,
-      "progress_note": "parity on v1, 21% on the harder successor",
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "humans can accomplish over 72.36% of the tasks",
-      "quote_source": "OSWorld — real tasks in a live operating system, verified by execution",
-      "status_today": "The clearest illustration of benchmark-hopping on this page. OSWorld v1 set human parity at 72.36%; Claude Sonnet 4.6 reached <strong>72.1%</strong> in February 2026, effectively parity, about two years after launch. The successor arrived four months later and knocked the frontier straight back down: on <strong>OSWorld 2.0</strong>, whose 108 workflows take a human a median of 1.6 hours, <strong>no system completes more than 21% end-to-end.</strong> Claude Opus 4.8 leads at 20.6% binary completion. Watch for a trap here: Anthropic reports 70.57% for Claude Opus 5 on OSWorld 2.0, but its Opus 4.8 figure of 55.7% closely matches the <em>partial-credit</em> score of 54.8% rather than the 20.6% completion score — so that number almost certainly is not \"completes 70% of tasks.\" Computer use remains the weakest frontier capability by a wide margin.",
-      "source_url": "https://osworld-v2.xlang.ai/",
-      "evidence": [
-        {
-          "label": "OSWorld 2.0 leaderboard",
-          "url": "https://snorkel.ai/leaderboard/os-world-2-0/"
-        },
-        {
-          "label": "OSWorld v1",
-          "url": "http://osworld-v1.xlang.ai/"
-        }
-      ]
-    },
-    {
-      "slug": "swe-bench-verified",
-      "name": "Resolving real GitHub issues",
-      "proposer": "Jimenez, Yang et al.",
-      "affiliation": "Princeton NLP; Verified subset by OpenAI",
-      "year": 2023,
-      "category": "benchmark",
-      "status": "nearly",
-      "progress": 84,
-      "progress_note": "83.5% on independent re-runs",
-      "falsifiability": "high",
-      "confidence": "medium",
-      "quote": "resolve real GitHub issues such that the repository's own hidden tests pass",
-      "quote_source": "SWE-bench Verified — 500 tasks, each confirmed solvable by a human engineer",
-      "status_today": "Nearly saturated, and a good lesson in whose numbers to trust. On <strong>Epoch AI's independent re-runs</strong>, Claude Opus 4.7 leads at 83.5%. Vendors report considerably higher — Anthropic quotes 96% for Claude Opus 5 — because lab announcements use bespoke scaffolds, extra attempts and undisclosed test-time compute. The same divergence is starker on SWE-bench Pro, where vendors report around 79–80% while Scale AI's identical-scaffolding leaderboard tops out at 61.5%. <strong>Prefer the independently-run column and say which is which.</strong> OpenAI reportedly stopped reporting SWE-bench Verified in early 2026. Two other things worth noting: Chinese open-weight models GLM-5.2 and DeepSeek-V4-Pro are within six points of the frontier here, which is not true on ARC or FrontierMath; and contamination is a live concern since the tasks come from public GitHub history.",
-      "source_url": "https://epoch.ai/benchmarks/swe-bench-verified",
-      "evidence": [
-        {
-          "label": "Scale AI SWE-bench Pro",
-          "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
-        },
-        {
-          "label": "SWE-bench",
-          "url": "https://www.swebench.com/"
         }
       ]
     },
@@ -1018,7 +709,7 @@
       "proposer": "Anthropic, OpenAI & Google DeepMind",
       "affiliation": "written independently, in their safety frameworks",
       "year": 2023,
-      "category": "policy",
+      "category": "lab",
       "status": "early",
       "progress": 0,
       "progress_note": "untriggered at all three labs",
@@ -1040,56 +731,6 @@
         {
           "label": "DeepMind Frontier Safety",
           "url": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"
-        }
-      ]
-    },
-    {
-      "slug": "eu-ai-act-compute",
-      "name": "10^25 FLOP: the EU's regulatory proxy",
-      "proposer": "European Commission",
-      "affiliation": "EU AI Act, Article 51(2)",
-      "year": 2024,
-      "deadline": "Aug 2026",
-      "category": "policy",
-      "status": "passed",
-      "progress": 100,
-      "progress_note": "crossed by 30+ models",
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "A general-purpose AI model shall be presumed to have high impact capabilities when the cumulative amount of computation used for its training measured in floating point operations is greater than 10^25.",
-      "quote_source": "Regulation (EU) 2024/1689, Article 51(2)",
-      "status_today": "<strong>The world's most comprehensive AI law declines to define AGI at all</strong>, and regulates by compute plus generality instead — which makes its threshold a revealing proxy for what regulators thought \"frontier\" meant in 2023. That threshold is now <strong>comprehensively saturated</strong>: Epoch identified more than 30 models from 12 developers above 10^25 FLOP as of June 2025, with roughly two new models crossing per month, and the figure is materially higher now. Around ten models exceed 10^26; the largest known training run is Grok 4 at roughly 5x10^26. A line drawn to catch the frontier now catches almost everything, and the Commission has never used its power to raise it. The date matters: <strong>enforcement powers land on 2 August 2026</strong>, a week from this review, carrying fines up to 3% of global turnover. Article 3(64) defines high-impact capabilities as those that \"match or exceed the capabilities recorded in the most advanced\" models — a legally binding definition that moves by construction.",
-      "source_url": "https://artificialintelligenceact.eu/article/51/",
-      "evidence": [
-        {
-          "label": "Models over 1e25 FLOP",
-          "url": "https://epoch.ai/data-insights/models-over-1e25-flop"
-        },
-        {
-          "label": "Commission FAQ",
-          "url": "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
-        }
-      ]
-    },
-    {
-      "slug": "legg-hutter-universal-intelligence",
-      "name": "Universal Intelligence",
-      "proposer": "Shane Legg & Marcus Hutter",
-      "affiliation": "IDSIA / ANU",
-      "year": 2007,
-      "category": "academic",
-      "status": "unfalsifiable",
-      "progress": 0,
-      "falsifiability": "low",
-      "confidence": "high",
-      "quote": "Intelligence measures an agent's ability to achieve goals in a wide range of environments.",
-      "quote_source": "Legg & Hutter, \"Universal Intelligence: A Definition of Machine Intelligence\", 2007",
-      "status_today": "The only mathematically rigorous definition of intelligence in this collection, and the one nobody can measure. Formally it sums an agent's expected reward across all computable environments, weighting each by its Kolmogorov complexity so that simpler worlds count for more. The authors state the fatal caveat themselves: <strong>\"the definition cannot be directly turned into a test of intelligence as the Kolmogorov complexity function is not computable.\"</strong> No universal-intelligence test has ever been built, and no system has ever been scored. It is recorded here as the honest limit case — and because its intellectual descendants are everywhere: Chollet's efficiency framing, the compression-equals-intelligence argument now used retroactively to explain why next-token prediction works, and the Hutter Prize. There is a telling coda: Legg's own 2026 output is a <em>psychometric</em> framework, not an algorithmic-information one.",
-      "source_url": "https://arxiv.org/abs/0712.3329",
-      "evidence": [
-        {
-          "label": "Minds and Machines",
-          "url": "https://link.springer.com/article/10.1007/s11023-007-9079-x"
         }
       ]
     },
@@ -1120,40 +761,6 @@
           "url": "http://prize.hutter1.net/hfaq.htm"
         }
       ]
-    },
-    {
-      "slug": "whole-brain-emulation",
-      "name": "Whole-brain emulation at human scale",
-      "proposer": "the neuromorphic / connectomics tradition",
-      "affiliation": "various",
-      "year": 2008,
-      "category": "academic",
-      "status": "early",
-      "progress": 1,
-      "progress_note": "0.00016% of human neuron count",
-      "estimated": true,
-      "falsifiability": "high",
-      "confidence": "low",
-      "quote": "build a system that reproduces the function of a biological brain by emulating its structure",
-      "quote_source": "The whole-brain-emulation route to AGI — the one path where progress is counted in neurons, not benchmarks",
-      "status_today": "The most literal reading of \"build a mind\" and the one furthest from completion, though 2026 produced a genuine landmark. In March 2026 Eon Systems published an embodied emulation of a fruit fly brain: <strong>139,255 neurons and roughly 50 million synapses</strong>, driving a simulated body in a physics engine, reproducing 91–95% of real fly behaviours <em>with no training</em>. That is a real scientific achievement and it is <strong>0.00016% of the human neuron count</strong> — about a third of the way on a log scale, which is the only scale on which this is encouraging. Included here as a corrective: the paths to AGI are not all at similar stages, and the discourse's implicit assumption that language models are the only route obscures how a differently-framed goal reads on the same date. <em>Sourcing note: the fly-emulation figures come from secondary coverage of a March 2026 result; we have not linked a primary paper and the confidence rating reflects that.</em>",
-      "evidence": []
-    },
-    {
-      "slug": "krakauer-g-fragmenting",
-      "name": "Is there even a g to measure?",
-      "proposer": "David Krakauer",
-      "affiliation": "Santa Fe Institute",
-      "year": 2026,
-      "category": "academic",
-      "status": "unfalsifiable",
-      "progress": 0,
-      "falsifiability": "medium",
-      "confidence": "low",
-      "quote": "The Rise and Fall of G in AGI",
-      "quote_source": "Santa Fe Institute, April 2026",
-      "status_today": "The sharpest new critique of the whole enterprise, and it is empirical rather than philosophical. Most single-number AGI scores — the Hendrycks framework included — implicitly assume that machine capabilities correlate the way human ones do, so that a general factor exists to be measured. Krakauer's group tested that assumption directly by running principal component analysis across benchmark batteries. In 2023–24, the first component explained <strong>92%</strong> of the variance: models were good or bad at everything together, and one number summarised them well. With the arrival of reasoning models that fell to <strong>64%</strong>. If capabilities are fragmenting rather than converging, then every single-number AGI score measures less each year — and the \"jagged frontier\" everyone keeps describing anecdotally is the same phenomenon showing up in the statistics. <em>Sourcing note: reported via secondary coverage of April 2026 SFI work; we have not verified the PCA figures against the primary paper.</em>",
-      "evidence": []
     },
     {
       "slug": "marcus-five-tasks",
@@ -1266,105 +873,6 @@
         {
           "label": "ARC Prize leaderboard",
           "url": "https://arcprize.org/leaderboard"
-        }
-      ]
-    },
-    {
-      "slug": "ai-2027-scenario",
-      "name": "AI 2027: superhuman coder by March 2027",
-      "proposer": "Kokotajlo, Lifland, Larsen, Dean & Alexander",
-      "affiliation": "AI Futures Project",
-      "year": 2025,
-      "deadline": "Mar 2027",
-      "category": "bet",
-      "status": "in-progress",
-      "progress": 70,
-      "progress_note": "~75% of predicted pace, per the authors",
-      "falsifiability": "medium",
-      "confidence": "high",
-      "quote": "200,000 copies in parallel, equivalent to 50,000 copies of the best human coder at 30x speed",
-      "quote_source": "AI 2027, April 2025 — the March 2027 \"superhuman coder\" milestone",
-      "status_today": "Unusually good practice: a scenario with dated, checkable numbers, whose authors then <strong>graded themselves in public and revised down.</strong> Their February 2026 self-assessment put realized quantitative progress at about 65% of the predicted pace, revised to roughly 75% by July 2026. Specific misses: SWE-bench Verified was predicted at 85% by mid-2025 and came in at 74.5%; the $500B valuation arrived four months late; the AI software R&D uplift is behind. METR's coding time horizon is almost exactly on trend at 1.04x. An independent tracker of 53 predictions has about half confirmed, ahead or on track. <strong>Most notably, the authors' own medians moved out by years</strong> — Kokotajlo from 2027 to December 2030, Lifland from 2031 to January 2035 — and they explicitly ask people to stop describing the scenario as a confident 2027 prediction. One line from the independent tracker deserves quoting: \"risks are arriving before the raw capabilities that were supposed to produce them.\"",
-      "source_url": "https://ai-2027.com/",
-      "evidence": [
-        {
-          "label": "Authors' self-grading",
-          "url": "https://blog.aifutures.org/p/grading-ai-2027s-2025-predictions"
-        },
-        {
-          "label": "Revised timelines",
-          "url": "https://blog.aifutures.org/p/clarifying-how-our-ai-timelines-forecasts"
-        }
-      ]
-    },
-    {
-      "slug": "hinton-radiologists",
-      "name": "Stop training radiologists",
-      "proposer": "Geoffrey Hinton",
-      "affiliation": "University of Toronto; 2024 Nobel laureate",
-      "year": 2016,
-      "deadline": "2021, or 2026 at the outside",
-      "category": "bet",
-      "status": "failed",
-      "progress": 0,
-      "progress_note": "both windows closed, prediction false",
-      "falsifiability": "high",
-      "confidence": "high",
-      "quote": "completely obvious",
-      "quote_source": "Hinton, 2016 — that within five years, ten at most, deep learning would outperform human radiologists, and that training new ones should stop",
-      "status_today": "<strong>Resolved, and false, on both the five-year and the ten-year horizon.</strong> It is included because a tracker that only lists open questions is flattering itself — this is what a specific, falsifiable, professionally consequential AI prediction looks like when it fails. Radiology in 2026 faces its largest documented shortage, with the AAMC projecting a US shortfall of up to 42,000 radiologists and other specialists by 2033, and radiologist compensation has <em>risen</em>. To his credit Hinton acknowledged the error in May 2025, saying he had spoken too broadly, meant only image analysis, and was \"wrong on the timing but not the direction.\" The instructive part is the shape of the miss: the image-classification capability largely did arrive roughly on schedule, and the <em>job</em> did not go away. That gap between a capability and its economic consequence is the same one running through every economic definition on this page.",
-      "source_url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15746014/hinton-acknowledges-mistake-in-predicting-ai-replacement-of-radiologists",
-      "evidence": [
-        {
-          "label": "Fortune, May 2026",
-          "url": "https://fortune.com/2026/05/04/godfather-of-ai-geoffrey-hinton-radiologists-future-of-work-tech-ai-job-anxiety/"
-        }
-      ]
-    },
-    {
-      "slug": "musk-agi-predictions",
-      "name": "Smarter than any single human",
-      "proposer": "Elon Musk",
-      "affiliation": "xAI / Tesla",
-      "year": 2024,
-      "deadline": "end of 2026",
-      "category": "bet",
-      "status": "failed",
-      "progress": 5,
-      "progress_note": "two deadlines already missed",
-      "estimated": true,
-      "falsifiability": "medium",
-      "confidence": "medium",
-      "quote": "My guess is that we'll have AI that is smarter than any one human probably around the end of next year, and then AI, the total amount of sort of sentient compute of AI, I think will probably exceed all humans in 5 years.",
-      "quote_source": "Elon Musk, X Spaces, 8 April 2024 — i.e. smarter than any human by end of 2025",
-      "status_today": "<strong>A record of missed self-imposed deadlines, recorded because base rates matter.</strong> In May 2024, asked how long until AGI, Musk answered \"next year\" — 2025 came and went. The April 2024 claim above set end-2025 for a system smarter than any individual human; that also passed. He has since re-pledged the same milestone for the end of 2026, five months from this review, with no frontier system close to the claim. His 2022 prediction that he would \"be surprised if we don't have AGI by\" 2029 remains live. Worth stating plainly: <strong>Musk has never accepted any of the four wagers offered against these claims</strong>, including offers escalating to $10M. The pattern is the reason the falsifiability column on this site exists — a dated prediction with no stake, no criteria and no adjudicator can be restated indefinitely at no cost.",
-      "source_url": "https://garymarcus.substack.com/p/10-million-says-we-wont-see-human",
-      "evidence": [
-        {
-          "label": "The 2029 prediction",
-          "url": "https://garymarcus.substack.com/p/dear-elon-musk-here-are-five-things"
-        }
-      ]
-    },
-    {
-      "slug": "mitchell-rorschach",
-      "name": "AGI as a Rorschach test",
-      "proposer": "Melanie Mitchell",
-      "affiliation": "Santa Fe Institute",
-      "year": 2024,
-      "category": "academic",
-      "status": "unfalsifiable",
-      "progress": 0,
-      "falsifiability": "low",
-      "confidence": "high",
-      "quote": "has been subject to so much hype and speculation it has become something of a Rorschach test",
-      "quote_source": "Melanie Mitchell, \"Debates on the Nature of Artificial General Intelligence\", Science, 2024",
-      "status_today": "This entry exists to make a point: <em>unfalsifiable</em> is a legitimate finding, and Mitchell's claim is a claim about definitions rather than a definition. She argues the question will only be settled by long-term scientific investigation, not by declaration, and criticises OpenAI-style framings for severing cognition from the physical world — a point Hassabis himself conceded in July 2026. <strong>The evidence on this page vindicates her.</strong> This site catalogues mutually incompatible definitions from people who agree on almost nothing, at least four of whom — Amodei, LeCun, Suleyman, Altman — have publicly abandoned the term while continuing to build toward it. In one five-week span in March 2026, three respected institutions declared AGI achieved, not achieved, and barely started, all describing the same models.",
-      "source_url": "https://klab.tch.harvard.edu/academia/classes/BAI/pdfs/Mitchell_Science2024.pdf",
-      "evidence": [
-        {
-          "label": "Fortune: no one agrees",
-          "url": "https://fortune.com/2026/03/30/agi-definition-jensen-huang-lex-fridman-deepmind-turing-text-cognitive-taxonomy/"
         }
       ]
     }
