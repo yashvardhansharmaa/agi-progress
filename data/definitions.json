@@ -39,18 +39,22 @@
       "year": 2010,
       "category": "benchmark",
       "status": "early",
-      "progress": 12,
+      "progress": 20,
       "estimated": true,
       "falsifiability": "high",
-      "confidence": "medium",
+      "confidence": "low",
       "quote": "a machine to enter an average American home and figure out how to make coffee",
       "quote_source": "Steve Wozniak. Find the machine, the coffee, a mug and water, and operate an unfamiliar appliance, in a house it has never seen",
-      "status_today": "<strong>Not passed.</strong> No robot has entered an unfamiliar home, found the kitchen, the coffee and a mug, and worked out an appliance it had never seen.\n\nThe useful number is METR's: time horizons on visual computer-use tasks run <strong>40 to 100 times shorter</strong> than on software-engineering tasks, and METR put Claude Sonnet 4.5's real-world coffee-making horizon at about two minutes. Elsewhere the picture agrees. Simulated robotic manipulation succeeds 89.4% of the time while real household tasks run at 12%.\n\nKitchen demonstrations from Figure, 1X and Physical Intelligence are real but instrumented or trained. Nobody has done it cold in a stranger's house.",
+      "status_today": "<strong>Not passed, and never attempted.</strong> No robot has entered an unfamiliar home, found the kitchen, the coffee and a mug, and worked out an appliance it had never seen.\n\nThe best independent evidence is Epoch AI's February 2026 task-by-task audit, which rates \"clean a kitchen\" at tier 2 of 5, significant limits in lab, and \"cook simple meals\" at tier 1, early research stage. The clause this test turns on is appliance transfer: handed an unfamiliar appliance and a zero-shot instruction, Physical Intelligence's π0.7 makes a reasonable attempt and does not finish, and succeeds only with step-by-step human coaching. Navigation and object search in homes absent from training are genuinely demonstrated, so this is well short of zero.\n\nKitchen demonstrations from Figure, 1X and Physical Intelligence are real but instrumented, trained, or in 1X's case substantially teleoperated. Nobody has done it cold in a stranger's house. Forecasters surveyed in April 2026 put the median pass at 2034.",
       "source_url": "https://metr.org/notes/2026-01-22-time-horizon-limitations/",
       "evidence": [
         {
-          "label": "METR on cross-domain horizons",
-          "url": "https://metr.org/notes/2026-01-22-time-horizon-limitations/"
+          "label": "Epoch AI robot capabilities",
+          "url": "https://epoch.ai/publications/where-autonomy-works-evaluating-robot-capabilities-in-2026"
+        },
+        {
+          "label": "Physical Intelligence π0.7",
+          "url": "https://www.pi.website/blog/pi07"
         },
         {
           "label": "Stanford AI Index 2026",
@@ -58,27 +62,27 @@
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "Never attempted in an unfamiliar home; scored from METR's physical time-horizon proxy",
+      "verification_note": "Never attempted in an unfamiliar home; scored as a judgement over Epoch AI's component-level assessments",
       "claim": "stated",
-      "measured": "2026-01"
+      "measured": "2026-04"
     },
     {
       "slug": "arc-agi-2-grand-prize",
       "name": "85% on ARC-AGI-2",
       "proposer": "ARC Prize Foundation",
-      "affiliation": "the $700,000 Grand Prize criterion",
+      "affiliation": "85% unlocks the $150,000 Bonus Prize",
       "year": 2025,
       "deadline": "Dec 2026",
       "stake": "$2M across three tracks",
       "category": "benchmark",
       "status": "early",
       "progress": 28,
-      "progress_note": "24% on the set the prize uses",
+      "progress_note": "24% adjudicated in-container, 2025",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "Can you create a system that can reach 85% accuracy?",
       "quote_source": "ARC Prize Foundation, 2025. The prize is scored on the private set, inside a compute-limited offline container.",
-      "status_today": "ARC-AGI-2 has two scores and the gap between them is the whole story. On the <strong>semi-private</strong> set, which frontier API models are evaluated against, GPT-5.6 Sol reaches <strong>92.5%</strong> and Claude Opus 5 reaches 90.4%. Six configurations now clear the 85% bar.\n\nOn the <strong>private</strong> set, inside the compute-limited offline container the prize actually uses, the record is <strong>24%</strong> and unclaimed. The 68-point gap says something specific: current systems clear the bar by spending money, at $1.44 to $2.06 per task. Efficiency was the entire point of Chollet's definition, and it is the half that has not moved.\n\nARC Prize 2026 offers $2M across three tracks and closes to submissions on 2 November, with results on 4 December, so this may resolve before the year ends.",
+      "status_today": "ARC-AGI-2 has two scores and the gap between them is the whole story. On the <strong>semi-private</strong> set, which frontier API models are evaluated against, GPT-5.6 Sol reaches <strong>92.5%</strong> and Claude Opus 5 reaches 90.4%. Six configurations now clear the 85% bar, at $0.74 to $2.06 per task.\n\nInside the compute-limited offline container the prize actually uses, the last <strong>adjudicated</strong> result is <strong>24%</strong>, set by team NVARC in the 2025 competition. The 2026 private leaderboard does not exist until submissions close on 2 November, with results on 4 December, so nothing in-container is final before then. The per-task costs above describe API runs and are not comparable to the Kaggle track's cost regime.\n\nOne correction to how this prize is usually described: the 85% threshold unlocks a <strong>$150,000 Bonus Prize</strong>, which rolls forward to 2027 if unmet. The $275,000 Grand Prize goes to the best solution writeup, and $700,000 is the whole track pool.",
       "source_url": "https://arcprize.org/competitions/2026/arc-agi-2",
       "evidence": [
         {
@@ -161,12 +165,12 @@
       "category": "academic",
       "status": "early",
       "progress": 6,
-      "progress_note": "6% of the purse ever claimed",
+      "progress_note": "under 6% of the purse ever claimed",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "enwik9 constitutes an amount of non-visual knowledge an average adult human holds, so compressors compressing enwik9 better than a human will predict better, and hence should be smarter... which, if achieved, most would agree constitutes AGI.",
       "quote_source": "Hutter Prize official FAQ",
-      "status_today": "Twenty years old, still running, and the numbers are sobering. The official record is <strong>110,793,128 bytes</strong>, set in September 2024, and across all eight winners in the prize's history <strong>€29,945 of the €500,000 pool has ever been paid out, about 6%.</strong> Here is the interpretive problem that makes this entry worth including: <strong>the best unconstrained compressor in the world is a transformer</strong>, nncp v3.2 at 106.6 MB, comfortably better than the record. It cannot win, because it violates the prize's rules limiting entrants to 50 hours on a single CPU core with 10GB of RAM. The prize was designed on the premise that compression is intelligence; when neural methods started winning at compression, the resource constraints kept them out.",
+      "status_today": "Twenty years old, still running, and the numbers are sobering. The official record is <strong>110,793,128 bytes</strong>, set in September 2024, and <strong>under 6% of the €500,000 pool has ever been paid out.</strong> A June 2026 entry that would clear the next 1% bar was still unawarded at the time of review.\n\nHere is the interpretive problem that makes this entry worth including: <strong>the best unconstrained compressor in the world is a transformer</strong>, nncp v3.2 at 106.6 MB, comfortably better than the record. It cannot win, because it violates the prize's rules limiting entrants to 50 hours on a single CPU core with 10GB of RAM. The prize was designed on the premise that compression is intelligence; when neural methods started winning at compression, the resource constraints kept them out.",
       "source_url": "http://prize.hutter1.net/",
       "evidence": [
         {
@@ -192,14 +196,18 @@
       "category": "economic",
       "status": "unfalsifiable",
       "progress": 0,
-      "progress_note": "clause deleted before it could resolve",
+      "progress_note": "cumulative losses, not profits; clause deleted before it could resolve",
       "falsifiability": "medium",
       "confidence": "high",
       "quote": "systems that have the ability to generate the maximum total profits to which its earliest investors, including Microsoft, are entitled",
       "quote_source": "Reported by The Information, Dec 2024. The contract itself is not public",
-      "status_today": "<strong>This definition no longer exists.</strong> The AGI clause was removed from the Microsoft–OpenAI agreement on 27 April 2026; Microsoft's announcement of the amended deal does not contain the word AGI at all. It was never triggered, and the independent expert panel created to verify it never convened. On the underlying metric, progress is <em>negative</em>: OpenAI reached roughly $25B annualised revenue by early 2026 while running deeply unprofitable. Three things are near-universally misreported here: the clause specified <strong>profits, not revenue</strong>; the figure was <strong>cumulative, not annual</strong>; and it was pegged to the capped-profit structure OpenAI itself dissolved in October 2025. The most falsifiable AGI definition ever written was settled by commercial renegotiation, not by anyone crossing a technical line.",
+      "status_today": "<strong>This definition no longer exists.</strong> The AGI clause was removed from the Microsoft–OpenAI agreement on 27 April 2026; Microsoft's announcement of the amended deal does not contain the word AGI at all. No AGI was ever declared, so the expert panel created to verify such a declaration never had anything to verify.\n\nThe clause is void, but the metric it named is still measurable, and the answer is that progress runs <em>away</em> from the threshold. Financial statements obtained by Ed Zitron and the Financial Times in June 2026 show OpenAI on <strong>$13.07B of 2025 revenue against a $20.92B operating loss</strong>, after $3.7B and $8.78B respectively in 2024. Cumulative profits since inception are deeply negative, so reaching $100B cumulative would require well over $130B of future profit from a company that has told investors it does not expect positive cash flow until around 2030.\n\nThree things are near-universally misreported here: the clause specified <strong>profits, not revenue</strong>; the figure was <strong>cumulative, not annual</strong>; and it was pegged to the capped-profit structure OpenAI itself dissolved in October 2025. The most falsifiable AGI definition ever written was settled by commercial renegotiation, not by anyone crossing a technical line.",
       "source_url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/",
       "evidence": [
+        {
+          "label": "Leaked OpenAI financials",
+          "url": "https://fortune.com/2026/06/16/openai-financials-leaked-losses-revenue-profit/"
+        },
         {
           "label": "Microsoft, Apr 2026",
           "url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/"
@@ -216,7 +224,7 @@
       "verification": "self-reported",
       "verification_note": "Rests on the two counterparties' own disclosures; the contract has never been public",
       "claim": "stated",
-      "measured": "2026-04"
+      "measured": "2026-06"
     },
     {
       "slug": "gdpval",
@@ -292,27 +300,28 @@
       "year": 2023,
       "category": "economic",
       "status": "early",
-      "progress": 20,
+      "progress": 10,
       "estimated": true,
       "falsifiability": "high",
       "confidence": "medium",
       "quote": "Go make $1 million on a retail web platform in a few months with just a $100,000 investment.",
       "quote_source": "Mustafa Suleyman, MIT Technology Review, July 2023",
-      "status_today": "Arguably the cleanest pass/fail criterion anyone has proposed: a defined stake, a defined multiple, a defined venue, a defined horizon, and a bank balance as the scorekeeper. <strong>Not passed, and no credible public claim of a pass.</strong> The nearest real evidence is Anthropic's Project Vend, where Claude ran an actual office store. Phase one lost money and was talked into buying tungsten cubes at a loss; phase two held a profit margin, and by mid-2026 had expanded to AI-run stores and cafés. In simulation, Claude Opus 4.6 averaged just over $8,000 from a $500 start on Vending-Bench 2, against an estimated strong-human strategy of about $63,000. The test is usually shortened to \"turn $100K into $1M\", but the original specifies <em>on a retail web platform</em>, which rules out the trading and crypto strategies most likely to produce a spurious pass.",
+      "status_today": "Arguably the cleanest pass/fail criterion anyone has proposed: a defined stake, a defined multiple, a defined venue, a defined horizon, and a bank balance as the scorekeeper. <strong>Not passed, and the balance is moving the wrong way.</strong>\n\nSince 10 April 2026 Andon Labs has run the nearest thing to a real attempt: an AI agent given a San Francisco storefront and a starting stake reported at $100,000, operating the business end to end. As of 27 July the bank balance stands at <strong>$62,719</strong>, and over the trailing month the store took $2,852 in revenue against $3,444 in token costs. Andon's own write-up states plainly that the store is not profitable.\n\nIn simulation the picture is better and still short: the best model on Vending-Bench 2 reaches roughly 17% of a skilled human's estimated $63,000 over a simulated year. The test is usually shortened to \"turn $100K into $1M\", but the original specifies <em>on a retail web platform</em>, which rules out the trading and crypto strategies most likely to produce a spurious pass.",
       "source_url": "https://www.technologyreview.com/2023/07/14/1076296/mustafa-suleyman-my-new-turing-test-would-see-if-ai-can-make-1-million/",
       "evidence": [
         {
-          "label": "Project Vend 2",
-          "url": "https://www.anthropic.com/research/project-vend-2"
+          "label": "Andon Market dashboard",
+          "url": "https://andonlabs.com/market"
         },
         {
-          "label": "Vending-Bench 2",
+          "label": "Vending-Bench 2 (Epoch)",
           "url": "https://epoch.ai/benchmarks/vending-bench-2"
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "Never attempted in the real economy; scored from simulated proxies",
-      "claim": "stated"
+      "verification_note": "Attempted with real money since April 2026, but the figures are the operator's own and not independently audited",
+      "claim": "stated",
+      "measured": "2026-07"
     },
     {
       "slug": "amodei-powerful-ai",
@@ -422,7 +431,7 @@
       "progress_note": "none met, three partial, of five",
       "estimated": true,
       "falsifiability": "high",
-      "confidence": "high",
+      "confidence": "medium",
       "quote": "if you (or anyone else) manages to beat at least three of them in 2029 — with a single system; three separate systems would obviously not count as general — you win; if only one or two are broken, we can't very well say we have nailed the general part in artificial general intelligence, can we?",
       "quote_source": "Gary Marcus, \"Dear Elon Musk\", 31 May 2022 (generality clause added June 2024)",
       "status_today": "<strong>This is an unaccepted offer, not a bet. No money has ever been at risk.</strong> Marcus offered $100,000 in May 2022; within a week Vivek Wadhwa and others had matched it to $500,000. Musk never responded, then or to the $1M and $10M offers that followed. Any description of this as \"Marcus's bet with Musk\" is wrong.\n\n<strong>None of the five tasks are unambiguously met by a single system</strong>, which is the bar the offer actually sets. The kitchen task is furthest away, and it is the one Marcus himself later excluded from his real wager with Miles Brundage as too dependent on robotics.",
@@ -443,22 +452,22 @@
         {
           "label": "Watch a film and say accurately what is going on",
           "state": "partial",
-          "note": "Long-context multimodal models summarise films; reliable plot-twist tracking without confabulation is unshown."
+          "note": "VideoOdyssey, on feature-length video: 56.3% for the best model against 84.4% for humans."
         },
         {
           "label": "Read a novel and answer questions beyond the literal text",
           "state": "partial",
-          "note": "The closest to met. Still below competent-adult reliability on adversarial long-book questions."
+          "note": "NoCha: 68.5% for the best model against 96.9% for humans, and no 2026 frontier model has been run on it."
         },
         {
           "label": "Work as a competent cook in an arbitrary kitchen",
           "state": "unmet",
-          "note": "No general household-capable robot. Marcus later excluded this task from his real bet as too hardware-dependent."
+          "note": "π0.7 does zero-shot multi-stage kitchen-appliance tasks in homes absent from training, but needed roughly 30 minutes of human coaching to work an air fryer. Not a cook. Marcus later excluded this task from his real bet as too hardware-dependent."
         },
         {
           "label": "Reliably construct bug-free code of more than 10,000 lines from a natural language specification, or by interacting with a non-expert user",
           "state": "unmet",
-          "note": "No demonstration at this scale. Marcus's December 2025 review called agents broadly unreliable, though not about this task specifically; markets still price it the likeliest technical task to fall by 2027."
+          "note": "No demonstration at this scale. METR's best 80%-reliability time horizon is about three hours. Markets price this task at 80%, behind novel comprehension."
         },
         {
           "label": "Convert arbitrary proofs from the mathematical literature, written in natural language, into a symbolic form suitable for verification",
@@ -466,7 +475,8 @@
           "note": "Whole-paper autoformalisation arrived in 2026: LeanMarathon formalised seven target theorems with no 'sorry' across two research papers. But those were hand-selected, and models still fail to stay faithful when a proof is paraphrased or a value changed."
         }
       ],
-      "claim": "stated"
+      "claim": "stated",
+      "measured": "2026-06"
     },
     {
       "slug": "marcus-brundage-2027",
@@ -478,16 +488,20 @@
       "stake": "$20K vs $2K at 10:1",
       "category": "bet",
       "status": "in-progress",
-      "progress": 45,
-      "progress_note": "towards 8 of 10 tasks",
+      "progress": 20,
+      "progress_note": "none met, four partial, of ten",
       "estimated": true,
       "falsifiability": "high",
       "confidence": "medium",
       "quote": "Both of us agree that the achievement of 8 out of 10 of these tasks would be strong evidence for the G (General) in Artificial General Intelligence having been achieved. For the purpose of the bet, the tasks should not be performed by 10 completely separate systems.",
       "quote_source": "Marcus & Brundage, 30 December 2024. Accepted, funded and live",
-      "status_today": "<strong>This is the real wager</strong>, and the one that should be cited instead of the Musk offers. Ten tasks, some expected of ordinary adults and some at the limits of the most proficient humans: follow an unseen film including plot twists; read new novels; write NYT-quality obituaries without hallucination; master any new video game in minutes; write legal briefs inventing no cases; 10,000 lines of bug-free code; Pulitzer-calibre books; Oscar-calibre screenplays; Nobel-calibre discoveries; and formalise arbitrary published proofs. Robotics was deliberately excluded. <strong>Marcus is heavily favoured</strong>, at 88% on Metaculus. The most informative thing about this bet is a factual dispute nobody has adjudicated: Metaculus's crowd rationale says \"six out of ten tasks likely solved already,\" while Marcus's own December 2025 audit says \"no system solved more than 4 (or maybe any).\" Markets put <strong>22.8% on the bet being annulled</strong>, because the panel of judges that decides it still does not publicly exist.",
+      "status_today": "<strong>This is the real wager</strong>, and the one that should be cited instead of the Musk offers. Ten tasks, robotics deliberately excluded, resolving 31 December 2027.\n\n<strong>None are met.</strong> Every task carrying a primary measurement sits well below its bar: films 56.3% against 84.4% for humans on feature-length video, novels 68.5% against 96.9%, mastering an unseen game 30.2% against a human 100%. The maths task is the cleanest arithmetic on this page, because footnote 3 of the bet sets it at twenty papers formalised twenty out of twenty, and the best 2026 system managed two hand-selected papers. Legal briefs carry the strongest real-world disconfirmation anywhere on this site: a database of court decisions on AI-fabricated citations records <strong>1,509 cases involving fabricated material, 703 of them filed by practising lawyers</strong>.\n\n<strong>Marcus is heavily favoured</strong>, at 88% on Metaculus. The most informative thing about the bet is a factual dispute nobody has adjudicated: the crowd rationale says \"six out of ten tasks likely solved already,\" while Marcus's own December 2025 audit says \"no system solved more than 4 (or maybe any).\" Markets put <strong>22.8% on the bet being annulled</strong>, because the panel of judges that decides it still does not publicly exist.",
       "source_url": "https://garymarcus.substack.com/p/where-will-ai-be-at-the-end-of-2027",
       "evidence": [
+        {
+          "label": "AI hallucination cases database",
+          "url": "https://www.damiencharlotin.com/hallucinations/"
+        },
         {
           "label": "Metaculus mirror",
           "url": "https://www.metaculus.com/questions/31246/2027-ai-bet-winner-between-gary-marcus-and-miles-brundage/"
@@ -499,7 +513,8 @@
       ],
       "verification": "unmeasured",
       "verification_note": "The judging panel that decides it has still not been named",
-      "claim": "stated"
+      "claim": "stated",
+      "measured": "2026-07"
     },
     {
       "slug": "kurzweil-kapor-longbet",
@@ -511,14 +526,14 @@
       "stake": "$20,000",
       "category": "bet",
       "status": "in-progress",
-      "progress": 45,
-      "progress_note": "capability advancing, protocol never run",
+      "progress": 40,
+      "progress_note": "protocol at zero, capability at a weaker proxy",
       "estimated": true,
       "falsifiability": "high",
       "confidence": "high",
       "quote": "each of the three Turing Test Judges will conduct online interviews of each of the four Turing Test Candidates for two hours each for a total of eight hours of interviews conducted by each of the three Judges (for a total of 24 hours of interviews)",
       "quote_source": "The Kurzweil–Kapor rules, agreed 2002. Requiring both a Human Determination Test and a Rank Order Test",
-      "status_today": "<strong>Unresolved and, more interestingly, never attempted.</strong> In twenty-four years no committee has been seated and not one interview has been conducted. Meanwhile the capability evidence points hard at Kurzweil: GPT-4.5 was judged human 73% of the time in the 2025 PNAS study. But that was a <em>five-minute</em> conversation with lay participants, and this wager demands 24 hours of interviews per trial across at least three trials. The most telling detail is what forecasters now worry about. Metaculus's question on a long adversarial Turing test lists as its top factor: <em>\"Big companies unlikely to run Turing test soon.\"</em> The probability of the Long Bets version passing before 2030 has fallen roughly 60 points in two years, <strong>not on capability pessimism, but on the expectation that nobody will bother to run it.</strong>",
+      "status_today": "<strong>Unresolved and never attempted.</strong> In twenty-four years no committee has been seated, no interview conducted, and the detailed rules the 2002 agreement promised that committee would write have never been written. The executable half of this criterion sits at zero.\n\nThe capability half passed a much weaker version. GPT-4.5 was judged human 73% of the time in the PNAS study, but only with a humanlike-persona prompt; without it the same model scored 36%. Those conversations ran five minutes, with a pre-registered fifteen-minute replication. This wager demands two-hour interviews from each of three judges, roughly 24 times longer, plus a rank-order test. Nothing measures that.\n\nWhat forecasters worry about is not capability. Metaculus's question on a long adversarial Turing test lists as its sole key factor: <em>\"Big companies unlikely to run Turing test soon.\"</em> The deepest market on the Long Bets version sits near even odds, well down from its peak, <strong>not on capability pessimism but on the expectation that nobody will bother to run it.</strong>",
       "source_url": "https://longbets.org/1/",
       "evidence": [
         {
@@ -532,7 +547,8 @@
       ],
       "verification": "unmeasured",
       "verification_note": "No committee seated and no interview conducted in 24 years",
-      "claim": "stated"
+      "claim": "stated",
+      "measured": "2026-05"
     },
     {
       "slug": "hassabis-einstein-test",
@@ -548,21 +564,25 @@
       "confidence": "high",
       "quote": "training an AI system with a knowledge cutoff of, say, 1911, and then seeing if it could come up with general relativity like Einstein did in 1915. That's the kind of true test of whether we have a full AGI system.",
       "quote_source": "Demis Hassabis, India AI Impact Summit, 19 February 2026",
-      "status_today": "<strong>Not met, by Hassabis's own assessment</strong>. He added in the same breath that \"it's clear today's systems couldn't do that.\" The nearest real evidence cuts both ways. In May 2026 an internal OpenAI reasoning model <em>disproved the Erdős unit distance conjecture</em>, open since 1946, a result verified by external mathematicians including Tim Gowers and Noga Alon. That is a genuine novel discovery. It is not a paradigm-shifting theory derived from a deliberately impoverished knowledge base. The test may also not be runnable: constructing a genuinely 1911-clean training corpus at frontier scale is an unsolved data-provenance problem, and the mathematical machinery Einstein used predates 1911, making \"independent discovery\" hard to adjudicate.",
-      "drift": "Hassabis is the clearest case of raising the bar while shortening the clock. His long-standing definition was \"all the cognitive capabilities humans can\", a median-human bar. DeepMind's April 2025 safety paper then anchored planning on \"Exceptional AGI\" at the 99th percentile; February 2026 added the Einstein Test; July 2026 added physical-world understanding as a necessary condition, which structurally disqualifies text-only models. Over the same period his timeline went from 5–10 years to 2–5.",
+      "status_today": "<strong>Not met, by Hassabis's own assessment</strong>. He added in the same breath that \"it's clear today's systems couldn't do that.\"\n\nThe test has been run once, far below frontier scale. In March 2026 Michael Hla trained a 3.3B-parameter model on roughly 22B tokens of pre-1900 text and prompted it with the observations behind relativity and the photoelectric effect. It produced fragments that sound right beside steam-engine nonsense, and his own verdict was pattern-matching rather than physics. A negative result three orders of magnitude below the frontier constrains very little. The corpus objection is weaker than it looks, too: TypewriterLM, released in June 2026, is a 7.24B-parameter model trained on 54B tokens with a 1913 cutoff and explicit leakage mitigation. Bounded corpora are tractable. Nobody has trained at a scale where failure would be informative.\n\nThe nearest discovery evidence cuts both ways. In May 2026 an internal OpenAI reasoning model <em>disproved the Erdős unit distance conjecture</em>, open since 1946, verified by external mathematicians including Tim Gowers and Noga Alon though not yet through journal peer review. Genuine, but a result inside an existing paradigm, not a theory derived from a deliberately impoverished knowledge base.",
+      "drift": "Hassabis is the clearest case of raising the bar while shortening the clock. His long-standing definition was \"all the cognitive capabilities humans can\", a median-human bar. DeepMind's April 2025 safety paper then anchored planning on \"Exceptional AGI\" at the 99th percentile; a December 2025 DeepMind podcast made world models and physical understanding prerequisites, which structurally disqualifies text-only models; February 2026 added the Einstein Test. Over the same period his timeline went from 5–10 years to 2–5.",
       "source_url": "https://singjupost.com/demis-hassabis-on-agi-advice-for-indian-engineers-ai-in-gaming-more-transcript/",
       "evidence": [
         {
-          "label": "Erdős conjecture disproof",
-          "url": "https://gilkalai.wordpress.com/2026/05/21/amazing-erdos-unit-distance-problem-was-disproved-it-was-achieved-by-ai/"
+          "label": "GPT-1900 experiment",
+          "url": "https://michaelhla.com/blog/machina-mirabilis.html"
         },
         {
-          "label": "DeepMind technical AGI safety",
-          "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/evaluating-potential-cybersecurity-threats-of-advanced-ai/An_Approach_to_Technical_AGI_Safety_Apr_2025.pdf"
+          "label": "TypewriterLM (1913 cutoff)",
+          "url": "https://arxiv.org/abs/2606.02991"
+        },
+        {
+          "label": "Erdős conjecture disproof",
+          "url": "https://gilkalai.wordpress.com/2026/05/21/amazing-erdos-unit-distance-problem-was-disproved-it-was-achieved-by-ai/"
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "Never run, and arguably unrunnable, a 1911-clean training corpus is an open problem",
+      "verification_note": "Run once at small scale (3.3B parameters, pre-1900 corpus, March 2026) with a negative result; never attempted at frontier scale",
       "claim": "stated"
     }
   ]
