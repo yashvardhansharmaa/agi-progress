@@ -665,7 +665,12 @@
           "note": "No system has been demonstrated on all four tests, let alone one system on all four."
         }
       ],
-      "progress": 50
+      "progress": 50,
+      "forecast": {
+        "date": "2028-09-13",
+        "forecasters": "1.8k",
+        "label": "Metaculus median, weakly general AI"
+      }
     },
     {
       "slug": "metaculus-full-agi",

@@ -87,6 +87,12 @@
 
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
+  function monthYear(iso) {
+    var p = String(iso || '').split('-');
+    var m = parseInt(p[1], 10);
+    return (m ? MONTHS[m - 1] + ' ' : '') + p[0];
+  }
+
   // A number is only as current as the run that produced it. `measured` is
   // "YYYY-MM", or "YYYY" when only the year is sourced, in which case it is
   // read as December so the age reported is the smallest one consistent with it.
@@ -129,18 +135,31 @@
 
     var unmeasured = defs.filter(function (d) { return d.verification === 'unmeasured'; }).length;
 
+    // The one crowd forecast on the page, carried on the criterion it belongs to.
+    var fc = null;
+    all.forEach(function (d) { if (d.forecast && !fc) fc = d.forecast; });
+
     var stats = [
       { v: defs.length,       l: 'Stated definitions' },
-      { v: met,               l: 'Criteria met',  accent: met > 0 },
-      { v: nearly,            l: 'Nearly met' },
+      { v: met,               l: met === 1 ? 'Criterion met' : 'Criteria met', accent: met > 0 },
       { v: mean + '%',        l: 'Mean progress', accent: true },
       { v: withDeadline,      l: 'Carry a hard deadline' },
       { v: unmeasured,        l: 'Never administered', accent: true }
     ];
 
+    if (fc) {
+      stats.splice(2, 0, {
+        v: monthYear(fc.date),
+        l: fc.label || 'Crowd forecast',
+        accent: true,
+        text: true
+      });
+    }
+
     stats.forEach(function (s) {
       var box = el('div', 'stat');
-      var v = el('span', 'stat-value' + (s.accent ? ' is-accent' : ''), String(s.v));
+      var v = el('span', 'stat-value' + (s.accent ? ' is-accent' : '') +
+        (s.text ? ' is-text' : ''), String(s.v));
       box.appendChild(v);
       box.appendChild(el('span', 'stat-label', s.l));
       host.appendChild(box);
