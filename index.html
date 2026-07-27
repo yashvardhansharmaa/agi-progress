@@ -71,6 +71,17 @@
   <p id="emptyState" class="empty" hidden>No definitions match that filter.</p>
 </main>
 
+<section class="wrap proxies" id="proxies">
+  <h2>Milestones, not finish lines</h2>
+  <p class="proxies-intro">
+    These four get cited as AGI progress constantly, and the numbers are among the most informative on this page.
+    But none of their authors claimed the threshold constitutes AGI, so they sit below the line rather than
+    counting toward the totals above. Chollet says outright that solving ARC-AGI would not mean AGI had been
+    reached; the recursive-R&amp;D triggers are safety thresholds, not definitions.
+  </p>
+  <div id="proxyCards" class="cards"></div>
+</section>
+
 <section class="wrap signals" id="signals">
   <h2>Four numbers worth holding onto</h2>
   <div class="signal-grid">
@@ -112,8 +123,10 @@
       <p>
         Where a criterion names a number, the bar is computed from that number and the arithmetic is shown.
         Where the criterion is concrete but not numeric, the score is a considered estimate, marked with a
-        striped bar so it reads differently from a measurement. Treat the low-confidence cards as prompts to go
-        read the source.
+        striped bar so it reads differently from a measurement. Each score carries the date of the run that
+        produced it, flagged in amber once it is more than six months old, because a live criterion scored
+        against a stale number is not really being tracked. Treat the low-confidence cards as prompts to go read
+        the source.
       </p>
     </div>
     <div>
@@ -121,9 +134,9 @@
       <p>
         A definition can be famous and still be unscoreable. The OpenAI Charter's &ldquo;outperforms humans at
         most economically valuable work&rdquo; has no threshold, no procedure and no deadline, so it is not here.
-        OpenAI itself is, through GDPval and the $100B clause. Also excluded: benchmarks whose authors never
-        claimed they measured AGI, predictions about consequences rather than capability, and regulatory compute
-        thresholds.
+        Excluded outright: predictions about consequences rather than capability, and regulatory compute
+        thresholds. Benchmarks whose authors never claimed they measured AGI are not excluded, but they are kept
+        below the line in <a href="#proxies">Milestones, not finish lines</a>.
       </p>
     </div>
     <div>

@@ -1,7 +1,7 @@
 {
   "meta": {
     "updated": "2026-07-26",
-    "note": "Only people and organisations that actually operationalised AGI — a stated criterion concrete enough to check. Definitions with no threshold or measurement procedure are excluded, as are capability benchmarks never framed as AGI tests."
+    "note": "Only people and organisations that actually operationalised AGI: a stated criterion concrete enough to check. Definitions with no threshold or measurement procedure are excluded. Entries marked claim=proxy are widely read as AGI progress indicators but were never framed as AGI tests by their authors; they are listed separately on the page."
   },
   "definitions": [
     {
@@ -18,7 +18,7 @@
       "confidence": "high",
       "quote": "an average interrogator will not have more than 70 per cent chance of making the right identification after five minutes of questioning",
       "quote_source": "Alan Turing, \"Computing Machinery and Intelligence\", 1950",
-      "status_today": "<strong>Passed, in 2025.</strong> Jones and Bergen ran two randomised, pre-registered three-party tests at UC San Diego: participants held simultaneous five-minute conversations with one human and one system, then judged which was which. GPT-4.5 with a humanlike-persona prompt was <strong>judged to be the human 73% of the time</strong>, selected as human significantly more often than the actual human participants. Two caveats keep this honest: the pass is prompt-dependent, and the same model without the persona prompt does not pass. The most famous test in the field fell to a system two generations behind the frontier. Turing himself never framed the 70% figure as a pass mark; it was a prediction about the year 2000.",
+      "status_today": "<strong>Passed in 2025, against a bar Turing never set.</strong> The 70% figure was his prediction for the year 2000, not a stated pass mark; the field retrofitted it into one. Scored against that retrofitted bar: Jones and Bergen ran two randomised, pre-registered three-party tests at UC San Diego, in which participants held simultaneous five-minute conversations with one human and one system, then judged which was which. GPT-4.5 with a humanlike-persona prompt was <strong>judged to be the human 73% of the time</strong>, selected as human significantly more often than the actual human participants. Two caveats keep this honest: the pass is prompt-dependent, and the same model without the persona prompt does not pass. The most famous test in the field fell to a system two generations behind the frontier.",
       "source_url": "https://arxiv.org/abs/2503.23674",
       "evidence": [
         {
@@ -27,7 +27,9 @@
         }
       ],
       "verification": "independent",
-      "verification_note": "Peer-reviewed PNAS study, pre-registered, no lab involvement"
+      "verification_note": "Peer-reviewed PNAS study, pre-registered, no lab involvement",
+      "claim": "stated",
+      "measured": "2025"
     },
     {
       "slug": "coffee-test",
@@ -56,7 +58,9 @@
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "Never attempted in an unfamiliar home; scored from METR's physical time-horizon proxy"
+      "verification_note": "Never attempted in an unfamiliar home; scored from METR's physical time-horizon proxy",
+      "claim": "stated",
+      "measured": "2026-01"
     },
     {
       "slug": "arc-agi-2-grand-prize",
@@ -83,7 +87,10 @@
         }
       ],
       "verification": "maintainer-checked",
-      "verification_note": "Adjudicated inside ARC Prize's own Kaggle competition"
+      "verification_note": "Adjudicated inside ARC Prize's own Kaggle competition",
+      "claim": "proxy",
+      "claim_note": "Chollet has said plainly that solving ARC-AGI would not mean AGI had been achieved. The prize is framed as a necessary milestone, not a finish line.",
+      "measured": "2025"
     },
     {
       "slug": "arc-agi-3",
@@ -112,7 +119,10 @@
         }
       ],
       "verification": "maintainer-checked",
-      "verification_note": "ARC Prize tested Claude Opus 5 directly, but the result is one vendor's, unreplicated"
+      "verification_note": "ARC Prize tested Claude Opus 5 directly, but the result is one vendor's, unreplicated",
+      "claim": "proxy",
+      "claim_note": "AGI-framed by name, but the ARC Prize Foundation claims it as a measure of one missing capability, not as a sufficient test for general intelligence.",
+      "measured": "2026-07"
     },
     {
       "slug": "hendrycks-agi-score",
@@ -137,7 +147,9 @@
         }
       ],
       "verification": "self-reported",
-      "verification_note": "Scored by the paper's own authors and never independently replicated; no 2026 model has been run at all"
+      "verification_note": "Scored by the paper's own authors and never independently replicated; no 2026 model has been run at all",
+      "claim": "stated",
+      "measured": "2025-12"
     },
     {
       "slug": "hutter-prize",
@@ -167,7 +179,9 @@
         }
       ],
       "verification": "maintainer-checked",
-      "verification_note": "Prize committee adjudicates every award against a byte count"
+      "verification_note": "Prize committee adjudicates every award against a byte count",
+      "claim": "stated",
+      "measured": "2024-09"
     },
     {
       "slug": "openai-microsoft-100b",
@@ -200,7 +214,9 @@
         }
       ],
       "verification": "self-reported",
-      "verification_note": "Rests on the two counterparties' own disclosures; the contract has never been public"
+      "verification_note": "Rests on the two counterparties' own disclosures; the contract has never been public",
+      "claim": "stated",
+      "measured": "2026-04"
     },
     {
       "slug": "gdpval",
@@ -233,7 +249,9 @@
         }
       ],
       "verification": "independent",
-      "verification_note": "Scored by Epoch AI and Artificial Analysis, though the benchmark is OpenAI's own"
+      "verification_note": "Scored by Epoch AI and Artificial Analysis, though the benchmark is OpenAI's own",
+      "claim": "proxy",
+      "claim_note": "OpenAI built GDPval to measure economic task performance and never claimed parity on it constitutes AGI. Reading it as an AGI threshold is this page's inference, not OpenAI's claim."
     },
     {
       "slug": "nadella-ten-percent-growth",
@@ -262,7 +280,9 @@
         }
       ],
       "verification": "independent",
-      "verification_note": "IMF and BEA national accounts"
+      "verification_note": "IMF and BEA national accounts",
+      "claim": "stated",
+      "measured": "2026-04"
     },
     {
       "slug": "suleyman-modern-turing-test",
@@ -291,7 +311,8 @@
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "Never attempted in the real economy; scored from simulated proxies"
+      "verification_note": "Never attempted in the real economy; scored from simulated proxies",
+      "claim": "stated"
     },
     {
       "slug": "amodei-powerful-ai",
@@ -348,7 +369,8 @@
           "state": "met",
           "note": "Not in doubt. GDPval measured frontier models completing expert deliverables around 100x faster."
         }
-      ]
+      ],
+      "claim": "stated"
     },
     {
       "slug": "three-lab-recursive-rd",
@@ -381,7 +403,10 @@
         }
       ],
       "verification": "self-reported",
-      "verification_note": "All three determinations are made by the labs about their own models; no regulator publishes an independent finding"
+      "verification_note": "All three determinations are made by the labs about their own models; no regulator publishes an independent finding",
+      "claim": "proxy",
+      "claim_note": "These are risk-management triggers written for safety frameworks. None of the three labs says crossing one means AGI has arrived, though all three treat it as the point where progress stops being human-paced.",
+      "measured": "2026-07"
     },
     {
       "slug": "marcus-five-tasks",
@@ -436,7 +461,8 @@
           "state": "unmet",
           "note": "Autoformalization has advanced but not on arbitrary literature papers."
         }
-      ]
+      ],
+      "claim": "stated"
     },
     {
       "slug": "marcus-brundage-2027",
@@ -468,7 +494,8 @@
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "The judging panel that decides it has still not been named"
+      "verification_note": "The judging panel that decides it has still not been named",
+      "claim": "stated"
     },
     {
       "slug": "kurzweil-kapor-longbet",
@@ -500,7 +527,8 @@
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "No committee seated and no interview conducted in 24 years"
+      "verification_note": "No committee seated and no interview conducted in 24 years",
+      "claim": "stated"
     },
     {
       "slug": "hassabis-einstein-test",
@@ -530,7 +558,8 @@
         }
       ],
       "verification": "unmeasured",
-      "verification_note": "Never run, and arguably unrunnable, a 1911-clean training corpus is an open problem"
+      "verification_note": "Never run, and arguably unrunnable, a 1911-clean training corpus is an open problem",
+      "claim": "stated"
     }
   ]
 }

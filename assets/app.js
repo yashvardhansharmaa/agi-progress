@@ -52,6 +52,11 @@
 
   var state = { data: null, category: 'all', sort: 'live-first' };
 
+  // A criterion is 'stated' when its proposer tied the threshold to AGI, and
+  // 'proxy' when the field reads it that way but the author never claimed it.
+  // The two groups render into separate sections.
+  function isStated(d) { return d.claim !== 'proxy'; }
+
   /* ---------- utilities ---------- */
 
   function el(tag, cls, text) {
@@ -80,12 +85,38 @@
 
   function statusOf(d) { return STATUS[d.status] || STATUS.early; }
 
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  // A number is only as current as the run that produced it. `measured` is
+  // "YYYY-MM", or "YYYY" when only the year is sourced, in which case it is
+  // read as December so the age reported is the smallest one consistent with it.
+  function measuredAge(d) {
+    if (!d.measured) return null;
+    var parts = String(d.measured).split('-');
+    var y = parseInt(parts[0], 10);
+    var m = parts.length > 1 ? parseInt(parts[1], 10) : 12;
+    if (!y || !m) return null;
+
+    var exact = parts.length > 1;
+    var label = exact ? MONTHS[m - 1] + ' ' + y : String(y);
+
+    var upd = (state.data && state.data.meta && state.data.meta.updated) || '';
+    var uy = parseInt(upd.slice(0, 4), 10);
+    var um = parseInt(upd.slice(5, 7), 10);
+    if (!uy || !um) return { label: label, months: 0, exact: exact };
+
+    return { label: label, months: (uy - y) * 12 + (um - m), exact: exact };
+  }
+
   /* ---------- dashboard ---------- */
 
-  function renderDashboard(defs) {
+  // Scoped to stated definitions: averaging in the proxies would report progress
+  // toward AGI thresholds that nobody actually set.
+  function renderDashboard(all) {
     var host = document.getElementById('dashboard');
     host.innerHTML = '';
 
+    var defs = all.filter(isStated);
     var scoreable = defs.filter(function (d) { return d.status !== 'unfalsifiable'; });
     var met = defs.filter(function (d) { return d.status === 'passed'; }).length;
     var nearly = defs.filter(function (d) { return d.status === 'nearly'; }).length;
@@ -99,7 +130,7 @@
     var unmeasured = defs.filter(function (d) { return d.verification === 'unmeasured'; }).length;
 
     var stats = [
-      { v: defs.length,       l: 'Criteria tracked' },
+      { v: defs.length,       l: 'Stated definitions' },
       { v: met,               l: 'Criteria met',  accent: met > 0 },
       { v: nearly,            l: 'Nearly met' },
       { v: mean + '%',        l: 'Mean progress', accent: true },
@@ -187,6 +218,20 @@
     bar.appendChild(fill);
     card.appendChild(bar);
 
+    // A resolved or void criterion cannot go stale; a live one can.
+    var age = measuredAge(d);
+    if (age) {
+      var live = d.status !== 'passed' && d.status !== 'unfalsifiable';
+      var stale = live && age.months > 6;
+      var m = el('p', 'measured' + (stale ? ' is-stale' : ''));
+      m.appendChild(document.createTextNode('measured ' + age.label));
+      if (stale) {
+        m.appendChild(el('span', 'age',
+          ' · ' + (age.exact ? '' : 'at least ') + age.months + ' months old'));
+      }
+      card.appendChild(m);
+    }
+
     // chips
     var chips = el('div', 'chips');
     var sChip = el('span', 'chip chip-status s-' + st.cls, st.label);
@@ -205,6 +250,16 @@
       chips.appendChild(vChip);
     }
     card.appendChild(chips);
+
+    // why this one sits below the line
+    if (d.claim === 'proxy' && d.claim_note) {
+      var cn = el('div', 'claim-note');
+      cn.appendChild(el('b', null, 'Not framed as an AGI test'));
+      var cnt = el('span');
+      cnt.innerHTML = prose(d.claim_note);
+      cn.appendChild(cnt);
+      card.appendChild(cn);
+    }
 
     // quote
     if (d.quote) {
@@ -307,22 +362,34 @@
     return out;
   }
 
-  function renderCards() {
-    var host = document.getElementById('cards');
-    var empty = document.getElementById('emptyState');
+  function fill(host, list) {
     host.innerHTML = '';
+    sortDefs(list).forEach(function (d) { host.appendChild(buildCard(d)); });
+  }
+
+  function renderCards() {
+    var empty = document.getElementById('emptyState');
+    var proxySection = document.getElementById('proxies');
 
     var list = state.data.definitions.filter(function (d) {
       return state.category === 'all' || d.category === state.category;
     });
 
-    list = sortDefs(list);
+    var stated = list.filter(isStated);
+    var proxies = list.filter(function (d) { return !isStated(d); });
+
+    fill(document.getElementById('cards'), stated);
+    fill(document.getElementById('proxyCards'), proxies);
+
+    // Each section disappears rather than sitting empty under a heading.
     empty.hidden = list.length > 0;
-    list.forEach(function (d) { host.appendChild(buildCard(d)); });
+    document.getElementById('cards').hidden = stated.length === 0;
+    proxySection.hidden = proxies.length === 0;
 
     var count = document.getElementById('resultCount');
     if (count) {
-      count.textContent = list.length + ' criteria shown' +
+      count.textContent = stated.length + ' stated definitions and ' + proxies.length +
+        ' proxies shown' +
         (state.category === 'all' ? '' : ' in ' + (CATEGORIES[state.category] || state.category));
     }
   }
@@ -396,7 +463,7 @@
     }
 
     var nUnmeasured = data.definitions.filter(function (x) {
-      return x.verification === 'unmeasured';
+      return isStated(x) && x.verification === 'unmeasured';
     }).length;
     var nEl = document.getElementById('unmeasuredCount');
     if (nEl) nEl.textContent = NUMBER_WORD[nUnmeasured] || String(nUnmeasured);

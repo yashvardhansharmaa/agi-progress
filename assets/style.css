@@ -339,6 +339,17 @@ code { font-family: var(--mono); font-size: 0.9em; }
   border-radius: 3px;
   transition: width .5s cubic-bezier(.2,.7,.3,1);
 }
+
+/* when the number was last established; absent when nothing dated produced it */
+.measured {
+  margin: -12px 0 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+}
+.measured.is-stale { color: var(--near); }
+.measured .age { opacity: .85; }
 .bar-fill.striped {
   background-image: repeating-linear-gradient(
     45deg, transparent, transparent 4px,
@@ -507,6 +518,51 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .card-foot a { color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
 .card-foot a:hover { color: var(--accent); border-color: var(--accent); }
 .card-foot .conf { margin-left: auto; color: var(--ink-faint); white-space: nowrap; }
+
+/* ---------- proxies: cited as AGI progress, never claimed as AGI tests ---------- */
+
+.proxies {
+  border-top: 1px solid var(--line);
+  margin-top: 48px;
+  padding-top: 44px;
+}
+.proxies h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 3.6vw, 31px);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  color: var(--ink-dim);
+}
+.proxies-intro {
+  max-width: 62ch;
+  margin: 0 0 30px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-faint);
+}
+
+/* per-card reason, mirrors .drift */
+.claim-note {
+  background: var(--bg-sunken);
+  border-left: 2px solid var(--unfals);
+  border-radius: 0 7px 7px 0;
+  padding: 11px 14px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+.claim-note b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--unfals);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
 
 /* ---------- signals ---------- */
 
