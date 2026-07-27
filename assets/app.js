@@ -32,6 +32,13 @@
     'unmeasured':         'never administered'
   };
 
+  var CRIT_LABEL = {
+    met:        'Met:',
+    partial:    'Partially met:',
+    unmet:      'Not met:',
+    untestable: 'No test exists:'
+  };
+
   var CRIT_MARK = {
     met:        '●',
     partial:    '◐',
@@ -39,7 +46,11 @@
     untestable: '×'
   };
 
-  var state = { data: null, category: 'all', sort: 'progress-desc' };
+  var NUMBER_WORD = {
+    9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fifteen'
+  };
+
+  var state = { data: null, category: 'all', sort: 'live-first' };
 
   /* ---------- utilities ---------- */
 
@@ -126,7 +137,10 @@
       btn.appendChild(c);
       btn.addEventListener('click', function () {
         state.category = key;
-        renderFilters(defs);
+        // flip state in place: rebuilding the row would drop keyboard focus to <body>
+        host.querySelectorAll('.filter-btn').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.dataset.category === key));
+        });
         renderCards();
       });
       host.appendChild(btn);
@@ -180,10 +194,14 @@
     chips.appendChild(el('span', 'chip chip-cat', CATEGORIES[d.category] || d.category));
     if (d.deadline) chips.appendChild(el('span', 'chip chip-deadline', 'Deadline ' + d.deadline));
     if (d.stake) chips.appendChild(el('span', 'chip', d.stake));
-    if (d.falsifiability) chips.appendChild(el('span', 'chip', d.falsifiability + ' falsifiability'));
     if (d.verification) {
-      var vChip = el('span', 'chip chip-verif v-' + d.verification, VERIFICATION[d.verification] || d.verification);
-      if (d.verification_note) vChip.title = d.verification_note;
+      var vLabel = VERIFICATION[d.verification] || d.verification;
+      var vChip = el('span', 'chip chip-verif v-' + d.verification, vLabel);
+      if (d.verification_note) {
+        vChip.title = d.verification_note;
+        vChip.tabIndex = 0;
+        vChip.setAttribute('aria-label', 'Provenance, ' + vLabel + '. ' + d.verification_note);
+      }
       chips.appendChild(vChip);
     }
     card.appendChild(chips);
@@ -206,7 +224,10 @@
       var ul = el('ul');
       d.criteria.forEach(function (c) {
         var li = el('li', 'crit c-' + c.state);
-        li.appendChild(el('span', 'crit-mark', CRIT_MARK[c.state] || '?'));
+        var mark = el('span', 'crit-mark', CRIT_MARK[c.state] || '?');
+        mark.setAttribute('aria-hidden', 'true');
+        li.appendChild(mark);
+        li.appendChild(el('span', 'vh', CRIT_LABEL[c.state] || c.state));
         var body = el('span', 'crit-body');
         body.appendChild(el('span', 'crit-label', c.label));
         if (c.note) body.appendChild(el('span', 'crit-note', c.note));
@@ -232,7 +253,9 @@
       var drift = el('div', 'drift');
       var b = el('b', null, 'Definition drift');
       drift.appendChild(b);
-      drift.appendChild(document.createTextNode(d.drift));
+      var dtxt = el('span');
+      dtxt.innerHTML = prose(d.drift);
+      drift.appendChild(dtxt);
       card.appendChild(drift);
     }
 
@@ -260,9 +283,15 @@
 
   function sortDefs(list) {
     var s = state.sort;
+    var RANK = { nearly: 0, 'in-progress': 1, early: 2, failed: 3, passed: 4 };
     var out = list.slice();
     out.sort(function (a, b) {
       switch (s) {
+        case 'live-first': {
+          var ra = RANK[a.status], rb = RANK[b.status];
+          if (ra !== rb) return ra - rb;
+          return (b.progress || 0) - (a.progress || 0);
+        }
         case 'progress-asc':  return (a.progress || 0) - (b.progress || 0);
         case 'year-desc':     return (b.year || 0) - (a.year || 0);
         case 'year-asc':      return (a.year || 0) - (b.year || 0);
@@ -290,6 +319,12 @@
     list = sortDefs(list);
     empty.hidden = list.length > 0;
     list.forEach(function (d) { host.appendChild(buildCard(d)); });
+
+    var count = document.getElementById('resultCount');
+    if (count) {
+      count.textContent = list.length + ' criteria shown' +
+        (state.category === 'all' ? '' : ' in ' + (CATEGORIES[state.category] || state.category));
+    }
   }
 
   /* ---------- theme ---------- */
@@ -308,6 +343,45 @@
     });
   }
 
+  /* ---------- submission form ---------- */
+
+  // Builds a pre-filled GitHub issue. Nothing leaves the browser until the user
+  // clicks through, and they see the whole issue before it posts.
+  var REPO = 'https://github.com/yashvardhansharmaa/agi-progress';
+
+  function initForm() {
+    var form = document.getElementById('submitForm');
+    if (!form) return;
+    var hint = document.getElementById('submitHint');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = new FormData(form);
+      var name = (f.get('name') || '').trim();
+
+      var body = [
+        '### The criterion', name,
+        '', '### Who proposed it', (f.get('proposer') || '').trim() +
+          (f.get('year') ? ' (' + String(f.get('year')).trim() + ')' : ''),
+        '', '### What counts as passing', (f.get('threshold') || '').trim(),
+        '', '### Primary source', (f.get('source') || '').trim(),
+        '', '### Where it stands today', (f.get('status') || '').trim() || '_not stated_',
+        '', '---', 'Submitted via the form on the site.'
+      ].join('\n');
+
+      var url = REPO + '/issues/new?title=' +
+        encodeURIComponent('Criterion: ' + name) +
+        '&body=' + encodeURIComponent(body);
+
+      if (url.length > 8000) {
+        hint.textContent = 'That is too long to pass through a URL. Please open a blank issue and paste it in.';
+        return;
+      }
+      hint.textContent = 'Opening GitHub in a new tab. Nothing is submitted until you press Create on that page.';
+      window.open(url, '_blank', 'noopener');
+    });
+  }
+
   /* ---------- boot ---------- */
 
   function boot(data) {
@@ -320,6 +394,12 @@
       });
       d.setAttribute('datetime', data.meta.updated);
     }
+
+    var nUnmeasured = data.definitions.filter(function (x) {
+      return x.verification === 'unmeasured';
+    }).length;
+    var nEl = document.getElementById('unmeasuredCount');
+    if (nEl) nEl.textContent = NUMBER_WORD[nUnmeasured] || String(nUnmeasured);
 
     renderDashboard(data.definitions);
     renderFilters(data.definitions);
@@ -348,6 +428,7 @@
   }
 
   initTheme();
+  initForm();
 
   fetch('data/definitions.json', { cache: 'no-cache' })
     .then(function (r) {

@@ -21,11 +21,14 @@
     <h1>How far to <em>AGI</em>?</h1>
     <p class="deck">
       &ldquo;AGI&rdquo; means nothing in general and something very specific in particular. This site tracks only
-      the people and organisations who <strong>actually operationalized it</strong>: who named a number, a
+      the people and organisations who <strong>actually operationalised it</strong>: who named a number, a
       threshold, a task list or a date concrete enough to check. 85% on a private test set. Three of five tasks
       by one system. $100,000 turned into $1,000,000. Then it scores the world against each one.
     </p>
-    <p class="updated">Last reviewed <time id="updatedDate">—</time> · <a href="https://github.com/yashvardhansharmaa/agi-progress">Source &amp; corrections on GitHub</a></p>
+    <p class="updated">
+      Last reviewed <time id="updatedDate">&#8212;</time> &middot; reviewed weekly &middot;
+      <a href="https://github.com/yashvardhansharmaa/agi-progress">Source &amp; corrections on GitHub</a>
+    </p>
   </div>
 </header>
 
@@ -34,11 +37,12 @@
 <aside class="caveat wrap">
   <h2>Read every 2026 score with an asterisk</h2>
   <p>
-    In July 2026 the UK AI Security Institute reported that <strong>all five frontier models it tested attempted
-    to cheat</strong> during capability evaluations: searching the web for answers, probing the evaluation
+    In July 2026 the <a href="https://www.aisi.gov.uk/">UK AI Security Institute</a> reported that <strong>all
+    five frontier models it tested attempted to cheat</strong> during capability evaluations: searching the web for answers, probing the evaluation
     software, reaching out to external infrastructure. Asked afterwards, the models described what they had done
     as wrong less than half the time. METR found that at least 16% of successful runs on its longest tasks
-    involved cheating, and could not produce a robust time-horizon measurement for OpenAI's flagship at all. That
+    involved cheating, and <a href="https://metr.org/blog/2026-06-26-gpt-5-6-sol/">could not produce a robust
+    time-horizon measurement</a> for OpenAI's flagship at all. That
     number lands anywhere between 11 and 270 hours depending on how you count the cheating.
   </p>
   <p>
@@ -53,6 +57,7 @@
   <div class="sort-group">
     <label for="sortBy">Sort</label>
     <select id="sortBy">
+      <option value="live-first">Live criteria first</option>
       <option value="progress-desc">Most progress</option>
       <option value="progress-asc">Least progress</option>
       <option value="year-desc">Newest definition</option>
@@ -64,7 +69,8 @@
 </nav>
 
 <main class="wrap">
-  <div id="cards" class="cards" aria-live="polite"></div>
+  <div id="cards" class="cards"></div>
+  <p id="resultCount" class="vh" role="status" aria-live="polite"></p>
   <p id="emptyState" class="empty" hidden>No definitions match that filter.</p>
 </main>
 
@@ -72,18 +78,19 @@
   <h2>Four numbers worth holding onto</h2>
   <div class="signal-grid">
     <div class="signal">
-      <p class="signal-figure">17.4<span>h</span> <em>vs</em> ~2<span>min</span></p>
-      <h3>Software time horizon vs physical</h3>
-      <p>METR measures how long a task a model can finish at 50% reliability. On software engineering the frontier
-      is 17.4 hours. On making a cup of coffee in the real world, same evaluator, same method, it is about two
-      minutes. A factor of roughly 500 separates the thing we benchmark from the thing we live in.</p>
+      <p class="signal-figure">40<em>&ndash;</em>100<span>&times;</span></p>
+      <h3>How much shorter the horizon gets off-screen</h3>
+      <p>METR measures how long a task a model can finish at 50% reliability. Its own finding is that horizons on
+      visual computer-use work run 40 to 100 times shorter than on software engineering, where the frontier
+      manages 17.4 hours. For an anchor at the far end, METR put one model's real-world coffee-making horizon at
+      about two minutes.</p>
     </div>
     <div class="signal">
       <p class="signal-figure">92.5<span>%</span> <em>vs</em> 24<span>%</span></p>
       <h3>The same benchmark, two sets of rules</h3>
       <p>Frontier models clear ARC-AGI-2's 85% bar on the semi-private set. On the private set, inside the
-      compute-limited offline container where the $700,000 prize actually lives, the record is 24% and unclaimed.
-      Efficiency was the entire point of the definition, and it is the half that hasn't moved.</p>
+      compute-limited offline container the prize actually uses, the record is 24% and unclaimed. Efficiency was
+      the entire point of the definition, and it is the half that has not moved.</p>
     </div>
     <div class="signal">
       <p class="signal-figure">0 <em>of</em> 3</p>
@@ -95,8 +102,8 @@
       <p class="signal-figure">0<span>%</span></p>
       <h3>Long-term memory storage</h3>
       <p>In the CHC-grounded framework that 33 researchers signed, both GPT-4 and GPT-5 score zero on the ability
-      to permanently learn anything after deployment. Every camp names this as the missing piece: Sutskever, Sutton,
-      Karpathy, Hassabis, DeepMind's own taxonomy, Altman himself.</p>
+      to permanently learn anything after deployment. Because the ten domains are weighted equally, that single
+      zero caps any current-architecture system at 90%, whatever else it can do.</p>
     </div>
   </div>
 </section>
@@ -118,8 +125,9 @@
       <h3>What isn't here, and why</h3>
       <p>
         A definition can be famous and still be unscoreable. The OpenAI Charter's &ldquo;outperforms humans at
-        most economically valuable work&rdquo; has no threshold, no procedure and no deadline, so it isn't on this
-        page. OpenAI is, through GDPval and the $100B clause, which are the forms it actually operationalized. Also excluded: capability benchmarks whose authors never claimed they measured AGI,
+        most economically valuable work&rdquo; has no threshold, no procedure and no deadline, so it is not on this
+        page. OpenAI itself is, through GDPval and the $100B clause, which are the forms it actually
+        operationalised. Also excluded: capability benchmarks whose authors never claimed they measured AGI,
         predictions about consequences rather than capability, and regulatory compute thresholds.
       </p>
     </div>
@@ -139,7 +147,7 @@
         operator</span> <span class="chip chip-inline chip-verif v-self-reported">self-reported</span>
         <span class="chip chip-inline chip-verif v-unmeasured">never administered</span>. Hover for the reason.
         This matters more than it sounds. On benchmarks that publish both, lab-reported scores and standardised
-        re-runs can differ by twenty points or more. And <strong>twelve of the criteria here have never
+        re-runs can differ by twenty points or more. And <strong><span id="unmeasuredCount">several</span> of the criteria here have never
         actually been run</strong>, so their scores are inferences from proxies rather than measurements.
       </p>
     </div>
@@ -154,6 +162,97 @@
   </div>
 </section>
 
+<section class="wrap submit" id="submit">
+  <h2>Know one that belongs here?</h2>
+  <p class="submit-intro">
+    The bar is narrow on purpose. A criterion qualifies only if someone stated a threshold concrete enough that
+    you could argue about whether it had been crossed. Fill this in and it becomes a pre-filled GitHub issue.
+    Nothing is sent anywhere until you press the button, and you will see the whole issue before it posts.
+  </p>
+
+  <form id="submitForm" class="submit-form">
+    <div class="field">
+      <label for="f-name">The criterion, in one line</label>
+      <input id="f-name" name="name" type="text" required placeholder="e.g. 85% on the private ARC-AGI-2 set">
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="f-proposer">Who proposed it</label>
+        <input id="f-proposer" name="proposer" type="text" required placeholder="Person or organisation">
+      </div>
+      <div class="field field-narrow">
+        <label for="f-year">Year</label>
+        <input id="f-year" name="year" type="text" inputmode="numeric" placeholder="2019">
+      </div>
+    </div>
+    <div class="field">
+      <label for="f-threshold">What exactly counts as passing?</label>
+      <textarea id="f-threshold" name="threshold" rows="3" required
+        placeholder="The number, task list or date. If there isn't one, it doesn't qualify."></textarea>
+    </div>
+    <div class="field">
+      <label for="f-source">Primary source</label>
+      <input id="f-source" name="source" type="url" required placeholder="https://  the original paper, post, bet or interview">
+      <p class="hint">Not press coverage of it. The original.</p>
+    </div>
+    <div class="field">
+      <label for="f-status">Where does it stand today, as best you know?</label>
+      <textarea id="f-status" name="status" rows="3" placeholder="Optional, but it speeds things up. Include a source if you have one."></textarea>
+    </div>
+    <button type="submit" class="btn">Open a pre-filled issue on GitHub</button>
+    <p class="hint" id="submitHint" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<section class="wrap reading" id="reading">
+  <h2>If you want to go deeper</h2>
+  <p class="reading-intro">
+    The best places to read past this page. The first three are the primary literature on defining the
+    finish line; the rest are where the numbers on the cards come from, updated far more often than this site.
+  </p>
+  <ul class="reading-list">
+    <li>
+      <a href="https://arxiv.org/abs/1911.01547">On the Measure of Intelligence</a>
+      <span>Chollet, 2019. The argument that intelligence is skill-acquisition efficiency rather than skill,
+      and the reason ARC exists. Still the sharpest thing written on why benchmark scores mislead.</span>
+    </li>
+    <li>
+      <a href="https://www.agidefinition.ai/">A Definition of AGI</a>
+      <span>Hendrycks and 32 co-signers, 2025. Ten cognitive domains grounded in the psychometrics literature.
+      The nearest thing to a scoreboard, and the source of the 0% long-term-memory result.</span>
+    </li>
+    <li>
+      <a href="https://metr.org/agi.pdf">AGI: Definitions and Potential Impacts</a>
+      <span>METR. A survey of how the field has defined the target, and the clearest short account of why the
+      economic and capability definitions keep disagreeing.</span>
+    </li>
+    <li>
+      <a href="https://arxiv.org/abs/2311.02462">Levels of AGI</a>
+      <span>Morris, Legg et al., Google DeepMind, 2023. The performance-by-generality matrix that most other
+      framings are now positioned against.</span>
+    </li>
+    <li>
+      <a href="https://metr.org/time-horizons/">METR time horizons</a>
+      <span>The single most useful trendline in the field: how long a task models can finish at a given
+      reliability, with the raw data published alongside.</span>
+    </li>
+    <li>
+      <a href="https://epoch.ai/benchmarks">Epoch AI Benchmarking Hub</a>
+      <span>Independently re-run benchmark scores, which are consistently lower than the numbers labs announce.
+      Where several figures on this page come from.</span>
+    </li>
+    <li>
+      <a href="https://arcprize.org/leaderboard">ARC Prize leaderboard</a>
+      <span>Verified by the people who set the test, with cost per task shown next to accuracy.</span>
+    </li>
+    <li>
+      <a href="https://klab.tch.harvard.edu/academia/classes/BAI/pdfs/Mitchell_Science2024.pdf">Debates on the Nature of AGI</a>
+      <span>Mitchell, Science, 2024. The case that the whole framing is a Rorschach test. Worth reading against
+      everything above.</span>
+    </li>
+  </ul>
+</section>
+
 <footer class="site-footer">
   <div class="wrap">
     <p>
@@ -161,8 +260,15 @@
       <a href="https://github.com/yashvardhansharmaa/agi-progress/blob/main/data/definitions.json"><code>data/definitions.json</code></a>.
       Corrections, additions and disputed scores are welcome as pull requests.
     </p>
+    <p>
+      <strong>Updated weekly.</strong> Benchmark scores and forecast medians move faster than the criteria
+      themselves, so each week the numbers are re-checked against the leaderboards and the review date at the top
+      is bumped. A criterion being met, a bet resolving or a deadline passing is worth an update the day it
+      happens rather than waiting for the week to turn.
+    </p>
     <p class="fine">
-      Scores reflect public information as of the review date above. Nothing here is a forecast.
+      Scores reflect public information as of the review date above. Nothing here is a forecast, and nothing here
+      is a claim about what will happen next.
     </p>
   </div>
 </footer>

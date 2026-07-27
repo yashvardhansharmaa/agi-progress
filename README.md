@@ -9,8 +9,13 @@ bet. This repo collects those, links each to a primary source, and scores the wo
 
 ## What counts for inclusion
 
-One rule: **the proposer has to have operationalized it** — named a criterion concrete enough to
-check. A definition alone is not enough.
+Two rules, both narrow on purpose:
+
+1. **The proposer has to have operationalised it** — named a threshold, task list, number or date
+   concrete enough that you could argue about whether it had been crossed. A definition alone is not
+   enough.
+2. **It has to be one people actually cite.** This is deliberately a short list of well-known
+   criteria rather than an exhaustive catalogue. Sixteen good ones beat fifty mediocre ones.
 
 Deliberately excluded:
 
@@ -23,6 +28,18 @@ Deliberately excluded:
 - Predictions about consequences rather than capability (job-loss forecasts, growth-regime models).
 - Regulatory compute proxies (the EU AI Act's 10^25 FLOP threshold).
 - Critiques about the state of the definitions, rather than definitions.
+- Frameworks whose own authors never published a way to score them (DeepMind's Levels of AGI and its
+  ten-faculty taxonomy, Legg's adversarial protocol), and criteria that specify a measure but no pass
+  mark (Nilsson's employment test).
+
+## Update cadence
+
+**Reviewed weekly.** The criteria barely move; the numbers scored against them move constantly, so
+each week the figures are re-checked against the leaderboards and the review date is bumped. A
+criterion being met, a bet resolving or a deadline passing gets an update the day it happens.
+
+Most figures can be rebuilt from machine-readable sources: `arcprize.org/media/data/leaderboard/*.json`,
+`metr.org/assets/benchmark_results_1_1.yaml`, and Epoch AI's `benchmark_data.zip` (CC-BY).
 
 **Live site:** https://yashvardhansharmaa.github.io/agi-progress/
 
