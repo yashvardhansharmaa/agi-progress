@@ -140,7 +140,8 @@ code { font-family: var(--mono); font-size: 0.9em; }
 
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  /* five tracks, three stats and a double-width forecast */
+  grid-template-columns: repeat(5, 1fr);
   gap: 1px;
   background: var(--line-soft);
   border: 1px solid var(--line-soft);
@@ -163,8 +164,25 @@ code { font-family: var(--mono); font-size: 0.9em; }
   display: block;
 }
 .stat-value.is-accent { color: var(--accent); }
-/* a date needs more room per character than a two-digit count */
-.stat-value.is-text { font-size: clamp(19px, 2.3vw, 25px); letter-spacing: 0; }
+
+/* the forecast gets two tracks, since a date needs far more room per
+   character than a two-digit count and it is the headline figure */
+.stat-wide { grid-column: span 2; }
+/* lower floor than the counts: eight characters at the shared 26px minimum
+   just misses on a 375px screen */
+.stat-wide .stat-value {
+  font-size: clamp(20px, 3.4vw, 34px);
+  letter-spacing: -0.01em;
+}
+.stat-sub {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+  opacity: .85;
+}
 .stat-label {
   font-size: 11.5px;
   letter-spacing: .07em;
@@ -778,12 +796,12 @@ button.chip-verif[aria-expanded="true"]::after { content: ' ⌃'; }
 
 /* ---------- responsive ---------- */
 
+/* Two columns and no span below 900px: four stats then fill two rows exactly.
+   A 2-track span inside an odd column count leaves an empty cell, which reads
+   as a hole because the grid gaps show the darker background through. */
 @media (max-width: 900px) {
-  .dashboard { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 520px) {
   .dashboard { grid-template-columns: repeat(2, 1fr); }
+  .stat-wide { grid-column: span 1; }
 }
 
 @media (max-width: 720px) {

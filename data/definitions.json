@@ -669,6 +669,7 @@
       "forecast": {
         "date": "2028-09-13",
         "forecasters": "1.8k",
+        "as_of": "2026-07-27",
         "label": "Metaculus median, weakly general AI"
       }
     },

@@ -140,28 +140,27 @@
     all.forEach(function (d) { if (d.forecast && !fc) fc = d.forecast; });
 
     var stats = [
-      { v: defs.length,       l: 'Stated definitions' },
-      { v: met,               l: met === 1 ? 'Criterion met' : 'Criteria met', accent: met > 0 },
-      { v: mean + '%',        l: 'Mean progress', accent: true },
-      { v: withDeadline,      l: 'Carry a hard deadline' },
-      { v: unmeasured,        l: 'Never administered', accent: true }
+      { v: defs.length, l: 'Stated definitions' },
+      { v: met,         l: met === 1 ? 'Criterion met' : 'Criteria met', accent: met > 0 },
+      { v: mean + '%',  l: 'Mean progress', accent: true }
     ];
 
     if (fc) {
       stats.splice(2, 0, {
         v: monthYear(fc.date),
         l: fc.label || 'Crowd forecast',
+        sub: [fc.forecasters ? fc.forecasters + ' forecasts' : null,
+              fc.as_of ? 'read ' + monthYear(fc.as_of) : null].filter(Boolean).join(' · '),
         accent: true,
-        text: true
+        wide: true
       });
     }
 
     stats.forEach(function (s) {
-      var box = el('div', 'stat');
-      var v = el('span', 'stat-value' + (s.accent ? ' is-accent' : '') +
-        (s.text ? ' is-text' : ''), String(s.v));
-      box.appendChild(v);
+      var box = el('div', 'stat' + (s.wide ? ' stat-wide' : ''));
+      box.appendChild(el('span', 'stat-value' + (s.accent ? ' is-accent' : ''), String(s.v)));
       box.appendChild(el('span', 'stat-label', s.l));
+      if (s.sub) box.appendChild(el('span', 'stat-sub', s.sub));
       host.appendChild(box);
     });
   }

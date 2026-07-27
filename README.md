@@ -41,6 +41,21 @@ criterion being met, a bet resolving or a deadline passing gets an update the da
 Most figures can be rebuilt from machine-readable sources: `arcprize.org/media/data/leaderboard/*.json`,
 `metr.org/assets/benchmark_results_1_1.yaml`, and Epoch AI's `benchmark_data.zip` (CC-BY).
 
+### The dashboard forecast
+
+The headline date comes from the `forecast` block on whichever criterion declares one, currently
+`metaculus-weakly-general`. It moves faster than anything else on the page and needs re-reading every
+week:
+
+```json
+"forecast": { "date": "2028-09-13", "forecasters": "1.8k", "as_of": "2026-07-27", "label": "..." }
+```
+
+Bump `date` and `as_of` together, so a stale figure is visible rather than silent. **This one cannot be
+scripted.** Metaculus returns 403 to plain fetchers and to both API endpoints, and the community
+estimate renders client-side behind the question's "Question Info" tab, so the Wayback snapshots do not
+contain it either. Open the question in a browser and read the value off the page.
+
 **Live site:** https://yashvardhansharmaa.github.io/agi-progress/
 
 ## How it's built
