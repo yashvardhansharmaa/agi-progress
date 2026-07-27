@@ -405,8 +405,7 @@ button.chip-verif[aria-expanded="true"]::after { content: ' ⌃'; }
 .chip-inline { display: inline-block; vertical-align: baseline; text-transform: none; }
 .chip-deadline { color: var(--accent); border-color: var(--accent-soft); }
 
-/* provenance of the score — cursor:help signals the title tooltip */
-.chip-verif { cursor: help; }
+/* provenance of the score; the chip is a disclosure button where a note exists */
 .chip-verif::before { content: "◆"; margin-right: 5px; opacity: .75; }
 .v-independent        { color: var(--pass);   border-color: currentColor; }
 .v-maintainer-checked { color: var(--ink-dim); border-color: var(--line); }
@@ -619,54 +618,6 @@ button.chip-verif[aria-expanded="true"]::after { content: ' ⌃'; }
   color: var(--unfals);
   margin-bottom: 5px;
   font-weight: 600;
-}
-
-/* ---------- signals ---------- */
-
-.signals {
-  border-top: 1px solid var(--line);
-  padding-top: 48px;
-  padding-bottom: 8px;
-}
-.signals h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(26px, 4vw, 34px);
-  letter-spacing: -0.02em;
-  margin: 0 0 34px;
-}
-.signal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 34px 30px;
-}
-.signal-figure {
-  font-family: var(--mono);
-  font-size: clamp(26px, 3.2vw, 33px);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  margin: 0 0 12px;
-}
-.signal-figure span { font-size: .55em; letter-spacing: 0; }
-.signal-figure em {
-  font-style: normal;
-  font-family: var(--serif);
-  font-size: .6em;
-  color: var(--ink-faint);
-  padding: 0 3px;
-}
-.signal h3 {
-  font-size: 14.5px;
-  font-weight: 600;
-  margin: 0 0 8px;
-  color: var(--ink);
-}
-.signal p:last-child {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.62;
-  color: var(--ink-dim);
 }
 
 /* ---------- methodology ---------- */
