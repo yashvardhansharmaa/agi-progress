@@ -418,8 +418,8 @@
       "stake": "$500K offered, never accepted",
       "category": "bet",
       "status": "early",
-      "progress": 20,
-      "progress_note": "none met, two partial, of five",
+      "progress": 30,
+      "progress_note": "none met, three partial, of five",
       "estimated": true,
       "falsifiability": "high",
       "confidence": "high",
@@ -428,6 +428,10 @@
       "status_today": "<strong>This is an unaccepted offer, not a bet. No money has ever been at risk.</strong> Marcus offered $100,000 in May 2022; within a week Vivek Wadhwa and others had matched it to $500,000. Musk never responded, then or to the $1M and $10M offers that followed. Any description of this as \"Marcus's bet with Musk\" is wrong.\n\n<strong>None of the five tasks are unambiguously met by a single system</strong>, which is the bar the offer actually sets. The kitchen task is furthest away, and it is the one Marcus himself later excluded from his real wager with Miles Brundage as too dependent on robotics.",
       "source_url": "https://garymarcus.substack.com/p/dear-elon-musk-here-are-five-things",
       "evidence": [
+        {
+          "label": "LeanMarathon",
+          "url": "https://arxiv.org/abs/2606.05400"
+        },
         {
           "label": "Per-task market prices",
           "url": "https://manifold.markets/LovkushAgarwal/possible-outcomes-of-the-bet-on-ai"
@@ -452,14 +456,14 @@
           "note": "No general household-capable robot. Marcus later excluded this task from his real bet as too hardware-dependent."
         },
         {
-          "label": "Write bug-free code of more than 10,000 lines from a specification",
+          "label": "Reliably construct bug-free code of more than 10,000 lines from a natural language specification, or by interacting with a non-expert user",
           "state": "unmet",
-          "note": "Marcus's December 2025 audit: 'agents didn't turn out to be reliable'."
+          "note": "No demonstration at this scale. Marcus's December 2025 review called agents broadly unreliable, though not about this task specifically; markets still price it the likeliest technical task to fall by 2027."
         },
         {
-          "label": "Convert arbitrary published proofs into symbolic form",
-          "state": "unmet",
-          "note": "Autoformalization has advanced but not on arbitrary literature papers."
+          "label": "Convert arbitrary proofs from the mathematical literature, written in natural language, into a symbolic form suitable for verification",
+          "state": "partial",
+          "note": "Whole-paper autoformalisation arrived in 2026: LeanMarathon formalised seven target theorems with no 'sorry' across two research papers. But those were hand-selected, and models still fail to stay faithful when a proof is paraphrased or a value changed."
         }
       ],
       "claim": "stated"
