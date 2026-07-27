@@ -32,6 +32,13 @@
     'unmeasured':         'never administered'
   };
 
+  var CRIT_MARK = {
+    met:        '●',
+    partial:    '◐',
+    unmet:      '○',
+    untestable: '×'
+  };
+
   var state = { data: null, category: 'all', sort: 'progress-desc' };
 
   /* ---------- utilities ---------- */
@@ -192,12 +199,32 @@
       card.appendChild(q);
     }
 
+    // sub-criteria checklist, for criteria stated as a conjunction of parts
+    if (d.criteria && d.criteria.length) {
+      var cl = el('div', 'criteria');
+      cl.appendChild(el('h4', null, 'Property by property'));
+      var ul = el('ul');
+      d.criteria.forEach(function (c) {
+        var li = el('li', 'crit c-' + c.state);
+        li.appendChild(el('span', 'crit-mark', CRIT_MARK[c.state] || '?'));
+        var body = el('span', 'crit-body');
+        body.appendChild(el('span', 'crit-label', c.label));
+        if (c.note) body.appendChild(el('span', 'crit-note', c.note));
+        li.appendChild(body);
+        ul.appendChild(li);
+      });
+      cl.appendChild(ul);
+      card.appendChild(cl);
+    }
+
     // assessment
     var a = el('div', 'assessment');
     a.appendChild(el('h4', null, 'Where things stand'));
-    var p = el('p');
-    p.innerHTML = prose(d.status_today);
-    a.appendChild(p);
+    String(d.status_today).split(/\n{2,}/).forEach(function (para) {
+      var p = el('p');
+      p.innerHTML = prose(para);
+      a.appendChild(p);
+    });
     card.appendChild(a);
 
     // drift

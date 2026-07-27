@@ -401,6 +401,53 @@ code { font-family: var(--mono); font-size: 0.9em; }
   letter-spacing: .04em;
 }
 
+/* sub-criteria checklist */
+
+.criteria { margin: 0 0 16px; }
+.criteria h4 {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 9px;
+  font-weight: 600;
+}
+.criteria ul { list-style: none; margin: 0; padding: 0; }
+
+.crit {
+  display: flex;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--line-soft);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.crit:first-child { border-top: 0; padding-top: 0; }
+
+.crit-mark {
+  font-size: 11px;
+  line-height: 1.55;
+  flex: none;
+  width: 12px;
+  text-align: center;
+}
+.crit-body { display: block; }
+.crit-label { display: block; color: var(--ink); }
+.crit-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+.c-met .crit-mark        { color: var(--pass); }
+.c-partial .crit-mark    { color: var(--near); }
+.c-unmet .crit-mark      { color: var(--low); }
+.c-untestable .crit-mark { color: var(--unfals); }
+.c-unmet .crit-label,
+.c-untestable .crit-label { color: var(--ink-dim); }
+
 /* status text */
 
 .assessment { margin: 0 0 16px; }
