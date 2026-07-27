@@ -11,6 +11,7 @@
     nearly:      { label: 'Nearly met',   cls: 'nearly'   },
     'in-progress': { label: 'In progress', cls: 'progress' },
     early:       { label: 'Early',        cls: 'early'    },
+    failed:      { label: 'Deadline missed', cls: 'failed' },
     unfalsifiable: { label: 'Unscoreable', cls: 'unfals'  }
   };
 

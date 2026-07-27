@@ -19,6 +19,7 @@
   --mid:         #b8823c;
   --low:         #5a6270;
   --unfals:      #7c6bb0;
+  --fail:        #a8564e;
 
   --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans:  ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
@@ -44,6 +45,7 @@
   --mid:         #a2742a;
   --low:         #8b929c;
   --unfals:      #5f4d96;
+  --fail:        #9c4a41;
 }
 
 * { box-sizing: border-box; }
@@ -347,6 +349,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .s-progress { color: var(--mid); }    .bg-progress { background: var(--mid); }
 .s-early    { color: var(--low); }    .bg-early    { background: var(--low); }
 .s-unfals   { color: var(--unfals); } .bg-unfals   { background: var(--unfals); }
+.s-failed   { color: var(--fail); }   .bg-failed   { background: var(--fail); }
 
 /* chips */
 
