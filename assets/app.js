@@ -153,9 +153,8 @@
       { v: defs.length, l: 'Stated definitions' },
       { v: met,         l: met === 1 ? 'Criterion met' : 'Criteria met', accent: met > 0 },
       { v: mean + '%',
-        l: 'Mean progress, measured criteria',
-        sub: measured.length + ' of ' + defs.length + ' · the ' + estimatedOnly.length +
-             ' never run average ' + avg(estimatedOnly) + '%',
+        l: 'Mean progress across ' + measured.length + ' of ' + defs.length + ' measured criteria',
+        sub: avg(estimatedOnly) + '% across the ' + estimatedOnly.length + ' never administered',
         accent: true }
     ];
 
