@@ -155,7 +155,8 @@
       { v: mean + '%',
         l: 'Mean progress across ' + measured.length + ' of ' + defs.length + ' measured criteria',
         sub: avg(estimatedOnly) + '% across the ' + estimatedOnly.length + ' never administered',
-        accent: true }
+        accent: true,
+        wide: true }
     ];
 
     if (fc) {
@@ -165,13 +166,15 @@
         sub: [fc.forecasters ? fc.forecasters + ' forecasts' : null,
               fc.as_of ? 'read ' + monthYear(fc.as_of) : null].filter(Boolean).join(' · '),
         accent: true,
-        wide: true
+        wide: true,
+        text: true
       });
     }
 
     stats.forEach(function (s) {
       var box = el('div', 'stat' + (s.wide ? ' stat-wide' : ''));
-      box.appendChild(el('span', 'stat-value' + (s.accent ? ' is-accent' : ''), String(s.v)));
+      box.appendChild(el('span', 'stat-value' + (s.accent ? ' is-accent' : '') +
+        (s.text ? ' is-text' : ''), String(s.v)));
       box.appendChild(el('span', 'stat-label', s.l));
       if (s.sub) box.appendChild(el('span', 'stat-sub', s.sub));
       host.appendChild(box);

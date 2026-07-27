@@ -140,8 +140,10 @@ code { font-family: var(--mono); font-size: 0.9em; }
 
 .dashboard {
   display: grid;
-  /* five tracks, three stats and a double-width forecast */
-  grid-template-columns: repeat(5, 1fr);
+  /* six tracks: two counts at one each, then the forecast and the mean at two
+     each. Both of those carry a full clause plus a second line, so at one track
+     they wrapped to four lines while the counts sat nearly empty. */
+  grid-template-columns: repeat(6, 1fr);
   gap: 1px;
   background: var(--line-soft);
   border: 1px solid var(--line-soft);
@@ -168,9 +170,10 @@ code { font-family: var(--mono); font-size: 0.9em; }
 /* the forecast gets two tracks, since a date needs far more room per
    character than a two-digit count and it is the headline figure */
 .stat-wide { grid-column: span 2; }
-/* lower floor than the counts: eight characters at the shared 26px minimum
-   just misses on a 375px screen */
-.stat-wide .stat-value {
+/* Only a text value needs the lower floor: "Sep 2028" is eight characters and
+   just misses at the shared 26px minimum on a 375px screen. A percentage is
+   three and keeps the full size. */
+.stat-value.is-text {
   font-size: clamp(20px, 3.4vw, 34px);
   letter-spacing: -0.01em;
 }
@@ -178,20 +181,21 @@ code { font-family: var(--mono); font-size: 0.9em; }
    figure, so it is sized to be read rather than skimmed past */
 .stat-sub {
   display: block;
-  margin-top: 6px;
-  font-size: 11.5px;
-  letter-spacing: .04em;
-  line-height: 1.35;
+  margin-top: 5px;
+  font-size: 12.5px;
+  letter-spacing: .01em;
+  line-height: 1.4;
   color: var(--ink-faint);
 }
+/* Sentence case: these labels now carry whole clauses rather than two-word
+   tags, and uppercase fights a sentence that long. Tracking drops with it. */
 .stat-label {
-  font-size: 11.5px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
+  font-size: 12.5px;
+  letter-spacing: .01em;
+  color: var(--ink-dim);
   margin-top: 8px;
   display: block;
-  line-height: 1.35;
+  line-height: 1.4;
   overflow-wrap: break-word;
 }
 
