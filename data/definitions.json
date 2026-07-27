@@ -607,6 +607,157 @@
       "verification_note": "Run once at small scale (3.3B parameters, pre-1900 corpus, March 2026) with a negative result; never attempted at frontier scale",
       "claim": "stated",
       "flip_condition": "A frontier-scale run on a pre-1911 corpus. TypewriterLM shows the corpus is buildable; only the scale is missing."
+    },
+    {
+      "slug": "metaculus-weakly-general",
+      "name": "Weakly general AI: four tests, one system",
+      "proposer": "Metaculus",
+      "affiliation": "question by Anthony Aguirre",
+      "year": 2020,
+      "category": "bet",
+      "claim": "stated",
+      "status": "in-progress",
+      "estimated": true,
+      "falsifiability": "high",
+      "confidence": "medium",
+      "measured": "2026-07",
+      "quote": "a single unified software system that can satisfy the following criteria, all easily completable by a typical college-educated human",
+      "quote_source": "Metaculus question 3479. The unified clause bars a system \"cobbled together as a set of sub-systems specialized to tasks like the above\"",
+      "status_today": "The most precisely operationalised AGI criterion anyone has written, and the only one whose live blocker is <strong>sample efficiency</strong> rather than raw capability. Three of the four tests are effectively settled. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThe rooms themselves stopped being the hard part in 2018, when Go-Explore reached level 1 reliably. The budget is the bar: Go-Explore and the exploration methods that followed consumed sample counts far beyond a hundred hours of play. A top-voted comment on the question calls this the only criterion not yet satisfied, and its author puts even odds on it falling by 2030.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate is <strong>13 September 2028</strong>, from 1.8k forecasters.",
+      "flip_condition": "A single system clearing Montezuma's Revenge inside the sample budget, then demonstrated on the other three tests without retraining.",
+      "source_url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
+      "evidence": [
+        {
+          "label": "Go-Explore",
+          "url": "https://www.uber.com/us/en/blog/go-explore/"
+        },
+        {
+          "label": "Jones & Bergen, PNAS",
+          "url": "https://arxiv.org/abs/2503.23674"
+        }
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Never adjudicated as a whole; no system has been tested against all four criteria together",
+      "criteria": [
+        {
+          "label": "Pass a Turing test of the type that would win the Loebner Silver Prize",
+          "state": "partial",
+          "note": "GPT-4.5 was judged human 73% of the time in a five-minute three-party test, but the Loebner format asked for 30 minutes and the competition has been defunct since about 2019."
+        },
+        {
+          "label": "Score 90% or more on a robust Winograd Schema Challenge such as WinoGrande",
+          "state": "met",
+          "note": "Treated as settled. Frontier leaderboards no longer report WinoGrande at all, which is what saturation looks like, so no adjudicated 2026 figure exists against the 90% bar."
+        },
+        {
+          "label": "Score at the 75th percentile on a full SAT mathematics section, from images of the pages",
+          "state": "met",
+          "note": "Multimodal frontier models clear this comfortably."
+        },
+        {
+          "label": "Learn Montezuma's Revenge from visual input and explore all 24 rooms in under 100 hours of equivalent play",
+          "state": "unmet",
+          "note": "Go-Explore reached level 1 reliably in 2018, but on sample budgets far above the bar. The 100-hour constraint, not the rooms, is what remains unsatisfied."
+        },
+        {
+          "label": "Be a single unified system, not sub-systems specialised to each task",
+          "state": "unmet",
+          "note": "No system has been demonstrated on all four tests, let alone one system on all four."
+        }
+      ],
+      "progress": 50
+    },
+    {
+      "slug": "metaculus-full-agi",
+      "name": "Full AGI: a two-hour adversarial Turing test, and a Ferrari",
+      "proposer": "Metaculus",
+      "affiliation": "question 5121, criteria revised 2022",
+      "year": 2020,
+      "category": "bet",
+      "claim": "stated",
+      "status": "early",
+      "estimated": true,
+      "falsifiability": "high",
+      "confidence": "medium",
+      "measured": "2026-07",
+      "quote": "Able to reliably pass a 2-hour, adversarial Turing test during which the participants can send text, images, and audio files",
+      "quote_source": "Metaculus question 5121. Judges are instructed to ask difficult questions designed to advantage humans and to unmask the computer",
+      "status_today": "Where the weakly-general question is nearly settled, this one is barely started, and the two tests that block it have <strong>never been run at all</strong>.\n\nThe first is a two-hour adversarial Turing test carrying text, images and audio, with judges explicitly instructed to unmask the machine. The longest published test is five minutes with a fifteen-minute replication, and lay interrogators rather than adversarial ones. The second is physical: autonomously assembling a 1:8 scale Ferrari 312 T4 model from human-readable instructions. Nobody has attempted it.\n\nThe two knowledge tests are in better shape. MMLU at 90% mean accuracy is met. APPS at 90% top-1 strict on interview-level problems is not: the best published interview-level figure found is about 80%, and frontier models are rarely evaluated on APPS any more. Community estimate <strong>November 2032</strong>, from 1.9k forecasters.",
+      "flip_condition": "Anyone running the two-hour adversarial test. It is the single cheapest unresolved measurement on this page, and its absence is the main reason this question has not moved.",
+      "source_url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
+      "evidence": [
+        {
+          "label": "Jones & Bergen, PNAS",
+          "url": "https://arxiv.org/abs/2503.23674"
+        },
+        {
+          "label": "APPS benchmark",
+          "url": "https://openreview.net/forum?id=sD93GOzH3i5"
+        }
+      ],
+      "verification": "unmeasured",
+      "verification_note": "Two of the four sub-criteria have never been attempted by anyone",
+      "criteria": [
+        {
+          "label": "Pass a 2-hour adversarial Turing test carrying text, images and audio",
+          "state": "unmet",
+          "note": "Never run. The longest published test is five minutes, with a pre-registered fifteen-minute replication, and judges were not adversarial."
+        },
+        {
+          "label": "Autonomously assemble a 1:8 scale Ferrari 312 T4 model from human-readable instructions",
+          "state": "unmet",
+          "note": "Never attempted. Epoch AI rates comparable household manipulation at tier 2 of 5."
+        },
+        {
+          "label": "At least 90% mean accuracy across MMLU",
+          "state": "met",
+          "note": "Cleared by frontier models."
+        },
+        {
+          "label": "At least 90% top-1 strict accuracy on APPS interview-level problems",
+          "state": "partial",
+          "note": "Best published interview-level figure found is about 80% Pass@1. Frontier models are seldom run on APPS now, so there is no current adjudicated number."
+        },
+        {
+          "label": "Be a single unified system, not sub-systems specialised to each task",
+          "state": "unmet",
+          "note": "Moot while two sub-criteria are unattempted."
+        }
+      ],
+      "progress": 30
+    },
+    {
+      "slug": "nilsson-employment-test",
+      "name": "The Employment Test: the fraction of jobs machines can do",
+      "proposer": "Nils J. Nilsson",
+      "affiliation": "Stanford",
+      "year": 2005,
+      "category": "economic",
+      "claim": "stated",
+      "status": "early",
+      "progress": 16,
+      "progress_note": "15.8% of real freelance projects automated",
+      "estimated": true,
+      "falsifiability": "high",
+      "confidence": "medium",
+      "measured": "2026-07",
+      "quote": "To pass the employment test, AI programs must be able to perform the jobs ordinarily performed by humans. Progress toward human-level AI could then be measured by the fraction of these jobs that can be acceptably performed by machines.",
+      "quote_source": "Nils J. Nilsson, \"Human-Level Artificial Intelligence? Be Serious!\", AI Magazine 26(4), 2005",
+      "status_today": "Alone among the criteria here, Nilsson did not set a pass mark. He defined <em>progress itself</em> as the fraction of ordinary jobs machines can acceptably perform, which makes this the only entry with a built-in continuous metric rather than a threshold to cross.\n\nThe closest instrument is the Remote Labor Index, built by CAIS with Scale, which scores whether AI agents can complete real paid freelance projects to the standard a client would accept. The best model reached <strong>15.8%</strong> in July 2026, up from 2.5% at launch in October 2025.\n\nSet that against GDPval, where frontier models score around 70% wins-or-ties on expert deliverables. Same year, same broad question, and a gap of more than fifty points. The difference is that GDPval grades a deliverable in isolation while the Remote Labor Index requires the whole job to be finished to a paying client's satisfaction. Nilsson asked for the second.",
+      "flip_condition": "The Remote Labor Index crossing 50%, which would be the first time a majority of real remote projects were completed to client standard.",
+      "source_url": "https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/General%20Essays/AIMag26-04-HLAI.pdf",
+      "evidence": [
+        {
+          "label": "Remote Labor Index",
+          "url": "https://www.remotelabor.ai/"
+        },
+        {
+          "label": "CAIS on the RLI jump",
+          "url": "https://safe.ai/blog/significant-increase-in-digital-labor-automation"
+        }
+      ],
+      "verification": "independent",
+      "verification_note": "Remote Labor Index is built and scored by CAIS with Scale, independent of the model vendors; the mapping from freelance projects to 'jobs ordinarily performed by humans' is this site's reading"
     }
   ]
 }
