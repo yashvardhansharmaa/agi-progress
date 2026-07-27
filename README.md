@@ -62,18 +62,25 @@ contain it either. Open the question in a browser and read the value off the pag
 
 ## How it's built
 
-Static HTML, CSS and vanilla JS. No build step, no dependencies, no framework.
+Static HTML, CSS and vanilla JS. No dependencies and no framework, but there is one build step.
 
 ```
-index.html              the page
+index.html              the page, with the criteria pre-rendered into it
 assets/style.css        styles (dark/light, responsive)
-assets/app.js           renders the cards from the JSON
+assets/app.js           renders the cards from the JSON in the browser
 data/definitions.json   the dataset — this is the actual content
+build.py                writes the criteria into index.html (stdlib only)
 .nojekyll               tells GitHub Pages to serve files as-is
 ```
 
-All content lives in `data/definitions.json`. Editing that file is the only thing you need to do to
-update the site.
+All content lives in `data/definitions.json`. **After editing it, run `python3 build.py` and commit
+the resulting `index.html` too.**
+
+`app.js` builds the cards client-side, which means a crawler, a link preview or any fetcher that does
+not run JavaScript would otherwise see an empty page. `build.py` writes a static copy of every
+criterion between markers in `index.html`; the JS replaces it on load. Skipping the build leaves the
+served page silently stale — showing the wrong criteria and the wrong numbers to everyone who is not
+running JS. CI checks this on every push.
 
 ## Running locally
 

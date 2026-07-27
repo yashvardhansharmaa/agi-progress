@@ -535,8 +535,13 @@
     }
   }
 
+  // Append rather than replace: the prerendered criteria live inside #cards, so
+  // overwriting it would leave a JS visitor with a network blip strictly worse
+  // off than one with JS disabled.
   function fail(err) {
-    var main = document.getElementById('cards');
+    var main = document.createElement('div');
+    document.getElementById('cards').parentNode.insertBefore(
+      main, document.getElementById('cards'));
     main.innerHTML =
       '<div class="load-error"><strong>Could not load the dataset.</strong><br>' +
       'If you are opening this file directly from disk, the browser blocks the fetch. ' +
