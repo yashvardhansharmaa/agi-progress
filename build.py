@@ -97,7 +97,11 @@ def main():
     # The stated heading already sits above this block in index.html.
     block += [render(d) for d in stated]
     if proxies:
+        # The heading alone left no-JS readers no idea why these sit below the
+        # line, so carry the reason with it.
         block.append('<h3 class="prerender-head">Milestones, not finish lines</h3>')
+        block.append('<p class="prerender-note">Cited as AGI progress constantly, but none of their authors '
+                     'claimed the threshold constitutes AGI, so they do not count toward the totals above.</p>')
         block += [render(d) for d in proxies]
     block += ['</div>', END]
 

@@ -15,7 +15,7 @@ Two rules, both narrow on purpose:
    concrete enough that you could argue about whether it had been crossed. A definition alone is not
    enough.
 2. **It has to be one people actually cite.** This is deliberately a short list of well-known
-   criteria rather than an exhaustive catalogue. Sixteen good ones beat fifty mediocre ones.
+   criteria rather than an exhaustive catalogue. Twenty good ones beat fifty mediocre ones.
 
 Deliberately excluded:
 
@@ -23,14 +23,16 @@ Deliberately excluded:
   valuable work"; Altman's "weakly defined term"). OpenAI still appears via GDPval and the $100B
   clause, which are the forms it actually operationalized.
 - Capability benchmarks whose authors never claimed they measured AGI (GPQA, SWE-bench, HLE,
-  FrontierMath, OSWorld). ARC-AGI, Winograd and the Turing Test stay, because they were each
-  explicitly proposed as tests of machine general intelligence.
+  FrontierMath, OSWorld). Benchmarks that are *routinely read* as AGI progress but were never claimed
+  as AGI tests by their authors are kept, below the line, with `claim: "proxy"` — currently ARC-AGI-2,
+  ARC-AGI-3, GDPval and the three-lab recursive-R&D triggers. Chollet has said outright that solving
+  ARC-AGI would not mean AGI had been reached, which is why both ARC entries sit there.
 - Predictions about consequences rather than capability (job-loss forecasts, growth-regime models).
 - Regulatory compute proxies (the EU AI Act's 10^25 FLOP threshold).
 - Critiques about the state of the definitions, rather than definitions.
-- Frameworks whose own authors never published a way to score them (DeepMind's Levels of AGI and its
-  ten-faculty taxonomy, Legg's adversarial protocol), and criteria that specify a measure but no pass
-  mark (Nilsson's employment test).
+- Frameworks whose own authors never published a way to score them (Legg's adversarial protocol).
+  DeepMind's Levels of AGI and its March 2026 cognitive framework are candidates, not exclusions:
+  the second defines a scoring protocol but has produced no public scores yet.
 
 ## Update cadence
 
@@ -127,7 +129,8 @@ Each entry in `definitions[]`:
    rests on. `independent` means a third party measured it; `maintainer-checked` means the
    criterion's own operator did; `self-reported` means the party being measured produced the number;
    `unmeasured` means the test has never been administered and the figure is an inference from
-   proxies. Twelve of the current entries are `unmeasured` — that is a finding, not a gap.
+   proxies. Eight of the fifteen stated criteria are `unmeasured` — that is a finding, not a gap, and
+   it is arguably the most important thing on the page.
 
 ## Contributing
 

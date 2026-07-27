@@ -66,7 +66,8 @@
       "verification_note": "Never attempted in an unfamiliar home; scored as a judgement over Epoch AI's component-level assessments",
       "claim": "stated",
       "measured": "2026-04",
-      "flip_condition": "One unrehearsed run in a home the system has never seen, operating an unfamiliar appliance unaided."
+      "flip_condition": "One unrehearsed run in a home the system has never seen, operating an unfamiliar appliance unaided.",
+      "progress_note": "component progress against a test never run"
     },
     {
       "slug": "arc-agi-2-grand-prize",
@@ -113,7 +114,7 @@
       "confidence": "high",
       "quote": "An interactive reasoning benchmark which challenges AI agents to explore novel environments, acquire goals on the fly, build adaptable world models, and learn continuously.",
       "quote_source": "ARC Prize Foundation, launched 25 March 2026. A 100% score means agents beat every environment as efficiently as humans.",
-      "status_today": "<strong>The cleanest AGI gap number currently available: 30% against a human 100%.</strong> Agents get no instructions, no rules and no stated goals. They must explore, infer how the environment works, work out what winning looks like, and carry what they learn forward. At launch in March 2026 the best frontier model scored 0.51%. Claude Opus 5, tested on 24 July, scored <strong>30.16%</strong>, roughly four times the next best system, GPT-5.6 Sol at 7.8%, with every older frontier model still near zero. That is the largest single-step gain on any AGI-framed benchmark right now, and it is one vendor's unreplicated result. On cost the picture is less one-sided than it looks: the run came to $20,657, which is nowhere near human on the efficiency dimension Chollet's definition cares about, but it undercut the $25,064 GPT-5.6 Sol spent to score 7.8%. Both figures are from the published semi-private leaderboard.",
+      "status_today": "<strong>30.16% against a human 100%.</strong> Agents get no instructions, no rules and no stated goals. They must explore, infer how the environment works, work out what winning looks like, and carry what they learn forward. At launch in March 2026 the best frontier model scored 0.51%. Claude Opus 5, tested on 24 July, scored <strong>30.16%</strong>, roughly four times the next best system, GPT-5.6 Sol at 7.8%, with every older frontier model still near zero. That is the largest single-step gain on any AGI-framed benchmark right now, and it is one vendor's unreplicated result. On cost the picture is less one-sided than it looks: the run came to $20,657, which is nowhere near human on the efficiency dimension Chollet's definition cares about, but it undercut the $25,064 GPT-5.6 Sol spent to score 7.8%. Both figures are from the published semi-private leaderboard.",
       "source_url": "https://arcprize.org/arc-agi/3",
       "evidence": [
         {
@@ -146,7 +147,7 @@
       "confidence": "medium",
       "quote": "AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.",
       "quote_source": "\"A Definition of AGI\", October 2025. Grounded in Cattell-Horn-Carroll theory, the most empirically validated model of human cognition",
-      "status_today": "The closest thing to a scoreboard anyone has built: ten cognitive domains, each weighted 10%, scored with adapted human psychometric batteries. GPT-4 scored 27%. GPT-5 scored <strong>57%</strong>. <strong>The single most striking result is that both score 0% on Long-Term Memory Storage</strong>. They cannot permanently learn anything after deployment. Because domains are weighted equally, that one zero caps any current-architecture system at 90%, which makes this the strongest available argument that scaling alone cannot finish the job. Two caveats: equal weighting is a value judgement with no empirical backing, and <strong>the score is stale</strong>. No 2026 model has been run through this framework, so the most-cited number in AGI discourse is nine months and several model generations old.",
+      "status_today": "Ten cognitive domains, each weighted 10%, scored with adapted human psychometric batteries. GPT-4 scored 27%. GPT-5 scored <strong>57%</strong>. <strong>The single most striking result is that both score 0% on Long-Term Memory Storage</strong>. They cannot permanently learn anything after deployment. Because domains are weighted equally, that one zero caps any current-architecture system at 90%, which makes this the strongest available argument that scaling alone cannot finish the job. Two caveats: equal weighting is a value judgement with no empirical backing, and <strong>the score is stale</strong>. No 2026 model has been run through this framework, so the most-cited number in AGI discourse is nine months and several model generations old.",
       "source_url": "https://www.agidefinition.ai/",
       "evidence": [
         {
@@ -175,7 +176,7 @@
       "confidence": "high",
       "quote": "enwik9 constitutes an amount of non-visual knowledge an average adult human holds, so compressors compressing enwik9 better than a human will predict better, and hence should be smarter... which, if achieved, most would agree constitutes AGI.",
       "quote_source": "Hutter Prize official FAQ",
-      "status_today": "Twenty years old, still running, and the numbers are sobering. The official record is <strong>110,793,128 bytes</strong>, set in September 2024, and <strong>under 6% of the €500,000 pool has ever been paid out.</strong> A June 2026 entry that would clear the next 1% bar was still unawarded at the time of review.\n\nHere is the interpretive problem that makes this entry worth including: <strong>the best unconstrained compressor in the world is a transformer</strong>, nncp v3.2 at 106.6 MB, comfortably better than the record. It cannot win, because it violates the prize's rules limiting entrants to 50 hours on a single CPU core with 10GB of RAM. The prize was designed on the premise that compression is intelligence; when neural methods started winning at compression, the resource constraints kept them out.",
+      "status_today": "Twenty years old, still running, and the numbers are sobering. The official record is <strong>110,793,128 bytes</strong>, set in September 2024, and <strong>under 6% of the €500,000 pool has ever been paid out.</strong> A June 2026 entry that would clear the next 1% bar was still unawarded at the time of review.\n\n<strong>The best unconstrained compressor in the world is a transformer</strong>, nncp v3.2 at 106.6 MB, comfortably better than the record. It cannot win, because it violates the prize's rules limiting entrants to 50 hours on a single CPU core with 10GB of RAM. The prize was designed on the premise that compression is intelligence; when neural methods started winning at compression, the resource constraints kept them out.",
       "source_url": "http://prize.hutter1.net/",
       "evidence": [
         {
@@ -207,7 +208,7 @@
       "confidence": "high",
       "quote": "systems that have the ability to generate the maximum total profits to which its earliest investors, including Microsoft, are entitled",
       "quote_source": "Reported by The Information, Dec 2024. The contract itself is not public",
-      "status_today": "<strong>This definition no longer exists.</strong> The AGI clause was removed from the Microsoft–OpenAI agreement on 27 April 2026; Microsoft's announcement of the amended deal does not contain the word AGI at all. No AGI was ever declared, so the expert panel created to verify such a declaration never had anything to verify.\n\nThe clause is void, but the metric it named is still measurable, and the answer is that progress runs <em>away</em> from the threshold. Financial statements obtained by Ed Zitron and the Financial Times in June 2026 show OpenAI on <strong>$13.07B of 2025 revenue against a $20.92B operating loss</strong>, after $3.7B and $8.78B respectively in 2024. Cumulative profits since inception are deeply negative, so reaching $100B cumulative would require well over $130B of future profit from a company that has told investors it does not expect positive cash flow until around 2030.\n\nThree things are near-universally misreported here: the clause specified <strong>profits, not revenue</strong>; the figure was <strong>cumulative, not annual</strong>; and it was pegged to the capped-profit structure OpenAI itself dissolved in October 2025. The most falsifiable AGI definition ever written was settled by commercial renegotiation, not by anyone crossing a technical line.",
+      "status_today": "<strong>This definition no longer exists.</strong> The AGI clause was removed from the Microsoft–OpenAI agreement on 27 April 2026; Microsoft's announcement of the amended deal does not contain the word AGI at all. No AGI was ever declared, so the expert panel created to verify such a declaration never had anything to verify.\n\nThe clause is void, but the metric it named is still measurable, and the answer is that progress runs <em>away</em> from the threshold. Financial statements obtained by Ed Zitron and the Financial Times in June 2026 show OpenAI on <strong>$13.07B of 2025 revenue against a $20.92B operating loss</strong>, after $3.7B and $8.78B respectively in 2024. Cumulative profits since inception are deeply negative, so reaching $100B cumulative would require well over $130B of future profit from a company that has told investors it does not expect positive cash flow until around 2030.\n\nThree things are near-universally misreported here: the clause specified <strong>profits, not revenue</strong>; the figure was <strong>cumulative, not annual</strong>; and it was pegged to the capped-profit structure OpenAI itself dissolved in October 2025. It was settled by renegotiation, not by anyone crossing a technical line.",
       "source_url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/",
       "evidence": [
         {
@@ -247,7 +248,7 @@
       "confidence": "medium",
       "quote": "a domain expert sees only the task and two unlabeled deliverables, and ranks them without knowing which is which",
       "quote_source": "Description of the GDPval grading protocol, OpenAI, arXiv October 2025. 50% means indistinguishable from an industry expert.",
-      "status_today": "The most rigorously built economic criterion anyone has published: 1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity is close but not cleanly reached on the bar as stated.</strong> The criterion defines 50% as indistinguishable from an expert, and the comparable figure is the straight win rate, which for GPT-5.2 is <strong>49.7%</strong>. Its wins-or-ties figure is 70.9%, and quoting that against a 50% bar is the most common error made with this benchmark. On OpenAI's own later reporting GPT-5.5 reaches 84.9% wins-or-ties, so the direction is not in doubt; the bar is simply not the one usually cited.\n\nEpoch AI's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it is at or near parity, and the impact has not followed.",
+      "status_today": "1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity is close but not cleanly reached on the bar as stated.</strong> The criterion defines 50% as indistinguishable from an expert, and the comparable figure is the straight win rate, which for GPT-5.2 is <strong>49.7%</strong>. Its wins-or-ties figure is 70.9%, and quoting that against a 50% bar is the most common error made with this benchmark. On OpenAI's own later reporting GPT-5.5 reaches 84.9% wins-or-ties, so the direction is not in doubt; the bar is simply not the one usually cited.\n\nEpoch AI's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it is at or near parity, and the impact has not followed.",
       "source_url": "https://arxiv.org/abs/2510.04374",
       "evidence": [
         {
@@ -285,12 +286,12 @@
       "confidence": "high",
       "quote": "Us self-claiming some AGI milestone, that's just nonsensical benchmark hacking to me. The real benchmark is: the world growing at 10%.",
       "quote_source": "Satya Nadella, Dwarkesh Podcast, 19 February 2025",
-      "status_today": "The single most unambiguous criterion in this collection: world GDP growth is measured quarterly by institutions with no stake in the AGI debate. It is also nowhere close. The IMF's July 2026 update projects <strong>3.0% global growth for 2026</strong>, revised down again from the 3.1% it published in April; US real GDP grew 2.1% in Q1 2026.\n\nThe deeper problem for AI attribution is that most of the recent US growth is the economy building the factory rather than the factory producing. Summing the national-accounts lines for information-processing equipment and intellectual property puts roughly three-quarters of Q1 2026 US growth in that bucket, though the BEA publishes no AI-specific line and those categories sweep in much that is not AI. Goldman Sachs, separately, reports finding no meaningful economy-wide relationship between AI adoption and productivity.\n\nThe criterion cannot distinguish AI-caused growth from any other cause; its strength is that it is immune to benchmark gaming, which was exactly Nadella's point.",
+      "status_today": "Nobody has to convene a panel to score this one: the IMF publishes it quarterly and has no stake in the AGI debate. It is also nowhere close. The IMF's July 2026 update projects <strong>3.0% global growth for 2026</strong>, revised down again from the 3.1% it published in April; US real GDP grew 2.1% in Q1 2026.\n\nThe deeper problem for AI attribution is that most of the recent US growth is the economy building the factory rather than the factory producing. Summing the national-accounts lines for information-processing equipment and intellectual property puts roughly three-quarters of Q1 2026 US growth in that bucket, though the BEA publishes no AI-specific line and those categories sweep in much that is not AI. Goldman Sachs, separately, reports finding no meaningful economy-wide relationship between AI adoption and productivity.\n\nThe criterion cannot distinguish AI-caused growth from any other cause; its strength is that it is immune to benchmark gaming, which was exactly Nadella's point.",
       "source_url": "https://www.dwarkesh.com/p/satya-nadella",
       "evidence": [
         {
-          "label": "IMF World Economic Outlook",
-          "url": "https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026"
+          "label": "IMF World Economic Outlook, July 2026",
+          "url": "https://www.imf.org/en/publications/weo/issues/2026/07/weo-update-july-2026"
         },
         {
           "label": "Epoch: AI datacenter share of GDP",
@@ -317,7 +318,7 @@
       "confidence": "medium",
       "quote": "Go make $1 million on a retail web platform in a few months with just a $100,000 investment.",
       "quote_source": "Mustafa Suleyman, MIT Technology Review, July 2023",
-      "status_today": "Arguably the cleanest pass/fail criterion anyone has proposed: a defined stake, a defined multiple, a defined venue, a defined horizon, and a bank balance as the scorekeeper. <strong>Not passed, and the balance is moving the wrong way.</strong>\n\nSince 10 April 2026 Andon Labs has run the nearest thing to a real attempt: an AI agent given a San Francisco storefront and a starting stake reported at $100,000, operating the business end to end. As of 27 July the bank balance stands at <strong>$62,719</strong>, and over the trailing month the store took $2,852 in revenue against $3,444 in token costs. Andon's own write-up states plainly that the store is not profitable.\n\nIn simulation the picture is better and still short: the best model on Vending-Bench 2 reaches roughly 17% of a skilled human's estimated $63,000 over a simulated year. The test is usually shortened to \"turn $100K into $1M\", but the original specifies <em>on a retail web platform</em>, which rules out the trading and crypto strategies most likely to produce a spurious pass.",
+      "status_today": "<strong>Not passed, and the balance is moving the wrong way.</strong> The criterion is unusually checkable: a stake, a multiple, a venue, a deadline, and a bank balance as the scorekeeper.\n\nSince 10 April 2026 Andon Labs has run the nearest thing to a real attempt: an AI agent given a San Francisco storefront and a starting stake reported at $100,000, operating the business end to end. As of 27 July the bank balance stands at <strong>$62,719</strong>, and over the trailing month the store took $2,852 in revenue against $3,444 in token costs. Andon's own write-up states plainly that the store is not profitable.\n\nIn simulation the picture is better and still short: the best model on Vending-Bench 2 reaches roughly 17% of a skilled human's estimated $63,000 over a simulated year. The test is usually shortened to \"turn $100K into $1M\", but the original specifies <em>on a retail web platform</em>, which rules out the trading and crypto strategies most likely to produce a spurious pass.",
       "source_url": "https://www.technologyreview.com/2023/07/14/1076296/mustafa-suleyman-my-new-turing-test-would-see-if-ai-can-make-1-million/",
       "evidence": [
         {
@@ -333,7 +334,8 @@
       "verification_note": "Attempted with real money since April 2026, but the figures are the operator's own and not independently audited",
       "claim": "stated",
       "measured": "2026-07",
-      "flip_condition": "Any audited AI-run business turning $100k into $1M on a retail web platform. Andon Market returning to its starting balance would be the leading indicator."
+      "flip_condition": "Any audited AI-run business turning $100k into $1M on a retail web platform. Andon Market returning to its starting balance would be the leading indicator.",
+      "progress_note": "real-money attempt running at a loss"
     },
     {
       "slug": "amodei-powerful-ai",
@@ -378,7 +380,7 @@
         {
           "label": "Runs tasks taking hours, days or weeks autonomously",
           "state": "partial",
-          "note": "METR's frontier 50% horizon is 17.4h, but METR calls measurements above 16h unreliable with its current suite (95% CI 8.5-55h) and excludes the point from its own trend fit. It is also a preview snapshot, not a shipped model. Hours yes, days marginal, weeks no."
+          "note": "METR's frontier 50% horizon is 17.4h, but METR calls measurements above 16h unreliable with its current suite (95% CI 8.5-55h) and excludes the point from its own trend fit. It is also a preview snapshot, not a shipped model."
         },
         {
           "label": "Controls physical tools, robots and lab equipment through a computer",
@@ -409,7 +411,7 @@
       "confidence": "high",
       "quote": "recursively self improving (i.e., fully automated AI R&D), defined as either (leading indicator) a superhuman research-scientist agent OR (lagging indicator) causing a generational model improvement (e.g., from OpenAI o1 to OpenAI o3) in 1/5th the wall-clock time of equivalent progress in 2024, sustainably for several months",
       "quote_source": "OpenAI Preparedness Framework v2. The Critical threshold for AI Self-Improvement",
-      "status_today": "<strong>The most adjudicable AGI definitions in existence, and all three are untriggered.</strong> Three commercial rivals, writing independently and with every incentive to claim capability, each defined a recursive-AI-R&D threshold. As of July 2026: Anthropic's Claude Opus 5 system card of 24 July states the automated AI R&D threshold is not crossed, on the grounds that no sustained AI-attributable 2x acceleration is observed and the model does not substitute for its research staff; <strong>OpenAI's system card for GPT-5.6 states that all three variants sit below the <em>High</em> rung</strong>, the one immediately beneath Critical; and Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
+      "status_today": "<strong>Untriggered at all three labs.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nAnthropic's Claude Opus 5 system card of 24 July states the automated AI R&D threshold is not crossed, on the grounds that no sustained AI-attributable 2x acceleration is observed and the model does not substitute for its research staff. <strong>OpenAI's card for GPT-5.6 puts all three variants below the <em>High</em> rung</strong>, one below Critical. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
       "source_url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
       "evidence": [
         {
@@ -606,7 +608,8 @@
       "verification": "unmeasured",
       "verification_note": "Run once at small scale (3.3B parameters, pre-1900 corpus, March 2026) with a negative result; never attempted at frontier scale",
       "claim": "stated",
-      "flip_condition": "A frontier-scale run on a pre-1911 corpus. TypewriterLM shows the corpus is buildable; only the scale is missing."
+      "flip_condition": "A frontier-scale run on a pre-1911 corpus. TypewriterLM shows the corpus is buildable; only the scale is missing.",
+      "progress_note": "one small-scale attempt, negative result"
     },
     {
       "slug": "metaculus-weakly-general",
@@ -623,7 +626,7 @@
       "measured": "2026-07",
       "quote": "a single unified software system that can satisfy the following criteria, all easily completable by a typical college-educated human",
       "quote_source": "Metaculus question 3479. The unified clause bars a system \"cobbled together as a set of sub-systems specialized to tasks like the above\"",
-      "status_today": "The most precisely operationalised AGI criterion anyone has written, and the only one whose live blocker is <strong>sample efficiency</strong> rather than raw capability. Three of the four tests are effectively settled. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThe rooms themselves stopped being the hard part in 2018, when Go-Explore reached level 1 reliably. The budget is the bar: Go-Explore and the exploration methods that followed consumed sample counts far beyond a hundred hours of play. A top-voted comment on the question calls this the only criterion not yet satisfied, and its author puts even odds on it falling by 2030.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate is <strong>13 September 2028</strong>, from 1.8k forecasters.",
+      "status_today": "The live blocker here is <strong>sample efficiency</strong>, not raw capability, which makes it unlike anything else on this page. Two of the four tests are settled and one is close. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThe rooms themselves stopped being the hard part in 2018, when Go-Explore reached level 1 reliably. The budget is the bar: Go-Explore and the exploration methods that followed consumed sample counts far beyond a hundred hours of play. A top-voted comment on the question calls this the only criterion not yet satisfied, and its author puts even odds on it falling by 2030.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate is <strong>13 September 2028</strong>, from 1.8k forecasters.",
       "flip_condition": "A single system clearing Montezuma's Revenge inside the sample budget, then demonstrated on the other three tests without retraining.",
       "source_url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
       "evidence": [
@@ -671,7 +674,8 @@
         "forecasters": "1.8k",
         "as_of": "2026-07-27",
         "label": "Metaculus median, weakly general AI"
-      }
+      },
+      "progress_note": "2 of 5 met, 1 partial"
     },
     {
       "slug": "metaculus-full-agi",
@@ -688,7 +692,7 @@
       "measured": "2026-07",
       "quote": "Able to reliably pass a 2-hour, adversarial Turing test during which the participants can send text, images, and audio files",
       "quote_source": "Metaculus question 5121. Judges are instructed to ask difficult questions designed to advantage humans and to unmask the computer",
-      "status_today": "Where the weakly-general question is nearly settled, this one is barely started, and the two tests that block it have <strong>never been run at all</strong>.\n\nThe first is a two-hour adversarial Turing test carrying text, images and audio, with judges explicitly instructed to unmask the machine. The longest published test is five minutes with a fifteen-minute replication, and lay interrogators rather than adversarial ones. The second is physical: autonomously assembling a 1:8 scale Ferrari 312 T4 model from human-readable instructions. Nobody has attempted it.\n\nThe two knowledge tests are in better shape. MMLU at 90% mean accuracy is met. APPS at 90% top-1 strict on interview-level problems is not: the best published interview-level figure found is about 80%, and frontier models are rarely evaluated on APPS any more. Community estimate <strong>November 2032</strong>, from 1.9k forecasters.",
+      "status_today": "<strong>The two hardest tests here have never been run by anyone.</strong> Not failed. Never attempted, in six years.\n\nThe knowledge tests moved with the field: MMLU is met, APPS at 90% top-1 strict is not, and frontier models are rarely run on APPS any more. The two that need someone to build an apparatus have not moved at all, because nobody has built one. That is a funding gap, not a capability gap. Community estimate <strong>November 2032</strong>, from 1.9k forecasters.",
       "flip_condition": "Anyone running the two-hour adversarial test. It is the single cheapest unresolved measurement on this page, and its absence is the main reason this question has not moved.",
       "source_url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
       "evidence": [
@@ -730,7 +734,8 @@
           "note": "Moot while two sub-criteria are unattempted."
         }
       ],
-      "progress": 30
+      "progress": 30,
+      "progress_note": "1 of 5 met, 1 partial"
     },
     {
       "slug": "nilsson-employment-test",

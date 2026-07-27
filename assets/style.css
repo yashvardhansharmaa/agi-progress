@@ -584,6 +584,14 @@ button.chip-verif[aria-expanded="true"]::after { content: ' ⌃'; }
   color: var(--ink-dim);
 }
 .prerender .card p { font-size: 14.5px; color: var(--ink-dim); }
+.prerender-note {
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
+  max-width: 62ch;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
 
 /* result count: was visually hidden, so the only feedback that a filter did
    anything reached screen readers and nobody else */
