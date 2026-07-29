@@ -185,7 +185,7 @@
 <h3>A Turing Test passed by 2029</h3>
 <p class="card-meta">Ray Kurzweil vs Mitchell Kapor · Long Bets #1, the inaugural Long Now wager · 2002</p>
 <p class="progress-row"><span class="progress-pct">40%</span> <span class="progress-caption">protocol at zero, capability at a weaker proxy (editorial estimate)</span></p>
-<p><strong>In progress.</strong> Unresolved and never attempted. In twenty-four years no committee has been seated, no interview conducted, and the detailed rules the 2002 agreement promised that committee would write have never been written.</p>
+<p><strong>In progress.</strong> Unresolved and, more interestingly, never attempted. In twenty-four years no committee has been seated and not one interview has been conducted.</p>
 <blockquote class="quote">“each of the three Turing Test Judges will conduct online interviews of each of the four Turing Test Candidates for two hours each for a total of eight hours of interviews conducted by each of the three Judges (for a total of 24 hours of interviews)”<cite>The Kurzweil–Kapor rules, agreed 2002. Requiring both a Human Determination Test and a Rank Order Test</cite></blockquote>
 <p class="measured">measured 2026-05</p>
 <p class="card-foot"><a href="https://longbets.org/1/" rel="noopener">Primary source</a></p>
@@ -291,33 +291,21 @@
     <div>
       <h3>The percentage is an editorial judgement</h3>
       <p>
-        Where a criterion names a number, the bar is computed from that number and the arithmetic is shown.
-        Where the criterion is concrete but not numeric, the score is a considered estimate, marked with a
-        striped bar so it reads differently from a measurement. Each score carries the date of the run that
-        produced it, flagged in amber once it is more than six months old, because a live criterion scored
-        against a stale number is not really being tracked. Treat the low-confidence cards as prompts to go read
-        the source.
+        Where a criterion names a number, the arithmetic is shown. Where it is concrete but not numeric, the
+        score is a considered estimate, marked <em>~</em> with a striped bar. Each score carries the date of the
+        run behind it, flagged amber past six months.
       </p>
     </div>
     <div>
       <h3>What isn't here, and why</h3>
       <p>
         A definition can be famous and still be unscoreable. The OpenAI Charter's &ldquo;outperforms humans at
-        most economically valuable work&rdquo; has no threshold, no procedure and no deadline, so it is not here.
-        Nor is Elon Musk's &ldquo;smarter than the smartest human&rdquo;, which names no evaluator, nor Humanity's
-        Last Exam, whose authors say explicitly that a high score would not indicate AGI and who set no
-        threshold. Excluded outright: predictions about consequences rather than capability, and regulatory
-        compute thresholds. Benchmarks whose authors never claimed they measured AGI are not excluded, but they
-        are kept below the line in <a href="#proxies">Milestones, not finish lines</a>.
-      </p>
-    </div>
-    <div>
-      <h3>Definitions drift, and that's data too</h3>
-      <p>
-        Where a proposer has materially changed their definition as systems improved, the card records the drift
-        with dates. Hassabis is the clearest case, raising the bar while shortening the clock. The pattern where
-        a capability stops counting as intelligence once a machine has it is old enough to have a name: the AI
-        effect.
+        most economically valuable work&rdquo; has no threshold, no procedure and no deadline. Nor does Musk's
+        &ldquo;smarter than the smartest human&rdquo; name an evaluator, and Humanity's Last Exam's own authors
+        say a high score would not indicate AGI. Also out: predictions about consequences rather than capability,
+        and compute thresholds. Benchmarks never claimed as AGI tests are kept below the line in
+        <a href="#proxies">Milestones, not finish lines</a>. Every definition links to its original source, not
+        press coverage; where a widely-repeated version turns out to be a misquote, the card says so.
       </p>
     </div>
     <div>
@@ -326,19 +314,10 @@
         Every card carries a provenance tag: <span class="chip chip-inline chip-verif v-independent">independently
         measured</span> <span class="chip chip-inline chip-verif v-maintainer-checked">checked by the
         operator</span> <span class="chip chip-inline chip-verif v-self-reported">self-reported</span>
-        <span class="chip chip-inline chip-verif v-unmeasured">never administered</span>. Click any of them on a
-        card for the reason.
-        On benchmarks that publish both, lab-reported scores and standardised re-runs can differ by twenty points
-        or more. And <strong><span id="unmeasuredCount">several</span> of the criteria here have never actually
-        been run</strong>, so their scores are inferences from proxies rather than measurements.
-      </p>
-    </div>
-    <div>
-      <h3>Sources over summaries</h3>
-      <p>
-        Every definition links to a primary source: the original paper, post, bet or interview, not press
-        coverage of it. Several widely-repeated claims turn out to be misquotes, and where we found that, the
-        card says so.
+        <span class="chip chip-inline chip-verif v-unmeasured">never administered</span>. Click one on a card for
+        the reason. Lab-reported scores and standardised re-runs can differ by twenty points, and
+        <strong><span id="unmeasuredCount">several</span> of these criteria have never been run at all</strong>,
+        so those scores are inferences rather than measurements.
       </p>
     </div>
   </div>
@@ -426,16 +405,13 @@
 <footer class="site-footer">
   <div class="wrap">
     <p>
-      Built as an open dataset. Every criterion lives in
+      Every criterion lives in
       <a href="https://github.com/yashvardhansharmaa/agi-progress/blob/main/data/definitions.json"><code>data/definitions.json</code></a>.
-      Corrections, additions and disputed scores are welcome as pull requests.
-    </p>
-    <p>
-      <strong>Updated weekly.</strong> The numbers are re-checked against the leaderboards each week. A criterion
-      being met, a bet resolving or a deadline passing is worth an update the day it happens.
+      Corrections and disputed scores are welcome as pull requests.
     </p>
     <p class="fine">
-      Scores reflect public information as of the review date above. Nothing here is a forecast.
+      Scores reflect public information as of the review date above. The Metaculus figure is other people's
+      forecast; nothing else here is one.
     </p>
   </div>
 </footer>

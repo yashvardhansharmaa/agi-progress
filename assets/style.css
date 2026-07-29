@@ -177,6 +177,36 @@ code { font-family: var(--mono); font-size: 0.9em; }
   font-size: clamp(20px, 3.4vw, 34px);
   letter-spacing: -0.01em;
 }
+/* Two kinds of bar, deliberately unalike. The progress bar reads capability and
+   uses the accent; the time bar is a clock counting down to a forecast date and
+   is drawn in a flat neutral so it cannot be mistaken for the other. */
+.stat-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--line-soft);
+  margin-top: 10px;
+  overflow: hidden;
+}
+.stat-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  transition: width .5s cubic-bezier(.2,.7,.3,1);
+}
+.stat-bar-progress .stat-bar-fill { background: var(--accent); }
+.stat-bar-time .stat-bar-fill { background: var(--ink-faint); opacity: .55; }
+/* where the never-administered mean would sit */
+.stat-bar-ghost {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  width: 2px;
+  background: var(--ink-faint);
+  opacity: .8;
+}
+
 /* a peer line to .stat-label, not a footnote to it: it states a different
    figure, so it is sized to be read rather than skimmed past */
 .stat-sub {

@@ -154,16 +154,32 @@
       { v: met,         l: met === 1 ? 'Criterion met' : 'Criteria met', accent: met > 0 },
       { v: mean + '%',
         l: 'Mean progress across ' + measured.length + ' of ' + defs.length + ' measured criteria',
+        bar: mean,
+        barKind: 'progress',
+        barGhost: avg(estimatedOnly),
         sub: avg(estimatedOnly) + '% across the ' + estimatedOnly.length + ' never administered',
         accent: true,
         wide: true }
     ];
 
     if (fc) {
+      // Time elapsed between the question opening and its median date. This is
+      // a clock, not a capability reading, so it is styled and labelled apart
+      // from the progress bar in the next cell.
+      var months = function (iso) {
+        var p = String(iso || '').split('-');
+        return parseInt(p[0], 10) * 12 + (p.length > 1 ? parseInt(p[1], 10) : 1);
+      };
+      var now = months(state.data.meta.updated);
+      var left = months(fc.date) - now;
+      var span = fc.opened ? months(fc.date) - months(fc.opened) : 0;
+
       stats.splice(2, 0, {
         v: monthYear(fc.date),
         l: fc.label || 'Crowd forecast',
-        sub: [fc.forecasters ? fc.forecasters + ' forecasts' : null,
+        bar: span > 0 ? Math.max(0, Math.min(100, Math.round(100 * (span - left) / span))) : null,
+        barKind: 'time',
+        sub: [left > 0 ? left + ' months out' : 'past due',
               fc.as_of ? 'read ' + monthYear(fc.as_of) : null].filter(Boolean).join(' · '),
         accent: true,
         wide: true,
@@ -176,6 +192,20 @@
       box.appendChild(el('span', 'stat-value' + (s.accent ? ' is-accent' : '') +
         (s.text ? ' is-text' : ''), String(s.v)));
       box.appendChild(el('span', 'stat-label', s.l));
+      if (s.bar != null) {
+        var track = el('div', 'stat-bar stat-bar-' + s.barKind);
+        // The never-administered mean sits behind as a ghost mark, so the gap
+        // between the two figures is visible and not just stated below.
+        if (s.barGhost != null) {
+          var ghost = el('span', 'stat-bar-ghost');
+          ghost.style.left = s.barGhost + '%';
+          track.appendChild(ghost);
+        }
+        var fill = el('span', 'stat-bar-fill');
+        fill.style.width = Math.max(1, s.bar) + '%';
+        track.appendChild(fill);
+        box.appendChild(track);
+      }
       if (s.sub) box.appendChild(el('span', 'stat-sub', s.sub));
       host.appendChild(box);
     });
