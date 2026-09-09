@@ -326,12 +326,16 @@
       "confidence": "medium",
       "quote": "Go make $1 million on a retail web platform in a few months with just a $100,000 investment.",
       "quote_source": "Mustafa Suleyman, MIT Technology Review, July 2023",
-      "status_today": "<strong>Not passed, and the balance is moving the wrong way.</strong> The criterion is unusually checkable: a stake, a multiple, a venue, a deadline, and a bank balance as the scorekeeper.\n\nSince 10 April 2026 Andon Labs has run the nearest thing to a real attempt: an AI agent given a San Francisco storefront and a starting stake reported at $100,000, operating the business end to end. As of 27 July the bank balance stands at <strong>$62,719</strong>, and over the trailing month the store took $2,852 in revenue against $3,444 in token costs. Andon's own write-up states plainly that the store is not profitable.\n\nIn simulation the picture is better and still short: the best model on Vending-Bench 2 reaches roughly 17% of a skilled human's estimated $63,000 over a simulated year. The test is usually shortened to \"turn $100K into $1M\", but the original specifies <em>on a retail web platform</em>, which rules out the trading and crypto strategies most likely to produce a spurious pass.",
+      "status_today": "<strong>Not passed, and the balance is collapsing.</strong> The criterion is unusually checkable: a stake, a multiple, a venue, a deadline, and a bank balance as the scorekeeper.\n\nSince 10 April 2026 Andon Labs has run the nearest thing to a real attempt: an AI agent, now powered by Claude Fable 5.1, given a San Francisco storefront and a starting stake reported at $100,000. On 27 July the balance was $62,719. As of 8 September, 151 days in, it is <strong>$6,013</strong>. Over the trailing month the store took $2,060 against $4,311 in token costs, so it now spends roughly two dollars in inference for every dollar it earns. Andon attributes part of the latest fall to rent rather than model performance. The criterion asks for $100,000 to become $1,000,000; the stake is down to 6% of itself.\n\nIn simulation the picture is better and improving. On Vending-Bench 2, which runs a year of the same business synthetically, GPT-6 Astra took first place on 3 September at <strong>$15,515</strong> averaged over five runs, the largest single jump the benchmark has recorded and the first time an OpenAI model has led it. Against Andon's own $63,000 estimate for a good human strategy that is <strong>25%</strong>, up from 18% for Claude Opus 5. The test is usually shortened to \"turn $100K into $1M\", but the original specifies <em>on a retail web platform</em>, which is what the storefront is testing and the simulation is not.",
       "source_url": "https://www.technologyreview.com/2023/07/14/1076296/mustafa-suleyman-my-new-turing-test-would-see-if-ai-can-make-1-million/",
       "evidence": [
         {
           "label": "Andon Market dashboard",
           "url": "https://andonlabs.com/market"
+        },
+        {
+          "label": "Vending-Bench 2",
+          "url": "https://andonlabs.com/evals/vending-bench-2"
         },
         {
           "label": "Vending-Bench 2 (Epoch)",
@@ -341,9 +345,9 @@
       "verification": "unmeasured",
       "verification_note": "Attempted with real money since April 2026, but the figures are the operator's own and not independently audited",
       "claim": "stated",
-      "measured": "2026-07",
+      "measured": "2026-09",
       "flip_condition": "Any audited AI-run business turning $100k into $1M on a retail web platform. Andon Market returning to its starting balance would be the leading indicator.",
-      "progress_note": "real-money attempt running at a loss"
+      "progress_note": "real-money attempt down to 6% of its stake"
     },
     {
       "slug": "amodei-powerful-ai",
@@ -419,7 +423,7 @@
       "confidence": "high",
       "quote": "recursively self improving (i.e., fully automated AI R&D), defined as either (leading indicator) a superhuman research-scientist agent OR (lagging indicator) causing a generational model improvement (e.g., from OpenAI o1 to OpenAI o3) in 1/5th the wall-clock time of equivalent progress in 2024, sustainably for several months",
       "quote_source": "OpenAI Preparedness Framework v2. The Critical threshold for AI Self-Improvement",
-      "status_today": "<strong>Untriggered at all three labs.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nThis week produced the best evidence yet that these thresholds are not decorative. OpenAI's system card for GPT-6 Astra, 3 September, rates the model <strong>Critical for cybersecurity</strong>, the first time OpenAI has put a model on its top rung in any category, and applies the safeguards that follow from it. The same determination reads: <em>\"In AI Self-Improvement, Astra does not reach our High threshold.\"</em> Astra scores 78.05% on OpenAI's internal research-debugging evaluation, below its indicative High bar. Anthropic's card for Claude Fable 5.1 and Mythos 5.1, 1 September, rates AI R&D risk low: well below its own researchers and engineers, with acceleration of internal work in line with prior models. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level.\n\nA lab that will say Critical when it thinks a line has been crossed is a lab whose <em>negative</em> finding on self-improvement is worth more. The caveat is unchanged: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
+      "status_today": "<strong>Untriggered at all three labs, and the gap between that and the marketing narrowed this week.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nThe determinations still say no. OpenAI's system card for GPT-6 Astra, 3 September, rates the model <strong>Critical for cybersecurity</strong>, the first time OpenAI has put a model on its top rung in any category, and applies the safeguards that follow. The same determination reads: <em>\"In AI Self-Improvement, Astra does not reach our High threshold.\"</em> Anthropic's card for Claude Fable 5.1 and Mythos 5.1, 1 September, rates AI R&D risk low. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level.\n\nRead those against what OpenAI published three days later. It says it has met its own stated goal of an <strong>automated research intern by September 2026</strong>, defined as a system doing well-specified research tasks that would take a skilled researcher a few days, and that as of mid-August the research organisation spends <strong>3.1 agent-workdays for every human workday</strong>. That is a long way from the written trigger, which needs a superhuman research scientist or a generational model improvement at five times 2024 pace sustained for months. An intern is not a scientist, and effort is not acceleration.\n\nThe sharper caveat is new: the Navier-Stokes result of 8 September was produced by an <em>internal</em> model OpenAI describes as significantly more capable than Astra, with no system card and no published capability determination. Every negative finding on this page covers a shipped model. All three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
       "source_url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
       "evidence": [
         {
@@ -427,12 +431,12 @@
           "url": "https://deploymentsafety.openai.com/gpt-6-astra"
         },
         {
-          "label": "Fable 5.1 & Mythos 5.1 card",
-          "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf"
+          "label": "Research acceleration inside OpenAI",
+          "url": "https://openai.com/index/research-acceleration-view-inside-openai/"
         },
         {
-          "label": "DeepMind Frontier Safety",
-          "url": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"
+          "label": "Fable 5.1 & Mythos 5.1 card",
+          "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf"
         }
       ],
       "verification": "self-reported",
@@ -440,7 +444,7 @@
       "claim": "proxy",
       "claim_note": "These are risk-management triggers written for safety frameworks. None of the three labs says crossing one means AGI has arrived, though all three treat it as the point where progress stops being human-paced.",
       "measured": "2026-09",
-      "flip_condition": "Any of the three labs publishing a determination that its own threshold has been crossed."
+      "flip_condition": "Any of the three labs publishing a determination that its own threshold has been crossed, or a capability determination for the internal model behind the Navier-Stokes proof."
     },
     {
       "slug": "marcus-five-tasks",
@@ -592,7 +596,7 @@
       "confidence": "high",
       "quote": "training an AI system with a knowledge cutoff of, say, 1911, and then seeing if it could come up with general relativity like Einstein did in 1915. That's the kind of true test of whether we have a full AGI system.",
       "quote_source": "Demis Hassabis, India AI Impact Summit, 19 February 2026",
-      "status_today": "<strong>Not met, by Hassabis's own assessment</strong>. He added in the same breath that \"it's clear today's systems couldn't do that.\"\n\nThe test has been run once, far below frontier scale. In March 2026 Michael Hla trained a 3.3B-parameter model on roughly 22B tokens of pre-1900 text and prompted it with the observations behind relativity. It produced fragments that sound right beside steam-engine nonsense, and his own verdict was pattern-matching rather than physics. The corpus objection is weaker than it looks, too: TypewriterLM, released in June 2026, is a 7.24B model trained on 54B tokens with a 1913 cutoff. Bounded corpora are tractable. Nobody has trained at a scale where failure would be informative.\n\nThe nearest positive evidence, an internal OpenAI model disproving the Erdős unit distance conjecture in May 2026, is a result inside an existing paradigm rather than a theory built from an impoverished corpus.",
+      "status_today": "<strong>Not met, by Hassabis's own assessment</strong>. He added in the same breath that \"it's clear today's systems couldn't do that.\"\n\nThe test has been run once, far below frontier scale. In March 2026 Michael Hla trained a 3.3B-parameter model on roughly 22B tokens of pre-1900 text and prompted it with the observations behind relativity. It produced fragments that sound right beside steam-engine nonsense, and his own verdict was pattern-matching rather than physics. The corpus objection is weaker than it looks: TypewriterLM, released in June 2026, is a 7.24B model trained on 54B tokens with a 1913 cutoff. Bounded corpora are tractable. Nobody has trained at a scale where failure would be informative.\n\nThe nearest positive evidence is now much stronger and still the wrong shape. On 8 September OpenAI published a proof that the Navier-Stokes equations can develop a finite-time singularity, with a Lean formalisation, produced by around <strong>10,000 concurrent agents</strong> running an unreleased internal model over 88 hours. Independent review has barely begun, and Lean checks that the steps follow, not that the formal statement is the Clay problem. Even granting it entirely, it is the resolution of a precisely posed question that mathematicians had already framed. Hassabis's test asks for the <em>conjecture</em>, not the proof: a theory nobody had stated, built from a corpus that does not contain it. Nothing yet addresses that.",
       "drift": "Hassabis is the clearest case of raising the bar while shortening the clock. His long-standing definition was \"all the cognitive capabilities humans can\", a median-human bar. DeepMind's April 2025 safety paper then anchored planning on \"Exceptional AGI\" at the 99th percentile; a December 2025 DeepMind podcast made world models and physical understanding prerequisites, which structurally disqualifies text-only models; February 2026 added the Einstein Test. Over the same period his timeline went from 5–10 years to 2–5.",
       "source_url": "https://singjupost.com/demis-hassabis-on-agi-advice-for-indian-engineers-ai-in-gaming-more-transcript/",
       "evidence": [
@@ -605,15 +609,16 @@
           "url": "https://arxiv.org/abs/2606.02991"
         },
         {
-          "label": "Erdős conjecture disproof",
-          "url": "https://gilkalai.wordpress.com/2026/05/21/amazing-erdos-unit-distance-problem-was-disproved-it-was-achieved-by-ai/"
+          "label": "Navier-Stokes result",
+          "url": "https://openai.com/index/navier-stokes-solution/"
         }
       ],
       "verification": "unmeasured",
       "verification_note": "Run once at small scale (3.3B parameters, pre-1900 corpus, March 2026) with a negative result; never attempted at frontier scale",
       "claim": "stated",
-      "flip_condition": "A frontier-scale run on a pre-1911 corpus. TypewriterLM shows the corpus is buildable; only the scale is missing.",
-      "progress_note": "one small-scale attempt, negative result"
+      "flip_condition": "A frontier-scale run on a pre-1911 corpus. TypewriterLM shows the corpus is buildable; only the scale is missing. Solving posed problems, however hard, does not bear on it.",
+      "progress_note": "one small-scale attempt, negative result",
+      "measured": "2026-09"
     },
     {
       "slug": "metaculus-weakly-general",
