@@ -635,7 +635,7 @@
       "measured": "2026-09",
       "quote": "a single unified software system that can satisfy the following criteria, all easily completable by a typical college-educated human",
       "quote_source": "Metaculus question 3479. The unified clause bars a system \"cobbled together as a set of sub-systems specialized to tasks like the above\"",
-      "status_today": "The live blocker here is <strong>sample efficiency</strong>, not raw capability, which makes it unlike anything else on this page. Two of the four tests are settled and one is close. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThat test is now contested rather than distant. On 7 September a tester reported GPT-6 Astra beating the game in real time on a basic harness, with no recording published. Others on the question say the reproducible runs use a harness that queues moves, pausing between screenshots, which has worked since GPT-5.3, and that unaided real-time play still fails. Forecasters have asked the admins what a question written in the reinforcement-learning era requires of a pretrained transformer. No ruling has been posted and nothing is verified.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate moved from 13 September 2028 to <strong>10 October 2027</strong> in the week after Astra shipped, from 1.8k forecasters.",
+      "status_today": "The live blocker here is <strong>sample efficiency</strong>, not raw capability, which makes it unlike anything else on this page. Two of the four tests are settled and one is close. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThat test is now contested rather than distant. On 7 September a tester reported GPT-6 Astra beating the game in real time on a basic harness, with no recording published. Others on the question say the reproducible runs use a harness that queues moves, pausing between screenshots, which has worked since GPT-5.3, and that unaided real-time play still fails. Forecasters have asked the admins what a question written in the reinforcement-learning era requires of a pretrained transformer. No ruling has been posted and nothing is verified.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate moved from 13 September 2028 to <strong>21 October 2027</strong> in the week after Astra shipped, from 1.8k forecasters. It has drifted back slightly over the past day, and the argument driving it is about what the criteria mean rather than what models can do: whether a Loebner-style test is even the right instrument, and how fast a system has to learn a game to count.",
       "flip_condition": "A single system clearing Montezuma's Revenge inside the sample budget, then demonstrated on the other three tests without retraining.",
       "source_url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
       "evidence": [
@@ -679,7 +679,7 @@
       ],
       "progress": 40,
       "forecast": {
-        "date": "2027-10-10",
+        "date": "2027-10-21",
         "opened": "2020-01",
         "forecasters": "1.8k",
         "as_of": "2026-09-09",
