@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27",
+    "updated": "2026-09-09",
     "note": "Only people and organisations that actually operationalised AGI: a stated criterion concrete enough to check. Definitions with no threshold or measurement procedure are excluded. Entries marked claim=proxy are widely read as AGI progress indicators but were never framed as AGI tests by their authors; they are listed separately on the page."
   },
   "definitions": [
@@ -85,7 +85,7 @@
       "confidence": "high",
       "quote": "Can you create a system that can reach 85% accuracy?",
       "quote_source": "ARC Prize Foundation, 2025. The prize is scored on the private set, inside a compute-limited offline container.",
-      "status_today": "ARC-AGI-2 has two scores and the gap between them is the whole story. On the <strong>semi-private</strong> set, which frontier API models are evaluated against, GPT-5.6 Sol reaches <strong>92.5%</strong> and Claude Opus 5 reaches 90.4%. Six configurations now clear the 85% bar, at $0.74 to $2.06 per task.\n\nInside the compute-limited offline container the prize actually uses, the last <strong>adjudicated</strong> result is <strong>24%</strong>, set by team NVARC in the 2025 competition. The 2026 private leaderboard does not exist until submissions close on 2 November, with results on 4 December, so nothing in-container is final before then. The per-task costs above describe API runs and are not comparable to the Kaggle track's cost regime.\n\nOne correction to how this prize is usually described: the 85% threshold unlocks a <strong>$150,000 Bonus Prize</strong>, which rolls forward to 2027 if unmet. The $275,000 Grand Prize goes to the best solution writeup, and $700,000 is the whole track pool.",
+      "status_today": "ARC-AGI-2 has two scores and the gap between them is the whole story. On the <strong>semi-private</strong> set, which frontier API models are evaluated against, GPT-6 Astra reaches <strong>95.0%</strong> and Claude Fable 5.1 reaches 90.0%. <strong>Eighteen</strong> configurations now clear the 85% bar, at $0.42 to $5.45 per task, against six at the last review.\n\nInside the compute-limited offline container the prize actually uses, the last <strong>adjudicated</strong> result is <strong>24%</strong>, set by team NVARC in the 2025 competition. The 2026 private leaderboard does not exist until submissions close on 2 November, with results on 4 December, so nothing in-container is final before then. The per-task costs above describe API runs and are not comparable to the Kaggle track's cost regime.\n\nOne correction to how this prize is usually described: the 85% threshold unlocks a <strong>$150,000 Bonus Prize</strong>, which rolls forward to 2027 if unmet. The $275,000 Grand Prize goes to the best solution writeup, and $700,000 is the whole track pool.",
       "source_url": "https://arcprize.org/competitions/2026/arc-agi-2",
       "evidence": [
         {
@@ -107,19 +107,23 @@
       "affiliation": "François Chollet",
       "year": 2026,
       "category": "benchmark",
-      "status": "early",
-      "progress": 30,
-      "progress_note": "30.2% against a human 100%",
+      "status": "passed",
+      "progress": 100,
+      "progress_note": "99.9% of a human 100%, provider-adapter harness",
       "falsifiability": "high",
       "confidence": "high",
       "quote": "An interactive reasoning benchmark which challenges AI agents to explore novel environments, acquire goals on the fly, build adaptable world models, and learn continuously.",
       "quote_source": "ARC Prize Foundation, launched 25 March 2026. A 100% score means agents beat every environment as efficiently as humans.",
-      "status_today": "<strong>30.16% against a human 100%.</strong> Agents get no instructions, no rules and no stated goals. They must explore, infer how the environment works, work out what winning looks like, and carry what they learn forward. At launch in March 2026 the best frontier model scored 0.51%. Claude Opus 5, tested on 24 July, scored <strong>30.16%</strong>, roughly four times the next best system, GPT-5.6 Sol at 7.8%, with every older frontier model still near zero. That is the largest single-step gain on any AGI-framed benchmark right now, and it is one vendor's unreplicated result. On cost the picture is less one-sided than it looks: the run came to $20,657, which is nowhere near human on the efficiency dimension Chollet's definition cares about, but it undercut the $25,064 GPT-5.6 Sol spent to score 7.8%. Both figures are from the published semi-private leaderboard.",
+      "status_today": "<strong>Saturated, and the harness decides by how much.</strong> GPT-6 Astra, released 2 September, scores <strong>99.9%</strong> against a human 100% under ARC Prize's provider-adapter harness, which preserves the model's hidden reasoning state between requests and compacts long conversations so it can reuse earlier work. Under the standard harness, which carries forward only the notes a model writes for itself, the same model scores <strong>62.7%</strong>. Both figures are ARC Prize's own, published 3 September.\n\nSix weeks earlier the best result was Claude Opus 5 at 30.16%, itself four times the next system. At launch in March 2026 the frontier scored 0.51%. No benchmark on this page has moved this far this fast.\n\nThe efficiency result is the one to hold onto, because efficiency is what Chollet's definition cares about. ARC Prize baselined roughly 500 members of the public before launch, and Astra used fewer actions than the median tested human on <strong>96% of levels</strong>. In money it is nowhere near: $18,817 for the run. ARC Prize says plainly that saturating the benchmark would not be <em>proof of achieving AGI</em>, and that these environments are bounded and deterministic rather than open-ended.",
       "source_url": "https://arcprize.org/arc-agi/3",
       "evidence": [
         {
-          "label": "Opus 5 results",
-          "url": "https://arcprize.org/results/anthropic-claude-opus-5"
+          "label": "Astra on ARC-AGI-3",
+          "url": "https://arcprize.org/blog/astra"
+        },
+        {
+          "label": "ARC-AGI-3 leaderboard",
+          "url": "https://arcprize.org/leaderboard"
         },
         {
           "label": "ARC-AGI-3 launch",
@@ -127,11 +131,11 @@
         }
       ],
       "verification": "maintainer-checked",
-      "verification_note": "ARC Prize tested Claude Opus 5 directly, but the result is one vendor's, unreplicated",
+      "verification_note": "ARC Prize tested Astra directly and published per-level replays",
       "claim": "proxy",
       "claim_note": "AGI-framed by name, but the ARC Prize Foundation claims it as a measure of one missing capability, not as a sufficient test for general intelligence.",
-      "measured": "2026-07",
-      "flip_condition": "An independent replication of the 30.16%, or any system clearing it at materially lower cost."
+      "measured": "2026-09",
+      "flip_condition": "Met. It would reopen only if the provider-adapter harness turned out to leak task information, or if ARC Prize withdrew the result."
     },
     {
       "slug": "hendrycks-agi-score",
@@ -147,12 +151,16 @@
       "confidence": "medium",
       "quote": "AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.",
       "quote_source": "\"A Definition of AGI\", October 2025. Grounded in Cattell-Horn-Carroll theory, the most empirically validated model of human cognition",
-      "status_today": "Ten cognitive domains, each weighted 10%, scored with adapted human psychometric batteries. GPT-4 scored 27%. GPT-5 scored <strong>57%</strong>. <strong>The single most striking result is that both score 0% on Long-Term Memory Storage</strong>. They cannot permanently learn anything after deployment. Because domains are weighted equally, that one zero caps any current-architecture system at 90%, which makes this the strongest available argument that scaling alone cannot finish the job. Two caveats: equal weighting is a value judgement with no empirical backing, and <strong>the score is stale</strong>. No 2026 model has been run through this framework, so the most-cited number in AGI discourse is nine months and several model generations old.",
+      "status_today": "Ten cognitive domains, each weighted 10%, scored with adapted human psychometric batteries. GPT-4 scored 27%. GPT-5 scored <strong>57%</strong>. <strong>The single most striking result is that both score 0% on Long-Term Memory Storage</strong>. They cannot permanently learn anything after deployment. Because domains are weighted equally, that one zero caps any current-architecture system at 90%, which makes this the strongest available argument that scaling alone cannot finish the job. Two caveats: equal weighting is a value judgement with no empirical backing, and <strong>the score is stale</strong>. No 2026 model has been run through this framework: not GPT-6 Astra, not Claude Fable 5.1, not Gemini. CAIS's own dashboard still reads GPT-5 at 57%, so the most-cited number in AGI discourse is nine months and several model generations old.",
       "source_url": "https://www.agidefinition.ai/",
       "evidence": [
         {
           "label": "arXiv paper",
           "url": "https://arxiv.org/abs/2510.18212"
+        },
+        {
+          "label": "CAIS dashboard",
+          "url": "https://dashboard.safe.ai/"
         }
       ],
       "verification": "self-reported",
@@ -248,7 +256,7 @@
       "confidence": "medium",
       "quote": "a domain expert sees only the task and two unlabeled deliverables, and ranks them without knowing which is which",
       "quote_source": "GDPval grading protocol, as described by Epoch AI, 2026",
-      "status_today": "1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity has been reached on the benchmark's own metric.</strong> The paper reports wins-or-ties, putting Claude Opus 4.1 at 47.6%; GPT-5.2 reached <strong>70.9%</strong> and GPT-5.5 later 84.9%. Quote these like for like: GPT-5.2's straight win rate is 49.7%, against 21.2% ties and 29.1% losses, so it is graded better than the expert more than twice as often as worse. Epoch AI's reading is that GPT-5.2 reached parity.\n\nEpoch's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it reached parity, and the impact has not followed.",
+      "status_today": "1,320 tasks across 44 occupations, drawn from real deliverables by professionals averaging 14 years' experience, graded by blind pairwise comparison against a human expert's work.\n\n<strong>Parity has been reached on the benchmark's own metric.</strong> The paper reports wins-or-ties, putting Claude Opus 4.1 at 47.6%; GPT-5.2 reached <strong>70.9%</strong> and GPT-5.5 later 84.9%. Quote these like for like: GPT-5.2's straight win rate is 49.7%, against 21.2% ties and 29.1% losses.\n\nOpenAI has since retired its own GDPval leaderboard and points to Artificial Analysis, which reruns 220 of the tasks agentically and reports Elo anchored to a human baseline of 1,000. <strong>Claude Fable 5.1 leads at 1,764</strong>. The instructive placing is GPT-6 Astra, which saturated ARC-AGI-3 the same week: 1,580, twenty-first. Whatever ARC-AGI-3 measures, it is not this.\n\nEpoch's February 2026 verdict is the part that matters. GDPval \"is falling short in its role as a leading indicator for automation.\" It was built to predict economic impact, it reached parity, and the impact has not followed.",
       "source_url": "https://arxiv.org/abs/2510.04374",
       "evidence": [
         {
@@ -269,7 +277,7 @@
       "claim": "proxy",
       "claim_note": "OpenAI built GDPval to measure economic task performance and never claimed parity on it constitutes AGI. Reading it as an AGI threshold is this page's inference, not OpenAI's claim.",
       "flip_condition": "A GDPval-style result tracking a measurable labour-market shift, which Epoch says has not happened.",
-      "measured": "2026-04",
+      "measured": "2026-09",
       "estimated": true
     },
     {
@@ -352,7 +360,7 @@
       "confidence": "high",
       "quote": "It does not just passively answer questions; instead, it can be given tasks that take hours, days, or weeks to complete, and then goes off and does those tasks autonomously, in the way a smart employee would.",
       "quote_source": "Dario Amodei, \"Machines of Loving Grace\", October 2024",
-      "status_today": "Amodei rejects the term AGI and defines \"powerful AI\" by the five properties listed above. Two are comfortably met. Two are partial. One cannot be tested at all, and it is the one carrying the definition: nobody has proposed a way to check whether a system is \"smarter than a Nobel Prize winner across most relevant fields.\"\n\nThe autonomy clause is where the action is, because METR measures it directly. The last published frontier figure is <strong>17.4 hours at 50% reliability, and about 3.1 hours at 80%</strong>. Hours, yes. Days, marginally. Weeks, no.\n\nThe score is an unweighted mean across the five properties, which flatters the result, because Amodei states them as a conjunction where every one must hold. His 2024 essay put powerful AI \"as early as 2026\"; the January 2026 restatement moved that to one or two years without noting the earlier window had expired.",
+      "status_today": "Amodei rejects the term AGI and defines \"powerful AI\" by the five properties listed above. Two are comfortably met. Two are partial. One cannot be tested at all, and it is the one carrying the definition: nobody has proposed a way to check whether a system is \"smarter than a Nobel Prize winner across most relevant fields.\"\n\nThe autonomy clause is where the action is, because METR measures it directly. The last published frontier figure is <strong>17.4 hours at 50% reliability, and about 3.1 hours at 80%</strong>. Hours, yes. Days, marginally. Weeks, no. METR has published no horizon for GPT-6 Astra or Claude Fable 5.1, and its suite was last updated in May 2026, so the two newest frontier models are unmeasured on the clause that does the most work in this definition.\n\nThe score is an unweighted mean across the five properties, which flatters the result, because Amodei states them as a conjunction where every one must hold. His 2024 essay put powerful AI \"as early as 2026\"; the January 2026 restatement moved that to one or two years without noting the earlier window had expired.",
       "source_url": "https://darioamodei.com/essay/machines-of-loving-grace",
       "evidence": [
         {
@@ -411,20 +419,16 @@
       "confidence": "high",
       "quote": "recursively self improving (i.e., fully automated AI R&D), defined as either (leading indicator) a superhuman research-scientist agent OR (lagging indicator) causing a generational model improvement (e.g., from OpenAI o1 to OpenAI o3) in 1/5th the wall-clock time of equivalent progress in 2024, sustainably for several months",
       "quote_source": "OpenAI Preparedness Framework v2. The Critical threshold for AI Self-Improvement",
-      "status_today": "<strong>Untriggered at all three labs.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nAnthropic's Claude Opus 5 system card of 24 July states the automated AI R&D threshold is not crossed, on the grounds that no sustained AI-attributable 2x acceleration is observed and the model does not substitute for its research staff. <strong>OpenAI's card for GPT-5.6 puts all three variants below the <em>High</em> rung for AI self-improvement</strong>, the step immediately beneath Critical. All three are rated High for biological, chemical and cyber capability. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level. Unlike benchmark scores, these are <em>negative</em> determinations with legal and reputational exposure attached. The obvious caveat: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
+      "status_today": "<strong>Untriggered at all three labs.</strong> Anthropic, OpenAI and Google DeepMind each wrote a recursive-AI-R&D threshold into a safety framework, independently, with every commercial incentive to claim capability.\n\nThis week produced the best evidence yet that these thresholds are not decorative. OpenAI's system card for GPT-6 Astra, 3 September, rates the model <strong>Critical for cybersecurity</strong>, the first time OpenAI has put a model on its top rung in any category, and applies the safeguards that follow from it. The same determination reads: <em>\"In AI Self-Improvement, Astra does not reach our High threshold.\"</em> Astra scores 78.05% on OpenAI's internal research-debugging evaluation, below its indicative High bar. Anthropic's card for Claude Fable 5.1 and Mythos 5.1, 1 September, rates AI R&D risk low: well below its own researchers and engineers, with acceleration of internal work in line with prior models. Gemini 3.1 Pro Deep Think reaches no DeepMind Critical Capability Level.\n\nA lab that will say Critical when it thinks a line has been crossed is a lab whose <em>negative</em> finding on self-improvement is worth more. The caveat is unchanged: all three are self-assessed, and no regulator publishes an independent determination against these thresholds.",
       "source_url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
       "evidence": [
         {
-          "label": "Claude Opus 5 system card",
-          "url": "https://www.anthropic.com/claude-opus-5-system-card"
+          "label": "GPT-6 Astra system card",
+          "url": "https://deploymentsafety.openai.com/gpt-6-astra"
         },
         {
-          "label": "GPT-5.6 system card",
-          "url": "https://deploymentsafety.openai.com/gpt-5-6"
-        },
-        {
-          "label": "Anthropic RSP updates",
-          "url": "https://www.anthropic.com/rsp-updates"
+          "label": "Fable 5.1 & Mythos 5.1 card",
+          "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf"
         },
         {
           "label": "DeepMind Frontier Safety",
@@ -435,7 +439,7 @@
       "verification_note": "All three determinations are made by the labs about their own models; no regulator publishes an independent finding",
       "claim": "proxy",
       "claim_note": "These are risk-management triggers written for safety frameworks. None of the three labs says crossing one means AGI has arrived, though all three treat it as the point where progress stops being human-paced.",
-      "measured": "2026-07",
+      "measured": "2026-09",
       "flip_condition": "Any of the three labs publishing a determination that its own threshold has been crossed."
     },
     {
@@ -510,14 +514,14 @@
       "stake": "$20K vs $2K at 10:1",
       "category": "bet",
       "status": "in-progress",
-      "progress": 20,
-      "progress_note": "none met, four partial, of ten",
+      "progress": 25,
+      "progress_note": "one clause arguably met, four partial, of ten",
       "estimated": true,
       "falsifiability": "high",
       "confidence": "medium",
       "quote": "Both of us agree that the achievement of 8 out of 10 of these tasks would be strong evidence for the G (General) in Artificial General Intelligence having been achieved. For the purpose of the bet, the tasks should not be performed by 10 completely separate systems.",
       "quote_source": "Marcus & Brundage, 30 December 2024. Accepted, funded and live",
-      "status_today": "<strong>This is the real wager</strong>, and the one that should be cited instead of the Musk offers. Ten tasks, robotics deliberately excluded, resolving 31 December 2027. None are met.\n\nEvery task carrying a primary measurement sits well below its bar: films 56.3% against 84.4% for humans, novels 68.5% against 96.9%, mastering an unseen game 30.2% against a human 100%. The maths task is the cleanest arithmetic here, because footnote 3 sets it at twenty papers formalised twenty out of twenty, and the best 2026 system managed two hand-selected papers.\n\n<strong>Marcus is heavily favoured</strong>, at 88% on Metaculus. The most informative thing about the bet is a dispute nobody has adjudicated: the crowd rationale says \"six out of ten tasks likely solved already,\" while Marcus's own December 2025 audit says \"no system solved more than 4 (or maybe any).\" Markets put <strong>22.8% on annulment</strong>, because the panel of judges that decides it still does not publicly exist.",
+      "status_today": "<strong>This is the real wager</strong>, and the one that should be cited instead of the Musk offers. Ten tasks, robotics deliberately excluded, resolving 31 December 2027.\n\nMost tasks carrying a primary measurement sit well below their bar: films 56.3% against 84.4% for humans, novels 68.5% against 96.9%. The maths task is the cleanest arithmetic here, because footnote 3 sets it at twenty papers formalised twenty out of twenty, and the best 2026 system managed two hand-selected papers. One clause moved this week: mastering an unseen game, scored here against ARC-AGI-3, went from 30.2% to <strong>99.9%</strong> under a provider-adapter harness, or 62.7% without one. That is one of ten, and the bet needs eight from a single system.\n\n<strong>Marcus is heavily favoured</strong>, at 88% on Metaculus. The most informative thing about the bet is a dispute nobody has adjudicated: the crowd rationale says \"six out of ten tasks likely solved already,\" while Marcus's own December 2025 audit says \"no system solved more than 4 (or maybe any).\" Markets put <strong>22.8% on annulment</strong>, because the panel of judges that decides it still does not publicly exist.",
       "source_url": "https://garymarcus.substack.com/p/where-will-ai-be-at-the-end-of-2027",
       "evidence": [
         {
@@ -536,7 +540,7 @@
       "verification": "unmeasured",
       "verification_note": "The judging panel that decides it has still not been named",
       "claim": "stated",
-      "measured": "2026-07",
+      "measured": "2026-09",
       "flip_condition": "Eight of ten by 31 Dec 2027, or the naming of a judging panel, which would cut the 22.8% annulment price."
     },
     {
@@ -623,10 +627,10 @@
       "estimated": true,
       "falsifiability": "high",
       "confidence": "medium",
-      "measured": "2026-07",
+      "measured": "2026-09",
       "quote": "a single unified software system that can satisfy the following criteria, all easily completable by a typical college-educated human",
       "quote_source": "Metaculus question 3479. The unified clause bars a system \"cobbled together as a set of sub-systems specialized to tasks like the above\"",
-      "status_today": "The live blocker here is <strong>sample efficiency</strong>, not raw capability, which makes it unlike anything else on this page. Two of the four tests are settled and one is close. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThe rooms themselves stopped being the hard part in 2018, when Go-Explore reached level 1 reliably. The budget is the bar: Go-Explore and the exploration methods that followed consumed sample counts far beyond a hundred hours of play. A top-voted comment on the question calls this the only criterion not yet satisfied, and its author puts even odds on it falling by 2030.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate is <strong>13 September 2028</strong>, from 1.8k forecasters.",
+      "status_today": "The live blocker here is <strong>sample efficiency</strong>, not raw capability, which makes it unlike anything else on this page. Two of the four tests are settled and one is close. The fourth asks for Montezuma's Revenge, all 24 rooms, from visual input alone, learned in under 100 hours of equivalent play.\n\nThat test is now contested rather than distant. On 7 September a tester reported GPT-6 Astra beating the game in real time on a basic harness, with no recording published. Others on the question say the reproducible runs use a harness that queues moves, pausing between screenshots, which has worked since GPT-5.3, and that unaided real-time play still fails. Forecasters have asked the admins what a question written in the reinforcement-learning era requires of a pretrained transformer. No ruling has been posted and nothing is verified.\n\nThe unification clause is the second live constraint, and it is the one nobody is trying to satisfy: no single system has been demonstrated doing all four. The community estimate moved from 13 September 2028 to <strong>10 October 2027</strong> in the week after Astra shipped, from 1.8k forecasters.",
       "flip_condition": "A single system clearing Montezuma's Revenge inside the sample budget, then demonstrated on the other three tests without retraining.",
       "source_url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
       "evidence": [
@@ -660,7 +664,7 @@
         {
           "label": "Learn Montezuma's Revenge from visual input and explore all 24 rooms in under 100 hours of equivalent play",
           "state": "unmet",
-          "note": "The rooms stopped being the hard part in 2018; the budget is the bar. The 2026 state of the art uses 400M frames for exploration alone, against roughly 21.6M for 100 hours of play."
+          "note": "The 2018-era sample budget is no longer the only question. A 7 September 2026 report of GPT-6 Astra clearing it in real time is unrecorded and disputed; the runs others reproduce pause between frames, which forecasters argue the 100-hour clause excludes. No admin ruling."
         },
         {
           "label": "Be a single unified system, not sub-systems specialised to each task",
@@ -670,10 +674,10 @@
       ],
       "progress": 40,
       "forecast": {
-        "date": "2028-09-13",
+        "date": "2027-10-10",
         "opened": "2020-01",
         "forecasters": "1.8k",
-        "as_of": "2026-07-27",
+        "as_of": "2026-09-09",
         "label": "Metaculus median, weakly general AI"
       },
       "progress_note": "1 of 5 met, 2 partial"
@@ -690,10 +694,10 @@
       "estimated": true,
       "falsifiability": "high",
       "confidence": "medium",
-      "measured": "2026-07",
+      "measured": "2026-09",
       "quote": "Able to reliably pass a 2-hour, adversarial Turing test during which the participants can send text, images, and audio files",
       "quote_source": "Metaculus question 5121. Judges are instructed to ask difficult questions designed to advantage humans and to unmask the computer",
-      "status_today": "<strong>The two hardest tests here have never been run by anyone.</strong> Not failed. Never attempted, in six years.\n\nThe knowledge tests moved with the field: MMLU is met, APPS at 90% top-1 strict is not, and frontier models are rarely run on APPS any more. The two that need someone to build an apparatus have not moved at all, because nobody has built one. That is a funding gap, not a capability gap. Community estimate <strong>November 2032</strong>, from 1.9k forecasters.",
+      "status_today": "<strong>The two hardest tests here have never been run by anyone.</strong> Not failed. Never attempted, in six years.\n\nThe knowledge tests moved with the field: MMLU is met, APPS at 90% top-1 strict is not, and frontier models are rarely run on APPS any more. The two that need someone to build an apparatus have not moved at all, because nobody has built one. That is a funding gap, not a capability gap. Community estimate <strong>April 2032</strong>, from 1.9k forecasters, seven months earlier than at the last review despite neither apparatus existing.",
       "flip_condition": "Anyone running the two-hour adversarial test. It is the single cheapest unresolved measurement on this page, and its absence is the main reason this question has not moved.",
       "source_url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
       "evidence": [
@@ -755,7 +759,7 @@
       "measured": "2026-07",
       "quote": "To pass the employment test, AI programs must be able to perform the jobs ordinarily performed by humans. Progress toward human-level AI could then be measured by the fraction of these jobs that can be acceptably performed by machines.",
       "quote_source": "Nils J. Nilsson, \"Human-Level Artificial Intelligence? Be Serious!\", AI Magazine 26(4), 2005",
-      "status_today": "Alone among the criteria here, Nilsson did not set a pass mark. He defined <em>progress itself</em> as the fraction of ordinary jobs machines can acceptably perform, which makes this the only entry with a built-in continuous metric rather than a threshold to cross.\n\nThe closest instrument is the Remote Labor Index, built by CAIS with Scale, which scores whether AI agents can complete real paid freelance projects to the standard a client would accept. The best model reached <strong>15.8%</strong> in July 2026, up from 2.5% at launch in October 2025.\n\nSet that against GDPval, where the best reported figure is 84.9% wins-or-ties on expert deliverables. Same year, same broad question, and a gap of nearly seventy points. The difference is that GDPval grades a deliverable in isolation while the Remote Labor Index requires the whole job to be finished to a paying client's satisfaction. Nilsson asked for the second.",
+      "status_today": "Alone among the criteria here, Nilsson did not set a pass mark. He defined <em>progress itself</em> as the fraction of ordinary jobs machines can acceptably perform, which makes this the only entry with a built-in continuous metric rather than a threshold to cross.\n\nThe closest instrument is the Remote Labor Index, built by CAIS with Scale, which scores whether AI agents can complete real paid freelance projects to the standard a client would accept. The best model reached <strong>15.8%</strong> in July 2026, up from 2.5% at launch in October 2025. Neither GPT-6 Astra nor Claude Fable 5.1 has been run on it, and CAIS's dashboard still reads 15.83%.\n\nSet that against GDPval, where the best reported figure is 84.9% wins-or-ties on expert deliverables. Same year, same broad question, and a gap of nearly seventy points. The difference is that GDPval grades a deliverable in isolation while the Remote Labor Index requires the whole job to be finished to a paying client's satisfaction. Nilsson asked for the second.",
       "flip_condition": "The Remote Labor Index crossing 50%, which would be the first time a majority of real remote projects were completed to client standard.",
       "source_url": "https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/General%20Essays/AIMag26-04-HLAI.pdf",
       "evidence": [

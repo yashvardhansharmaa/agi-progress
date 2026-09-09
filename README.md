@@ -50,7 +50,7 @@ The headline date comes from the `forecast` block on whichever criterion declare
 week:
 
 ```json
-"forecast": { "date": "2028-09-13", "forecasters": "1.8k", "as_of": "2026-07-27", "label": "..." }
+"forecast": { "date": "2027-10-10", "forecasters": "1.8k", "as_of": "2026-09-09", "label": "..." }
 ```
 
 Bump `date` and `as_of` together, so a stale figure is visible rather than silent. **This one cannot be
